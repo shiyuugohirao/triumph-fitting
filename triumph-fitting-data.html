@@ -11,8 +11,13 @@
 <div class="page" data-action="Page-Show" data-querystring="cid=tr-fitting">
   <div role="main" id="maincontent">
     <!-- dwMarker="content" dwContentID="560fdc6af44ccced2240d50f04" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/css/slick-theme.css" />
     <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/css/slick.css" />
+    <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/fitting/css/new_fitting.css" />
+
     <style>
       .fitting {
         background-color: #fff;
@@ -20,6 +25,130 @@
 
       .reserve_add04 {
         margin-bottom: 0 !important;
+      }
+
+      /* KV Section */
+      .fitting .kv {
+        background-color: #fff !important;
+        background-image: none !important;
+        position: relative;
+        width: 100%;
+        margin-bottom: 0;
+      }
+
+      .fitting .kv .kvArea {
+        position: relative;
+        width: 100%;
+        height: 810px;
+        overflow: hidden;
+      }
+
+      .fitting .kv .kvArea_inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .fitting .kv .kvArea_box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .fitting .kv .slideshow-fade {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .fitting .kv .slideshow-fade li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .fitting .kv .slideshow-fade img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Essay Section */
+      .fitting .essay {
+        position: relative;
+        width: 100%;
+        padding: 80px 0;
+        background-color: #f8f8f8;
+        margin-bottom: 0;
+      }
+
+      .fitting .essay .essayArea {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .fitting .essay .essayArea_inner {
+        position: relative;
+        width: 100%;
+      }
+
+      .fitting .essay .essayArea_box {
+        position: relative;
+        width: 100%;
+        text-align: center;
+      }
+
+      .fitting .essay h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: #333;
+      }
+
+      .fitting .essay h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #666;
+      }
+
+      .fitting .essay button {
+        background-color: #b2152c;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .fitting .essay button:hover {
+        background-color: #8a1120;
+      }
+
+      .fitting .essay dialog {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+
+      .fitting .essay dialog button {
+        background-color: #666;
+        margin-top: 20px;
       }
 
       /* KV - TRIUMPH FITTING */
@@ -32,6 +161,14 @@
       }
 
       /* FITTING STEP */
+      .fitting .stepArea {
+        position: relative;
+        width: 100%;
+        padding: 80px 0;
+        background-color: #fff;
+        margin-bottom: 0;
+      }
+
       .fitting .stepArea .ttlArea {
         padding: 60px 0 0 112px !important;
       }
@@ -66,37 +203,6 @@
         }
       }
 
-      /* MOVIES */
-      .fitting .movieArea_inner .ttlArea {
-        text-align: right;
-      }
-
-      .fitting .movieArea_inner .ttlArea img {
-        margin-left: auto;
-        width: 303px;
-        position: relative;
-        z-index: 2;
-      }
-
-      @media screen and (max-width: 769px) {
-        .fitting .movieArea_inner .ttlArea img {
-          width: 151px;
-        }
-      }
-
-      /* ARCHIVE MOVIES */
-      .fitting .movieArea_archive--ttl img {
-        display: inline-block;
-        vertical-align: baseline;
-        width: 163px;
-      }
-
-      @media screen and (max-width: 769px) {
-        .fitting .movieArea_archive--ttl img {
-          width: 220px;
-        }
-      }
-
       /* FITTING REPORT */
       .fitting .reportArea_inner .ttlArea img {
         height: auto;
@@ -108,6 +214,278 @@
       @media screen and (max-width: 769px) {
         .fitting .reportArea_inner .ttlArea img {
           width: 156px;
+        }
+      }
+
+      /* Statement Section */
+      .fitting .statement {
+        position: relative;
+        width: 100%;
+        background-color: #e90029;
+        padding: 80px 0;
+        margin-bottom: 0;
+      }
+
+      .fitting .statement .statementArea {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+
+      .fitting .statement h1 {
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        font-style: italic;
+        margin-bottom: 60px;
+        font-family: "Shippori Mincho", serif;
+      }
+
+      .fitting .statement .statementColumns {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 60px;
+        flex-wrap: wrap;
+      }
+
+      .fitting .statement .statementColumn {
+        color: white;
+        font-size: 1.2rem;
+        line-height: 2.5;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        letter-spacing: 0.1em;
+        font-family: "Shippori Mincho", serif;
+        min-height: 200px;
+        display: block;
+        text-align: left;
+      }
+
+      .fitting .statement .statementLinks {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 40px;
+      }
+
+      .fitting .statement .statementLink {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        position: relative;
+        padding-bottom: 5px;
+        transition: opacity 0.3s ease;
+      }
+
+      .fitting .statement .statementLink:hover {
+        opacity: 0.8;
+      }
+
+      .fitting .statement .statementLink::after {
+        content: "▼";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+      }
+
+      .fitting .statement .statementLink::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: white;
+      }
+
+      /* Link Section */
+      .fitting .link {
+        position: relative;
+        width: 100%;
+        background-color: #fff;
+        padding: 80px 0;
+        margin-bottom: 0;
+      }
+
+      .fitting .link .linkArea {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+
+      .fitting .link h2 {
+        color: #e90029;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 40px;
+        font-family: "Shippori Mincho", serif;
+      }
+
+      .fitting .link .linkGroup {
+        margin-bottom: 60px;
+      }
+
+      .fitting .link .linkGroup h3 {
+        color: #e90029;
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        font-weight: bold;
+      }
+
+      .fitting .link .linkButtons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .fitting .link .linkButton {
+        display: inline-block;
+        width: 200px;
+        height: 60px;
+        border: 2px solid #e90029;
+        background-color: white;
+        color: #333;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border-radius: 4px;
+      }
+
+      .fitting .link .linkButton:hover {
+        background-color: #e90029;
+        color: white;
+      }
+
+      .fitting .link .brandButton {
+        display: inline-block;
+        width: 200px;
+        height: 60px;
+        border: 2px solid #e90029;
+        background-color: white;
+        color: #333;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border-radius: 4px;
+      }
+
+      .fitting .link .brandButton:hover {
+        background-color: #e90029;
+        color: white;
+      }
+
+      .fitting .link .storeListButton {
+        display: inline-block;
+        width: 300px;
+        height: 60px;
+        border: 2px solid #e90029;
+        background-color: white;
+        color: #e90029;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        border-radius: 4px;
+        margin: 0 auto;
+      }
+
+      .fitting .link .storeListButton:hover {
+        background-color: #e90029;
+        color: white;
+      }
+
+      /* Responsive adjustments */
+      @media screen and (max-width: 768px) {
+        .fitting .kv .kvArea {
+          height: 400px;
+        }
+
+        .fitting .statement {
+          padding: 40px 0;
+        }
+
+        .fitting .statement h1 {
+          font-size: 2rem;
+          margin-bottom: 60px;
+        }
+
+        .fitting .statement .statementColumns {
+          gap: 15px;
+        }
+
+        .fitting .statement .statementColumn {
+          font-size: 1rem;
+          min-height: 150px;
+        }
+
+        .fitting .statement .statementLinks {
+          gap: 20px;
+        }
+
+        .fitting .essay {
+          padding: 40px 0;
+        }
+
+        .fitting .essay h2 {
+          font-size: 2rem;
+        }
+
+        .fitting .essay h3 {
+          font-size: 1.5rem;
+        }
+
+        .fitting .stepArea {
+          padding: 40px 0;
+        }
+
+        .fitting .link {
+          padding: 40px 0;
+        }
+
+        .fitting .link h2 {
+          font-size: 2rem;
+        }
+
+        .fitting .link .linkGroup h3 {
+          font-size: 1.5rem;
+        }
+
+        .fitting .link .linkButtons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .fitting .link .linkButton,
+        .fitting .link .brandButton {
+          width: 250px;
+        }
+
+        .fitting .link .storeListButton {
+          width: 250px;
         }
       }
     </style>
@@ -128,11 +506,11 @@
 
       .main_contents__h2,
       .main_contents__h2_main_title {
-        font-family: "triumph grand", ARMochi, sans-serif !important;
+        font-family: "triumph grand", sans-serif !important;
       }
 
       .reserveArea h2 {
-        font-family: "triumph grand", ARMochi, sans-serif !important;
+        font-family: "triumph grand", sans-serif !important;
       }
 
       .reserve_add04 {
@@ -166,130 +544,106 @@
       }
     </style>
     <article class="fitting">
-      <!-- 202407 -->
       <section class="kv">
-        <h1>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 293.291 22.32">
-            <path
-              d="M-147.188-21.7h15.655v3.72h-5.735V0h-4.185V-17.98h-5.735Zm26.753,12.09h-1.519V0h-4.185V-21.7h7.9a6.767,6.767,0,0,1,4.743,1.612,5.893,5.893,0,0,1,1.922,4.433,5.893,5.893,0,0,1-1.922,4.433,5.737,5.737,0,0,1-2.17,1.271L-107.539,0h-5.177Zm-1.519-3.72h3.472a2.765,2.765,0,0,0,2.108-.651,2.357,2.357,0,0,0,.62-1.643,2.4,2.4,0,0,0-.62-1.674,2.746,2.746,0,0,0-2.108-.682h-3.472ZM-103.23,0V-21.7h4.185V0Zm26.939-1.922A9.433,9.433,0,0,1-82.8.31a9.433,9.433,0,0,1-6.51-2.232Q-92.1-4.433-92.1-9.145V-21.7h4.185V-8.835A5.261,5.261,0,0,0-86.49-4.8,5.119,5.119,0,0,0-82.8-3.41,5.119,5.119,0,0,0-79.112-4.8a5.261,5.261,0,0,0,1.426-4.03V-21.7H-73.5V-9.145Q-73.5-4.433-76.291-1.922ZM-63.612-21.7l7.905,12.989L-47.8-21.7h2.945V0h-4.185V-12.09L-54.25-3.565h-2.914l-5.208-8.525V0h-4.185V-21.7ZM-29.6-8.835h-3.968V0h-4.185V-21.7H-29.6q3.782,0,5.642,1.953a6.209,6.209,0,0,1,1.7,4.5,6.209,6.209,0,0,1-1.7,4.5Q-25.792-8.835-29.6-8.835Zm-3.968-3.72h3.782a3.456,3.456,0,0,0,2.635-.868,2.612,2.612,0,0,0,.713-1.829,2.651,2.651,0,0,0-.713-1.86,3.456,3.456,0,0,0-2.635-.868h-3.782ZM-1.984,0V-9.765h-10.85V0h-4.185V-21.7h4.185v8.215h10.85V-21.7H2.2V0ZM32.829-17.98H23.994v4.495h6.665v3.72H23.994V0H19.809V-21.7h13.02ZM38.068,0V-21.7h4.185V0Zm9.579-21.7H63.3v3.72H57.567V0H53.382V-17.98H47.647Zm20.739,0H84.041v3.72H78.306V0H74.121V-17.98H68.386ZM89.435,0V-21.7H93.62V0Zm11.284,0V-21.7h2.945l12.09,14.136V-21.7h4.185V0h-2.945L104.9-14.136V0ZM136.9-18.29a6.837,6.837,0,0,0-5.146,2.17,7.341,7.341,0,0,0-2.077,5.27,7.2,7.2,0,0,0,2.139,5.3,7.162,7.162,0,0,0,5.27,2.139,7.56,7.56,0,0,0,4.836-1.674V-9.765h-5.58v-3.72H146.1v9.641a10.652,10.652,0,0,1-3.859,3.022A12.045,12.045,0,0,1,136.989.31,11.247,11.247,0,0,1,128.727-2.9a10.745,10.745,0,0,1-3.239-7.951,10.771,10.771,0,0,1,3.224-7.952,11.156,11.156,0,0,1,8.215-3.208,10.944,10.944,0,0,1,7.936,3.1l-2.7,2.852A7.207,7.207,0,0,0,136.9-18.29Z"
-              transform="translate(147.188 22.01)"
-              fill="#fff" />
-          </svg>
-          <span>トリンプフィッティング</span>
-        </h1>
-        <figure>
-          <picture>
-            <source
-              media="(max-width: 769px)"
-              srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/kv@sp.webp" />
-            <img
-              src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/kv.webp"
-              alt="TRIUMPH FITTING"
-              width="375"
-              height="300" />
-          </picture>
-          <figcaption>
-            <h2>
-              息のあう
-              <br />
-              ランジェリーが見つかる、
-              <br />
-              トリンプのフィッティング
-            </h2>
-            <p>
-              年齢やライフスタイルの変化により、
-              <br class="pc_contents" />
-              女性のボディラインはさまざまな影響を受けます。
-              <br class="pc_contents" />
-              10年前と違うだけでなく、1年前、1か月前と違うことも。
-              <br class="pc_contents" />
-              自分の今を見つめ直して、
-              <br class="pc_contents" />
-              見違えたシルエットから生まれる「自信」を、
-              <br class="pc_contents" />
-              トリンプのファッションアドバイザーと一緒に見つけませんか。
-            </p>
-            <ul>
-              <li>
-                <a href="#step">
-                  <p>
-                    フィッティング
-                    <br />
-                    の流れ
-                  </p>
-                </a>
-              </li>
-              <li>
-                <a href="#faq">
-                  <p>
-                    フィッティング
-                    <br />
-                    FAQ
-                    <span>NEW</span>
-                  </p>
-                </a>
-              </li>
-              <li>
-                <a href="#movie"><p>体験動画</p></a>
-              </li>
-              <li>
-                <a href="#report">
-                  <p>
-                    フィッティング
-                    <br />
-                    レポート
-                  </p>
-                </a>
-              </li>
-            </ul>
-          </figcaption>
-        </figure>
+        <div class="kvArea">
+          <div class="kvArea_inner">
+            <div class="kvArea_box">
+              <ul class="slideshow-fade">
+                <li>
+                  <img
+                    src="https://images.unsplash.com/photo-1605713288610-00c1c630ca1e?&w=1440&h=810&fit=crop&crop=faces,edges&q=0&fm=webp"
+                    alt="スライドショー画像1" />
+                </li>
+                <li>
+                  <img
+                    src="https://images.unsplash.com/photo-1590527548172-295fdcb1bab0?&w=1440&h=810&fit=crop&crop=faces,edges&q=0&fm=webp"
+                    alt="スライドショー画像2" />
+                </li>
+                <li>
+                  <img
+                    src="https://images.unsplash.com/photo-1543095834-7445b8af8c2b?&w=1440&h=810&fit=crop&crop=faces,edges&q=0&fm=webp"
+                    alt="スライドショー画像3" />
+                </li>
+                <li>
+                  <img
+                    src="https://images.unsplash.com/photo-1517488629431-6427e0ee1e5f?&w=1440&h=810&fit=crop&crop=faces,edges&q=0&fm=webp"
+                    alt="スライドショー画像4" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section class="flowtingArea">
-        <ul>
-          <li>
-            <p>
-              フィッティング
-              <br class="pc_contents" />
-              予約はこちら
-            </p>
-          </li>
-          <li>
-            <a href="https://triumph-cpn-fitting.resv.jp/" target="_blank" rel="noopener noreferrer">
-              <div>
-                <p>
-                  百貨店・
-                  <br />
-                  トリンプショップ
-                </p>
-                <img
-                  src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icn_next_red.webp"
-                  alt=""
-                  loading="lazy"
-                  width="22"
-                  height="22" />
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="https://triumph-cpn-fitting-gms.resv.jp/" target="_blank" rel="noopener noreferrer">
-              <div>
-                <p>
-                  チェーン
-                  <br class="pc_contents" />
-                  ストア
-                </p>
-                <img
-                  src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icn_next_red.webp"
-                  alt=""
-                  loading="lazy"
-                  width="22"
-                  height="22" />
-              </div>
-            </a>
-          </li>
-        </ul>
+      <section class="statement">
+        <div class="statementArea">
+          <h1>#トリンプで試着したら人生変わったわ</h1>
+          <div class="statementColumns">
+            <div class="statementColumn">トリンプで試着する。</div>
+            <div class="statementColumn">変わるのは胸だけじゃない。</div>
+            <div class="statementColumn">
+              姿勢が変わる。
+              <br />
+              表情が変わる。
+            </div>
+            <div class="statementColumn">
+              知らない自分が、
+              <br />
+              顔を出す。
+            </div>
+            <div class="statementColumn">一人ひとりに合ういちまいを、</div>
+            <div class="statementColumn">心を込めて選び抜く。</div>
+            <div class="statementColumn">次はあなたが変わる番。</div>
+            <div class="statementColumn">是非、お近くのトリンプへ。</div>
+          </div>
+          <div class="statementLinks">
+            <a href="#essay" class="statementLink">SPECIAL ESSAY</a>
+            <a href="#step" class="statementLink">FITTING STEP</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="link">
+        <div class="linkArea">
+          <h2>人生が変える体験をあなたにも</h2>
+
+          <div class="linkGroup">
+            <h3>フィッティングを予約する</h3>
+            <div class="linkButtons">
+              <a href="#" class="linkButton">百貨店で予約する</a>
+              <a href="#" class="linkButton">GMSで予約する</a>
+              <a href="#" class="linkButton">AMOで予約する</a>
+            </div>
+          </div>
+
+          <div class="linkGroup">
+            <h3>オンラインで商品購入</h3>
+            <div class="linkButtons">
+              <a href="#" class="brandButton">Triumph</a>
+              <a href="#" class="brandButton">AMOSTYLE</a>
+              <a href="#" class="brandButton">sloggi</a>
+            </div>
+          </div>
+
+          <a href="#" class="storeListButton">店舗一覧</a>
+        </div>
+      </section>
+
+      <section class="essay" id="essay">
+        <h2>essay</h2>
+        <div class="essayArea">
+          <div class="essayArea_inner">
+            <div class="essayArea_box">
+              <h3>essay</h3>
+              <dialog>
+                <button autofocus>閉じる</button>
+                <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青い空の下で。</p>
+                <p>その当時の誰もが羨む、青春と呼ぶべきものだった。</p>
+              </dialog>
+              <button>essayを表示</button>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="stepArea" id="step">
@@ -397,716 +751,6 @@
             loading="lazy"
             width="72"
             height="67" />
-        </div>
-      </section>
-
-      <section class="faqArea" id="faq">
-        <div class="line line01"></div>
-        <div class="line line02"></div>
-        <h3 class="subArea in_view">
-          <span class="ttl"><span>フィッティングの疑問に</span></span>
-          <span class="ttl"><span>お答えします！</span></span>
-        </h3>
-        <div class="faqArea_inner">
-          <h2 class="ttlArea in_view">
-            <span class="ttl">
-              <span>
-                <img
-                  src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/txt_fittingfaq.svg"
-                  alt="FITTING FAQ"
-                  loading="lazy"
-                  width="312"
-                  height="128" />
-              </span>
-            </span>
-          </h2>
-
-          <div class="faqArea_box">
-            <details class="faqArea_details">
-              <summary>
-                <dl class="faqArea_q__inner">
-                  <dt>
-                    <img
-                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icon_q.svg"
-                      alt="Question"
-                      loading="lazy"
-                      width="33"
-                      height="32" />
-                  </dt>
-                  <dd>
-                    <p>美しいボディラインの秘訣が知りたい！</p>
-                    <span></span>
-                  </dd>
-                </dl>
-              </summary>
-              <div class="faqArea_details__ans">
-                <dl class="faqArea_a__inner">
-                  <dt>
-                    <img
-                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icon_a.svg"
-                      alt="Answer"
-                      loading="lazy"
-                      width="33"
-                      height="36" />
-                  </dt>
-                  <dd>
-                    <p>
-                      トリンプでは
-                      <font size="4.9em"><u>YSIOA体型診断</u></font>
-                      を行っています。
-                      <br />
-                      <font size="4.9em"><u>それぞれの体型に合わせて</u></font>
-                      美しいボディラインを実現する為、店頭では
-                      <font size="4.9em"><u>トータルコーディネイト</u></font>
-                      のアイテムをご提案しております。
-                    </p>
-                    <span>
-                      <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/q01.webp" alt="" />
-                    </span>
-                  </dd>
-                </dl>
-                <p></p>
-              </div>
-            </details>
-            <details class="faqArea_details">
-              <summary>
-                <dl class="faqArea_q__inner">
-                  <dt>
-                    <img
-                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icon_q.svg"
-                      alt="Question"
-                      loading="lazy"
-                      width="33"
-                      height="32" />
-                  </dt>
-                  <dd>
-                    <p>ランジェリーを買い替えるタイミングっていつ？</p>
-                    <span></span>
-                  </dd>
-                </dl>
-              </summary>
-              <div class="faqArea_details__ans">
-                <dl class="faqArea_a__inner">
-                  <dt>
-                    <img
-                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icon_a.svg"
-                      alt="Answer"
-                      loading="lazy"
-                      width="33"
-                      height="36" />
-                  </dt>
-                  <dd class="reverse">
-                    <p>
-                      買い替えの目安は、購入した時と
-                      <font size="4.9em"><u>フィット感が変わった時。</u></font>
-                      <br />
-                      着けごこちがきつい、ゆるい、ストラップがずれるなど
-                      <font size="4.9em"><u>違和感を感じた時</u></font>
-                      が買い替え時です。店頭でファッションアドバイザーが
-                      <font size="4.9em"><u>フィットの確認</u></font>
-                      を一緒に行いますので、ぜひご相談ください。
-                    </p>
-                    <span>
-                      <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/q02.webp" alt="" />
-                    </span>
-                  </dd>
-                </dl>
-                <p></p>
-              </div>
-            </details>
-            <details class="faqArea_details">
-              <summary>
-                <dl class="faqArea_q__inner">
-                  <dt>
-                    <img
-                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icon_q.svg"
-                      alt="Question"
-                      loading="lazy"
-                      width="33"
-                      height="32" />
-                  </dt>
-                  <dd>
-                    <p>いつも同じサイズでいいの？</p>
-                    <span></span>
-                  </dd>
-                </dl>
-              </summary>
-              <div class="faqArea_details__ans">
-                <dl class="faqArea_a__inner">
-                  <dt>
-                    <img
-                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icon_a.svg"
-                      alt="Answer"
-                      loading="lazy"
-                      width="33"
-                      height="36" />
-                  </dt>
-                  <dd>
-                    <p>
-                      基本は同じで問題ありませんが、 女性の体型は
-                      <font size="4.9em"><u>変化しやすく</u></font>
-                      、体重変化はなくても体調や気分で違和感を感じる場合があります。
-                      まずは、ご自身の体調、生理周期、季節などによる体型変化を把握して、
-                      <font size="4.9em"><u>店頭でご相談</u></font>
-                      いただくことで、快適に毎日をお過ごしいただくためのランジェリーをご提案いたします。
-                    </p>
-                    <span>
-                      <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/q03.webp" alt="" />
-                    </span>
-                  </dd>
-                </dl>
-                <p></p>
-              </div>
-            </details>
-            <details class="faqArea_details">
-              <summary>
-                <dl class="faqArea_q__inner">
-                  <dt>
-                    <img
-                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icon_q.svg"
-                      alt="Question"
-                      loading="lazy"
-                      width="33"
-                      height="32" />
-                  </dt>
-                  <dd>
-                    <p>フィッティングの頻度が知りたい！</p>
-                    <span></span>
-                  </dd>
-                </dl>
-              </summary>
-              <div class="faqArea_details__ans">
-                <dl class="faqArea_a__inner">
-                  <dt>
-                    <img
-                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icon_a.svg"
-                      alt="Answer"
-                      loading="lazy"
-                      width="33"
-                      height="36" />
-                  </dt>
-                  <dd class="reverse">
-                    <p>
-                      トリンプでは目安として
-                      <font size="4.9em"><u>3ヶ月に1度、季節ごと</u></font>
-                      の採寸をおすすめしています。いつものランジェリーの着用感に
-                      <font size="4.9em"><u>違和感を感じられた場合も</u></font>
-                      ご相談ください。
-                    </p>
-                    <span>
-                      <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/q04.webp" alt="" />
-                    </span>
-                  </dd>
-                </dl>
-                <p></p>
-              </div>
-            </details>
-            <details class="faqArea_details">
-              <summary>
-                <dl class="faqArea_q__inner">
-                  <dt>
-                    <img
-                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icon_q.svg"
-                      alt="Question"
-                      loading="lazy"
-                      width="33"
-                      height="32" />
-                  </dt>
-                  <dd>
-                    <p>ブラジャーがフィットするってどういう状態？</p>
-                    <span></span>
-                  </dd>
-                </dl>
-              </summary>
-              <div class="faqArea_details__ans">
-                <dl class="faqArea_a__inner">
-                  <dt>
-                    <img
-                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icon_a.svg"
-                      alt="Answer"
-                      loading="lazy"
-                      width="33"
-                      height="36" />
-                  </dt>
-                  <dd>
-                    <p>
-                      フィットしている状態は、
-                      <font size="4.9em"><u>違和感がない、苦しくない、ずれない</u></font>
-                      などです。着けごこちはもちろんですが、トリンプではお洋服をお召しの際のシルエットもお客様と一緒に確認しております。
-                      ぜひ店頭でトリンプ
-                      <font size="4.9em"><u>3Dフィッティング</u></font>
-                      をご体験ください。
-                    </p>
-                    <span>
-                      <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/q05.webp" alt="" />
-                    </span>
-                  </dd>
-                </dl>
-                <p></p>
-              </div>
-            </details>
-            <details class="faqArea_details">
-              <summary>
-                <dl class="faqArea_q__inner">
-                  <dt>
-                    <img
-                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icon_q.svg"
-                      alt="Question"
-                      loading="lazy"
-                      width="33"
-                      height="32" />
-                  </dt>
-                  <dd>
-                    <p>初心者におすすめのガードルは？</p>
-                    <span></span>
-                  </dd>
-                </dl>
-              </summary>
-              <div class="faqArea_details__ans">
-                <dl class="faqArea_a__inner">
-                  <dt>
-                    <img
-                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icon_a.svg"
-                      alt="Answer"
-                      loading="lazy"
-                      width="33"
-                      height="36" />
-                  </dt>
-                  <dd class="reverse">
-                    <p>
-                      ガードルには、ハード、ミディアム、ソフトのサポートがあり、
-                      <font size="4.9em"><u>素材や丈の長さのバリエーション</u></font>
-                      があります。
-                      <br />
-                      はじめて着用される場合は、
-                      <font size="4.9em"><u>店頭でフィッティング</u></font>
-                      していただくのがおすすめです。履きごこちが良いと感じたアイテムからスタートしてみましょう！
-                    </p>
-                    <span>
-                      <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/q06.webp" alt="" />
-                    </span>
-                  </dd>
-                </dl>
-                <p></p>
-              </div>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <section class="movieArea" id="movie">
-        <div class="line line01"></div>
-        <div class="line line02"></div>
-        <h3 class="subArea in_view">
-          <span class="ttl"><span>すごっ！</span></span>
-          <span class="ttl"><span>感激の声、続出！</span></span>
-        </h3>
-        <div class="movieArea_inner">
-          <h2 class="ttlArea in_view">
-            <span class="ttl">
-              <span>
-                <img
-                  src="https://jpn-ecommerce-s3.triumph.com/tr-about/fitting/images/new/txt_movies.svg"
-                  alt="MOVIES"
-                  loading="lazy"
-                  width="151"
-                  height="29" />
-              </span>
-            </span>
-            <span class="ja">トリンプフィッティング体験動画</span>
-          </h2>
-
-          <div class="movieArea_box">
-            <div class="movieArea_box--list">
-              <h2>
-                <picture>
-                  <source
-                    media="(max-width: 769px)"
-                    srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/vol_01.webp" />
-                  <img
-                    src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/vol_01.webp"
-                    class="movieTtl"
-                    alt="デコルテのハリ感が欲しい！"
-                    loading="lazy"
-                    width="283"
-                    height="120" />
-                </picture>
-              </h2>
-
-              <ul class="movie__thumb-list">
-                <li class="movie__thumb-item">
-                  <dl>
-                    <dt class="movie__thumb-picture-head">1</dt>
-                    <dd class="movie__thumb-picture-body">
-                      <picture>
-                        <source
-                          media="(max-width: 769px)"
-                          srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie1_1.webp" />
-                        <img
-                          src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie1_1.webp"
-                          alt="「デコルテ周りのハリがなくなった」とファッションアドバイザーに相談したところ、一緒に「息のあうランジェリー」を探してもらえることに…"
-                          width="257"
-                          height="143"
-                          loading="lazy" />
-                      </picture>
-                      <p>
-                        「デコルテ周りのハリがなくなった」とファッションアドバイザーに相談したところ、
-                        <br />
-                        一緒に「息のあうランジェリー」を探してもらえることに…
-                      </p>
-                    </dd>
-                  </dl>
-                </li>
-                <li class="movie__thumb-item">
-                  <dl>
-                    <dt class="movie__thumb-picture-head">2</dt>
-                    <dd class="movie__thumb-picture-body">
-                      <picture>
-                        <source
-                          media="(max-width: 769px)"
-                          srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie1_2.webp" />
-                        <img
-                          src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie1_2.webp"
-                          alt="おすすめされた『天使のブラ　魔法のハリ感』は、バストを引き上げ、胸を内側に寄せてくれるのでお悩み解決にピッタリ。"
-                          width="257"
-                          height="143"
-                          loading="lazy" />
-                      </picture>
-                      <p>
-                        おすすめされた『天使のブラ　魔法のハリ感』は、バストを引き上げ、胸を内側に寄せてくれるのでお悩み解決にピッタリ。
-                      </p>
-                    </dd>
-                  </dl>
-                </li>
-                <li class="movie__thumb-item">
-                  <dl>
-                    <dt class="movie__thumb-picture-head">3</dt>
-                    <dd class="movie__thumb-picture-body">
-                      <picture>
-                        <source
-                          media="(max-width: 769px)"
-                          srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie1_3.webp" />
-                        <img
-                          src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie1_3.webp"
-                          alt="おすすめされた『天使のブラ　魔法のハリ感』は、バストを引き上げ、胸を内側に寄せてくれるのでお悩み解決にピッタリ。"
-                          width="257"
-                          height="143"
-                          loading="lazy" />
-                      </picture>
-                      <p>
-                        おすすめされた『天使のブラ　魔法のハリ感』は、バストを引き上げ、胸を内側に寄せてくれるのでお悩み解決にピッタリ。
-                      </p>
-                    </dd>
-                  </dl>
-                </li>
-              </ul>
-              <div class="movie__heading">
-                <h3>
-                  <span>
-                    『天使のブラ　魔法のハリ感』
-                    <br class="spbl" />
-                    感動体験
-                  </span>
-                  動画はこちら！
-                </h3>
-                <p>※YouTubeに遷移します。</p>
-              </div>
-              <div class="movie__wrap">
-                <div class="movie__wrapbox">
-                  <div class="movieInner">
-                    <iframe src="https://www.youtube.com/embed/uSlLVjtCRmc?rel=0&controls=0" loading="lazy"></iframe>
-                  </div>
-                </div>
-                <div class="movie__textwrap">
-                  <p class="movie__text1">
-                    バストの上の“そげ”にお悩みの丸山さんが、
-                    <br />
-                    もっとファッションを楽しめるようになった驚きのフィッティング体験を公開！
-                  </p>
-                  <p class="movie__text2">
-                    #久しぶりの採寸　#ズレやすい　#ストラップが落ちる　
-                    <br />
-                    #産後　#フィッティング
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="movieArea_box--list">
-              <h2>
-                <picture>
-                  <source
-                    media="(max-width: 769px)"
-                    srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/vol_02.webp" />
-                  <img
-                    src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/vol_02.webp"
-                    class="movieTtl"
-                    alt="ヒップを小さく見せたい！"
-                    loading="lazy"
-                    width="241"
-                    height="127" />
-                </picture>
-              </h2>
-
-              <ul class="movie__thumb-list">
-                <li class="movie__thumb-item">
-                  <dl>
-                    <dt class="movie__thumb-picture-head">1</dt>
-                    <dd class="movie__thumb-picture-body">
-                      <picture>
-                        <source
-                          media="(max-width: 769px)"
-                          srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie2_1.webp" />
-                        <img
-                          src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie2_1.webp"
-                          alt="産後からウエストやヒップの悩みがあり、ファッションアドバイザーに「もっとスタイルよく見せたい」と相談したところ、ガードルを勧められ、試着してみることに…"
-                          width="257"
-                          height="143"
-                          loading="lazy" />
-                      </picture>
-                      <p>
-                        産後からウエストやヒップの悩みがあり、ファッションアドバイザーに「もっとスタイルよく見せたい」と相談したところ、ガードルを勧められ、試着してみることに…
-                      </p>
-                    </dd>
-                  </dl>
-                </li>
-                <li class="movie__thumb-item">
-                  <dl>
-                    <dt class="movie__thumb-picture-head">2</dt>
-                    <dd class="movie__thumb-picture-body">
-                      <picture>
-                        <source
-                          media="(max-width: 769px)"
-                          srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie2_2.webp" />
-                        <img
-                          src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie2_2.webp"
-                          alt="サポート力のある『ガードル』を前に、「ずっと履いていられるかな…」と心配したものの、実際に履いてみると薄い生地で一年中着られる快適さ。一気にスタイルアップ！"
-                          width="257"
-                          height="143"
-                          loading="lazy" />
-                      </picture>
-                      <p>
-                        サポート力のある『ガードル』を前に、「ずっと履いていられるかな…」と心配したものの、実際に履いてみると薄い生地で一年中着られる快適さ。一気にスタイルアップ！
-                      </p>
-                    </dd>
-                  </dl>
-                </li>
-                <li class="movie__thumb-item">
-                  <dl>
-                    <dt class="movie__thumb-picture-head">3</dt>
-                    <dd class="movie__thumb-picture-body">
-                      <picture>
-                        <source
-                          media="(max-width: 769px)"
-                          srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie2_3.webp" />
-                        <img
-                          src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie2_3.webp"
-                          alt="『ガードル』に出会ったことで、タイトパンツやスカート、ワンピースもどんどんチャレンジしたくなりました！"
-                          width="257"
-                          height="143"
-                          loading="lazy" />
-                      </picture>
-                      <p>『ガードル』に出会ったことで、タイトパンツやスカート、ワンピースもどんどんチャレンジしたくなりました！</p>
-                    </dd>
-                  </dl>
-                </li>
-              </ul>
-              <div class="movie__heading">
-                <h3>
-                  <span>
-                    『ガードル』でかなえた、
-                    <br class="spbl" />
-                    感動の美尻体験
-                  </span>
-                  動画はこちら！
-                </h3>
-                <p>※YouTubeに遷移します。</p>
-              </div>
-              <div class="movie__wrap">
-                <div class="movie__wrapbox">
-                  <div class="movieInner">
-                    <iframe src="https://www.youtube.com/embed/okNBI-n4mUk?rel=0&controls=0" loading="lazy"></iframe>
-                  </div>
-                </div>
-                <div class="movie__textwrap">
-                  <p class="movie__text1">
-                    産後に体型が変化してヒップが気になるONAGIさんがガードルでかなえた、
-                    <br />
-                    感動の美尻体験をチェック！
-                  </p>
-                  <p class="movie__text2">
-                    #スタイルアップ　#ヒップアップ　#くびれ　
-                    <br />
-                    #簡単にボディメイク　#ガードル
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="movieArea_box--list">
-              <h2>
-                <picture>
-                  <source
-                    media="(max-width: 769px)"
-                    srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/vol_03.webp" />
-                  <img
-                    src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/vol_03.webp"
-                    class="movieTtl"
-                    alt="体系診断を受けてみました！"
-                    loading="lazy"
-                    width="268"
-                    height="113" />
-                </picture>
-              </h2>
-
-              <ul class="movie__thumb-list">
-                <li class="movie__thumb-item">
-                  <dl>
-                    <dt class="movie__thumb-picture-head">1</dt>
-                    <dd class="movie__thumb-picture-body">
-                      <picture>
-                        <source
-                          media="(max-width: 769px)"
-                          srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie3_1.webp" />
-                        <img
-                          src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie3_1.webp"
-                          alt="5つのボディタイプによってぴったりのランジェリーが見つかる、トリンプ独自の体型診断『YSIOA診断』を店舗で体験！"
-                          width="257"
-                          height="143"
-                          loading="lazy" />
-                      </picture>
-                      <p>5つのボディタイプによってぴったりのランジェリーが見つかる、トリンプ独自の体型診断『YSIOA診断』を店舗で体験！</p>
-                    </dd>
-                  </dl>
-                </li>
-                <li class="movie__thumb-item">
-                  <dl>
-                    <dt class="movie__thumb-picture-head">2</dt>
-                    <dd class="movie__thumb-picture-body">
-                      <picture>
-                        <source
-                          media="(max-width: 769px)"
-                          srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie3_2.webp" />
-                        <img
-                          src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie3_2.webp"
-                          alt="体型診断の結果とそれぞれの体型の悩みに最適なランジェリーを勧められ、可愛い下着を目の前にテンションが上がりつつ、試着してみることに…"
-                          width="257"
-                          height="143"
-                          loading="lazy" />
-                      </picture>
-                      <p>
-                        体型診断の結果とそれぞれの体型の悩みに最適なランジェリーを勧められ、可愛い下着を目の前にテンションが上がりつつ、試着してみることに…
-                      </p>
-                    </dd>
-                  </dl>
-                </li>
-                <li class="movie__thumb-item">
-                  <dl>
-                    <dt class="movie__thumb-picture-head">3</dt>
-                    <dd class="movie__thumb-picture-body">
-                      <picture>
-                        <source
-                          media="(max-width: 769px)"
-                          srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie3_3.webp" />
-                        <img
-                          src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/movie3_3.webp"
-                          alt="体型タイプ別に最適なものを着用してお悩み解決が出来たことに感動！実際に体型診断を受ける大切さを実感しました。"
-                          width="257"
-                          height="143"
-                          loading="lazy" />
-                      </picture>
-                      <p>体型タイプ別に最適なものを着用してお悩み解決が出来たことに感動！実際に体型診断を受ける大切さを実感しました。</p>
-                    </dd>
-                  </dl>
-                </li>
-              </ul>
-              <div class="movie__heading">
-                <h3>
-                  <span>
-                    噂のトリンプ独自の体型診断、
-                    <br class="spbl" />
-                    YSIOA診断
-                  </span>
-                  動画はこちら！
-                </h3>
-                <p>※YouTubeに遷移します。</p>
-              </div>
-              <div class="movie__wrap">
-                <div class="movie__wrapbox">
-                  <div class="movieInner">
-                    <iframe src="https://www.youtube.com/embed/mGCt3njieRY?rel=0&controls=0" loading="lazy"></iframe>
-                  </div>
-                </div>
-                <div class="movie__textwrap">
-                  <p class="movie__text1">
-                    メリハリをつけたい、かっこいいシルエットにしたい古田さん＆奥山さんが、YSIOA診断を初体験。ボディの変化は果たして!?
-                  </p>
-                  <p class="movie__text2">
-                    #体型診断　#メリハリのある体型　#全身のバランス　
-                    <br />
-                    #バストアップ　#ボディーシェイパー　
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="movieArea_archive">
-            <p class="movieArea_archive--ttl">
-              <picture>
-                <source
-                  media="(max-width: 769px)"
-                  srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/fitting/images/new/txt_archve_movies_sp.svg" />
-                <img
-                  src="https://jpn-ecommerce-s3.triumph.com/tr-about/fitting/images/new/txt_archve_movies.svg"
-                  alt="ARCHIVE MOVIES"
-                  loading="lazy"
-                  width="220"
-                  height="18" />
-              </picture>
-            </p>
-            <div class="movieArea_archive--box">
-              <div class="archiveList">
-                <div class="movieWrap">
-                  <div class="movieInner">
-                    <iframe src="https://www.youtube.com/embed/vLB5BZ57yKU?rel=0&controls=0" loading="lazy"></iframe>
-                  </div>
-                </div>
-                <p>左右のバストサイズが違う！編</p>
-              </div>
-              <div class="archiveList">
-                <div class="movieWrap">
-                  <div class="movieInner">
-                    <iframe src="https://www.youtube.com/embed/Xy39v0Ih6Zc?rel=0&controls=0" loading="lazy"></iframe>
-                  </div>
-                </div>
-                <p>自分のサイズが分からない！編</p>
-              </div>
-            </div>
-          </div>
-          <div class="lineMovie02">
-            <img
-              src="https://jpn-ecommerce-s3.triumph.com/tr-about/fitting/images/new/line_movie_sp.svg"
-              alt=""
-              loading="lazy"
-              width="65"
-              height="51" />
-          </div>
-          <a
-            href="https://triumph-cpn.com/triumph/fitting/eventreport/"
-            class="movieArea_btn in_view"
-            target="_blank"
-            rel="noopener noreferrer">
-            <p>
-              フィッティング
-              <br class="sp_contents" />
-              体験レポートはこちら
-            </p>
-            <img
-              src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/img/icn_next_white.webp"
-              alt=""
-              loading="lazy"
-              width="22"
-              height="22" />
-          </a>
         </div>
       </section>
 
@@ -1337,7 +981,7 @@
           </div>
         </section>
 
-        <div class="reserve_add04"></div>
+        <!-- <div class="reserve_add04"></div> -->
       </section>
     </article>
     <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/css/build.css" />
@@ -1345,6 +989,31 @@
     <script type="text/javascript" src="https://jpn-ecommerce-s3.triumph.com/tr-about/js/jquery.inview.min.js"></script>
     <script type="text/javascript" src="https://jpn-ecommerce-s3.triumph.com/tr-about/js/slick.min.js"></script>
     <script type="text/javascript" src="https://jpn-ecommerce-s3.triumph.com/tr-about/js/reservation_v3.js?250630"></script>
+    <script>
+      const dialog = document.querySelector("dialog");
+      const showButton = document.querySelector("dialog + button");
+      const closeButton = document.querySelector("dialog button");
+
+      showButton.addEventListener("click", () => {
+        dialog.showModal();
+      });
+
+      closeButton.addEventListener("click", () => {
+        dialog.close();
+      });
+
+      $(function () {
+        $(".slideshow-fade li").css({ position: "relative", overflow: "hidden" });
+        $(".slideshow-fade li").hide().css({ position: "absolute", top: 0, left: 0 });
+        $(".slideshow-fade li:first").addClass("fade").show();
+        setInterval(function () {
+          var $active = $(".slideshow-fade li.fade");
+          var $next = $active.next("li").length ? $active.next("li") : $(".slideshow-fade li:first");
+          $active.fadeOut(1000).removeClass("fade");
+          $next.fadeIn(1000).addClass("fade");
+        }, 2000);
+      });
+    </script>
     <script>
       $(".in_view").on("inview", function (event, isInView, visiblePartX, visiblePartY) {
         if (isInView) {

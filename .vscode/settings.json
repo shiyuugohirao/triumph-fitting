@@ -25,5 +25,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "prettier.requireConfig": true,
-  "prettier.useEditorConfig": false
+  "prettier.useEditorConfig": false,
+  "cSpell.words": ["AMOSTYLE", "flowting", "inview", "Shippori", "sloggi", "unslick", "YSIOA"]
 }
