@@ -17,6 +17,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/css/slick-theme.css" />
         <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/css/slick.css" />
         <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/fitting/css/new_fitting.css" />
@@ -27,6 +28,22 @@
           }
           .fitting {
             background-color: #fff;
+          }
+          header {
+            background-color: #e9e9e6 !important;
+          }
+          footer {
+            background-color: #e9e9e6 !important;
+            padding-top: 40px !important;
+            padding-bottom: 16px !important;
+          }
+          .main_contents__h2,
+          .main_contents__h2_main_title {
+            font-family: "triumph grand", sans-serif !important;
+          }
+          .main_answer .self_btn:hover {
+            text-decoration: none;
+            opacity: 0.7;
           }
 
           /* KV Section */
@@ -429,21 +446,18 @@
             transform: translateY(-50%);
             z-index: 1000;
             width: 80px;
-            background-color: #e90029;
-            border-left: 2px solid #fff;
+            border: 2px solid #e90029;
           }
 
           .fitting .flowtingArea_inner {
             display: flex;
             flex-direction: column;
-            border-color: #e90029;
-            border-width: 2px;
             height: 100%;
           }
 
           .fitting .flowtingArea_section {
             flex: 1;
-            border-bottom: 1px solid #fff;
+            border-bottom: 2px solid #e90029;
             background-color: #fff;
             position: relative;
           }
@@ -571,76 +585,80 @@
               top: auto;
               transform: none;
               width: 100%;
-              height: 60px;
-              background-color: #e90029;
-              border-left: none;
-              border-top: 2px solid #fff;
+              height: auto;
+              border: 2px solid #e90029;
             }
             .fitting .flowtingArea_inner {
-              flex-direction: row;
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
               height: 100%;
             }
             .fitting .flowtingArea_section {
-              flex: 1;
-              border-bottom: none;
-              border-right: 1px solid #fff;
-              background-color: transparent;
+              width: 100%;
+              border-bottom: 2px solid #e90029;
+              background-color: #fff;
             }
             .fitting .flowtingArea_section:last-child {
+              border-bottom: none;
+            }
+            .fitting .flowtingArea_section:first-child {
+              /* 店舗一覧セクション - 上部の大きなセクション */
+              height: 60px;
+            }
+            .fitting .flowtingArea_bottom {
+              display: flex;
+              width: 100%;
+              height: 60px;
+            }
+            .fitting .flowtingArea_bottom .flowtingArea_section {
+              flex: 1;
+              border-bottom: none;
+              border-right: 2px solid #e90029;
+              height: 60px;
+            }
+            .fitting .flowtingArea_bottom .flowtingArea_section:last-child {
               border-right: none;
             }
             .fitting .flowtingLink {
+              display: flex;
               flex-direction: row;
               align-items: center;
               justify-content: center;
-              padding: 10px 5px;
+              padding: 15px 20px;
               height: 100%;
+              text-decoration: none;
+              transition: background-color 0.3s ease;
+            }
+            .fitting .flowtingArea_bottom .flowtingLink {
+              padding: 10px 15px;
+            }
+            .fitting .flowtingLink:hover {
+              background-color: #f8f8f8;
             }
             .fitting .flowtingText {
-              color: white;
-              font-size: 0.8rem;
+              color: #e90029;
+              font-family: "Noto Sans";
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 140%;
               writing-mode: horizontal-tb;
               text-orientation: mixed;
-              margin-bottom: 0;
               margin-right: 8px;
-              line-height: 1.2;
+              text-align: center;
+              white-space: nowrap;
             }
             .fitting .flowtingIcon {
-              color: white;
-              border-color: white;
+              color: #e90029;
+              border: 2px solid #e90029;
               width: 16px;
               height: 16px;
               font-size: 0.8rem;
-            }
-          }
-
-          header {
-            background-color: #e9e9e6 !important;
-          }
-
-          footer {
-            background-color: #e9e9e6 !important;
-            padding-top: 40px !important;
-            padding-bottom: 16px !important;
-          }
-
-          .main_contents__h2,
-          .main_contents__h2_main_title {
-            font-family: "triumph grand", sans-serif !important;
-          }
-
-          .main_answer .self_btn:hover {
-            text-decoration: none;
-            opacity: 0.7;
-          }
-
-          @media screen and (max-width: 768px) {
-            .fitting .flowtingArea {
-              border-top: none !important;
-            }
-
-            .fitting .flowtingArea ul {
-              margin: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 2px;
             }
           }
         </style>
@@ -1092,25 +1110,23 @@
                     </svg>
                   </a>
                 </div>
-                <div class="flowtingArea_section">
-                  <a href="#" class="flowtingLink">
-                    <div class="flowtingText">予約する</div>
-                    <svg width="12" height="12">
-                      <use href="#external-link-icon"></use>
-                    </svg>
-                  </a>
-                </div>
-                <div class="flowtingArea_section">
-                  <a href="#" class="flowtingLink">
-                    <div class="flowtingText">
-                      オンラインで
-                      <br />
-                      商品購入
-                    </div>
-                    <svg width="12" height="12">
-                      <use href="#external-link-icon"></use>
-                    </svg>
-                  </a>
+                <div class="flowtingArea_bottom">
+                  <div class="flowtingArea_section">
+                    <a href="#" class="flowtingLink">
+                      <div class="flowtingText">オンラインで商品購入</div>
+                      <svg width="12" height="12">
+                        <use href="#external-link-icon"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="flowtingArea_section">
+                    <a href="#" class="flowtingLink">
+                      <div class="flowtingText">予約する</div>
+                      <svg width="12" height="12">
+                        <use href="#external-link-icon"></use>
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </section>
