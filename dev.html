@@ -22,12 +22,14 @@
         <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/css/slick.css" />
         <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/fitting/css/new_fitting.css" />
 
-        <style>
+        <style id="202509_Style">
+          /* global */
           body {
             margin: 0;
           }
           .fitting {
             background-color: #fff;
+            overflow: initial;
           }
           header {
             background-color: #e9e9e6 !important;
@@ -55,26 +57,22 @@
             width: 100%;
             margin-bottom: 0;
           }
-
           .fitting .kv .kvArea {
             position: relative;
             width: 100%;
             height: 810px;
             overflow: hidden;
           }
-
           .fitting .kv .kvArea_inner {
             position: relative;
             width: 100%;
             height: 100%;
           }
-
           .fitting .kv .kvArea_box {
             position: relative;
             width: 100%;
             height: 100%;
           }
-
           .fitting .kv .slideshow-fade {
             position: relative;
             width: 100%;
@@ -83,7 +81,6 @@
             margin: 0;
             padding: 0;
           }
-
           .fitting .kv .slideshow-fade li {
             position: absolute;
             top: 0;
@@ -91,150 +88,22 @@
             width: 100%;
             height: 100%;
           }
-
           .fitting .kv .slideshow-fade img {
             width: 100%;
             height: 100%;
             object-fit: cover;
           }
-
-          /* Essay Section */
-          .fitting .essay {
-            position: relative;
-            width: 100%;
-            padding: 80px 0;
-            background-color: #f8f8f8;
-            margin-bottom: 0;
+          @media screen and (max-width: 768px) {
+            .fitting .kv .kvArea {
+              height: 400px;
+            }
           }
-
-          .fitting .essay .essayArea {
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-          }
-
-          .fitting .essay .essayArea_inner {
-            position: relative;
-            width: 100%;
-          }
-
-          .fitting .essay .essayArea_box {
-            position: relative;
-            width: 100%;
-            text-align: center;
-          }
-
-          .fitting .essay h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: #333;
-          }
-
-          .fitting .essay h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #666;
-          }
-
-          .fitting .essay button {
-            background-color: #b2152c;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-          }
-
-          .fitting .essay button:hover {
-            background-color: #8a1120;
-          }
-
-          .fitting .essay dialog {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-          }
-
-          .fitting .essay dialog button {
-            background-color: #666;
-            margin-top: 20px;
-          }
-
           /* KV - TRIUMPH FITTING */
           .fitting .mainArea h2 path {
             fill: #b2152c;
           }
-
           .fitting .mainArea h2.change path {
             fill: #fff;
-          }
-
-          /* FITTING STEP */
-          .fitting .stepArea {
-            position: relative;
-            width: 100%;
-            padding: 80px 0;
-            background-color: #fff;
-            margin-bottom: 0;
-          }
-
-          .fitting .stepArea .ttlArea {
-            padding: 60px 0 0 112px !important;
-          }
-
-          @media screen and (max-width: 769px) {
-            .fitting .stepArea .ttlArea {
-              padding: 26px 0 0 10px !important;
-            }
-          }
-
-          .fitting .stepArea .ttlArea img {
-            width: 317px;
-            position: relative;
-            z-index: 2;
-          }
-
-          @media screen and (max-width: 769px) {
-            .fitting .stepArea .ttlArea img {
-              width: 159px;
-            }
-          }
-
-          /* STEP1〜3 */
-          .fitting .stepArea_box--list .stepTtl img {
-            margin: 0 auto;
-            width: 39px;
-          }
-
-          @media (max-width: 768px) {
-            .fitting .stepArea_box--list:nth-child(3) .stepIcn {
-              margin: 15px auto 0;
-            }
-          }
-
-          /* FITTING REPORT */
-          .fitting .reportArea_inner .ttlArea img {
-            height: auto;
-            width: 312px;
-            position: relative;
-            z-index: 2;
-          }
-
-          @media screen and (max-width: 769px) {
-            .fitting .reportArea_inner .ttlArea img {
-              width: 156px;
-            }
           }
 
           /* Statement Section */
@@ -245,7 +114,6 @@
             padding: 80px 0;
             margin-bottom: 0;
           }
-
           .fitting .statement .statementArea {
             position: relative;
             width: 100%;
@@ -254,7 +122,6 @@
             padding: 0 20px;
             text-align: center;
           }
-
           .fitting .statement h1 {
             color: white;
             font-size: 3rem;
@@ -263,7 +130,6 @@
             margin-bottom: 60px;
             font-family: "Shippori Mincho", serif;
           }
-
           .fitting .statement .statementColumns {
             display: flex;
             justify-content: center;
@@ -271,7 +137,6 @@
             margin-bottom: 60px;
             flex-wrap: wrap;
           }
-
           .fitting .statement .statementColumn {
             color: white;
             font-size: 1.2rem;
@@ -284,14 +149,12 @@
             display: block;
             text-align: left;
           }
-
           .fitting .statement .statementLinks {
             display: flex;
             justify-content: center;
             gap: 40px;
             margin-top: 40px;
           }
-
           .fitting .statement .statementLink {
             color: white;
             text-decoration: none;
@@ -303,11 +166,9 @@
             padding-bottom: 5px;
             transition: opacity 0.3s ease;
           }
-
           .fitting .statement .statementLink:hover {
             opacity: 0.8;
           }
-
           .fitting .statement .statementLink::after {
             content: "▼";
             position: absolute;
@@ -316,7 +177,6 @@
             transform: translateX(-50%);
             font-size: 0.8rem;
           }
-
           .fitting .statement .statementLink::before {
             content: "";
             position: absolute;
@@ -325,6 +185,329 @@
             width: 100%;
             height: 1px;
             background-color: white;
+          }
+
+          @media screen and (max-width: 768px) {
+            .fitting .statement {
+              padding: 40px 0;
+            }
+            .fitting .statement h1 {
+              font-size: 2rem;
+              margin-bottom: 60px;
+            }
+            .fitting .statement .statementColumns {
+              gap: 15px;
+            }
+            .fitting .statement .statementColumn {
+              font-size: 1rem;
+              min-height: 150px;
+            }
+            .fitting .statement .statementLinks {
+              gap: 20px;
+            }
+          }
+
+          /* Essay Section */
+          .fitting .essay {
+            position: relative;
+            width: 100%;
+            padding: 80px 0;
+            background-color: #f8f8f8;
+            margin-bottom: 0;
+          }
+          .fitting .essay .essayArea {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+          }
+          .fitting .essay .essayArea_inner {
+            position: relative;
+            width: 100%;
+          }
+          .fitting .essay .essayArea_box {
+            position: relative;
+            width: 100%;
+            text-align: center;
+          }
+          .fitting .essay h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #333;
+          }
+          .fitting .essay h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #666;
+          }
+          .fitting .essay button {
+            background-color: #b2152c;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+          }
+          .fitting .essay button:hover {
+            background-color: #8a1120;
+          }
+          .fitting .essay dialog {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+          }
+          .fitting .essay dialog button {
+            background-color: #666;
+            margin-top: 20px;
+          }
+          @media screen and (max-width: 768px) {
+            .fitting .essay {
+              padding: 40px 0;
+            }
+            .fitting .essay h2 {
+              font-size: 2rem;
+            }
+            .fitting .essay h3 {
+              font-size: 1.5rem;
+            }
+          }
+
+          /* Flowting Area */
+          .fitting .flowtingArea {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            width: 80px;
+            border: 2px solid #e90029;
+          }
+          .fitting .flowtingArea_inner {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+          }
+          .fitting .flowtingArea_section {
+            flex: 1;
+            background-color: #fff;
+            position: relative;
+          }
+          .fitting .flowtingArea_section_store {
+            order: 1;
+            border-bottom: 2px solid #e90029;
+          }
+          .fitting .flowtingArea_section_reservation {
+            order: 2;
+            border-bottom: 2px solid #e90029;
+          }
+          .fitting .flowtingArea_section_online {
+            order: 3;
+            border-bottom: none;
+          }
+
+          .fitting .flowtingLink {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-decoration: none;
+            padding: 30px;
+          }
+
+          .fitting .flowtingLink {
+            color: #e90029;
+            background-color: #fff;
+            stroke: #e90029;
+          }
+          .fitting .flowtingLink:hover {
+            color: #fff;
+            background-color: #e90029;
+            stroke: #fff;
+          }
+
+          .fitting .flowtingText {
+            font-family: "Noto Sans JP";
+            font-size: 18px;
+            text-align: center;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+            text-align: center;
+          }
+          .fitting .flowtingArea_section_store {
+            order: 1;
+          }
+          .fitting .flowtingArea_bottom {
+            order: 2;
+          }
+          .fitting .flowtingArea_bottom .flowtingArea_section_reservation {
+            order: 1;
+          }
+          .fitting .flowtingArea_bottom .flowtingArea_section_online {
+            order: 2;
+          }
+          @media screen and (max-width: 768px) {
+            .fitting .flowtingArea {
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              top: auto;
+              transform: none;
+              width: 100%;
+              height: auto;
+              border: 2px solid #e90029;
+            }
+            .fitting .flowtingArea_inner {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              height: 100%;
+            }
+            .fitting .flowtingArea_section {
+              width: 100%;
+              background-color: #fff;
+            }
+            .fitting .flowtingArea_section_store {
+              border-bottom: 2px solid #e90029;
+              height: 60px;
+            }
+            .fitting .flowtingArea_bottom {
+              display: flex;
+              width: 100%;
+              height: 60px;
+              border-bottom: none;
+            }
+            .fitting .flowtingArea_bottom .flowtingArea_section {
+              flex: 1;
+              height: 60px;
+            }
+            .fitting .flowtingArea_section_store {
+              order: 1;
+            }
+            .fitting .flowtingArea_bottom {
+              order: 2;
+            }
+            .fitting .flowtingArea_bottom .flowtingArea_section_online {
+              order: 1;
+              border-right: 2px solid #e90029;
+              border-bottom: none;
+            }
+            .fitting .flowtingArea_bottom .flowtingArea_section_reservation {
+              order: 2;
+              border-bottom: none;
+            }
+            .fitting .flowtingLink {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              padding: 15px 50px;
+              height: 100%;
+              text-decoration: none;
+              transition: background-color 0.3s ease;
+            }
+            .fitting .flowtingArea_bottom .flowtingLink {
+              padding: 10px 15px;
+            }
+            .fitting .flowtingLink {
+              color: #e90029;
+            }
+            .fitting .flowtingLink:hover {
+              color: #f8f8f8;
+              background-color: #e90029;
+            }
+            .fitting .flowtingText {
+              font-family: "Noto Sans";
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 140%;
+              writing-mode: horizontal-tb;
+              text-orientation: mixed;
+              margin-bottom: 0px;
+              text-align: center;
+              white-space: nowrap;
+              display: inline-flex;
+              align-items: center;
+            }
+            .fitting .flowtingText:hover {
+              color: #f8f8f8;
+            }
+            .fitting svg {
+              margin-left: 8px;
+              width: 12px;
+              height: 12px;
+            }
+          }
+        </style>
+        <style>
+          /* FITTING STEP */
+          .fitting .stepArea {
+            position: relative;
+            width: 100%;
+            padding: 80px 0;
+            background-color: #fff;
+            margin-bottom: 0;
+          }
+          .fitting .stepArea .ttlArea {
+            padding: 60px 0 0 112px !important;
+          }
+          .fitting .stepArea .ttlArea img {
+            width: 317px;
+            position: relative;
+            z-index: 2;
+          }
+          @media screen and (max-width: 769px) {
+            .fitting .stepArea .ttlArea {
+              padding: 26px 0 0 10px !important;
+            }
+            .fitting .stepArea .ttlArea img {
+              width: 159px;
+            }
+          }
+
+          /* STEP1〜3 */
+          .fitting .stepArea_box--list .stepTtl img {
+            margin: 0 auto;
+            width: 39px;
+          }
+
+          @media screen and (max-width: 768px) {
+            .fitting .stepArea {
+              padding: 40px 0;
+            }
+            .fitting .stepArea_box--list:nth-child(3) .stepIcn {
+              margin: 15px auto 0;
+            }
+          }
+
+          /* FITTING REPORT */
+          .fitting .reportArea_inner .ttlArea img {
+            height: auto;
+            width: 312px;
+            position: relative;
+            z-index: 2;
+          }
+          @media screen and (max-width: 769px) {
+            .fitting .reportArea_inner .ttlArea img {
+              width: 156px;
+            }
           }
 
           /* Link Section */
@@ -438,118 +621,7 @@
             color: white;
           }
 
-          /* Flowting Area */
-          .fitting .flowtingArea {
-            position: fixed;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            width: 80px;
-            border: 2px solid #e90029;
-          }
-
-          .fitting .flowtingArea_inner {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-          }
-
-          .fitting .flowtingArea_section {
-            flex: 1;
-            border-bottom: 2px solid #e90029;
-            background-color: #fff;
-            position: relative;
-          }
-
-          .fitting .flowtingArea_section:last-child {
-            border-bottom: none;
-          }
-
-          .fitting .flowtingLink {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            text-decoration: none;
-            padding: 20px 10px;
-            transition: background-color 0.3s ease;
-          }
-
-          .fitting .flowtingLink:hover {
-            background-color: #f8f8f8;
-          }
-
-          .fitting .flowtingText {
-            color: #e90029;
-            font-size: 0.9rem;
-            font-weight: bold;
-            writing-mode: vertical-rl;
-            text-orientation: upright;
-            letter-spacing: 0.1em;
-            line-height: 1.4;
-            margin-bottom: 10px;
-            text-align: center;
-          }
-
-          .fitting .flowtingIcon {
-            color: #e90029;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border: 2px solid #e90029;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 2px;
-          }
-
-          /* Responsive adjustments */
           @media screen and (max-width: 768px) {
-            .fitting .kv .kvArea {
-              height: 400px;
-            }
-
-            .fitting .statement {
-              padding: 40px 0;
-            }
-
-            .fitting .statement h1 {
-              font-size: 2rem;
-              margin-bottom: 60px;
-            }
-
-            .fitting .statement .statementColumns {
-              gap: 15px;
-            }
-
-            .fitting .statement .statementColumn {
-              font-size: 1rem;
-              min-height: 150px;
-            }
-
-            .fitting .statement .statementLinks {
-              gap: 20px;
-            }
-
-            .fitting .essay {
-              padding: 40px 0;
-            }
-
-            .fitting .essay h2 {
-              font-size: 2rem;
-            }
-
-            .fitting .essay h3 {
-              font-size: 1.5rem;
-            }
-
-            .fitting .stepArea {
-              padding: 40px 0;
-            }
-
             .fitting .link {
               padding: 40px 0;
             }
@@ -574,91 +646,6 @@
 
             .fitting .link .storeListButton {
               width: 250px;
-            }
-
-            /* Mobile Flowting Area */
-            .fitting .flowtingArea {
-              position: fixed;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              top: auto;
-              transform: none;
-              width: 100%;
-              height: auto;
-              border: 2px solid #e90029;
-            }
-            .fitting .flowtingArea_inner {
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              height: 100%;
-            }
-            .fitting .flowtingArea_section {
-              width: 100%;
-              border-bottom: 2px solid #e90029;
-              background-color: #fff;
-            }
-            .fitting .flowtingArea_section:last-child {
-              border-bottom: none;
-            }
-            .fitting .flowtingArea_section:first-child {
-              /* 店舗一覧セクション - 上部の大きなセクション */
-              height: 60px;
-            }
-            .fitting .flowtingArea_bottom {
-              display: flex;
-              width: 100%;
-              height: 60px;
-            }
-            .fitting .flowtingArea_bottom .flowtingArea_section {
-              flex: 1;
-              border-bottom: none;
-              border-right: 2px solid #e90029;
-              height: 60px;
-            }
-            .fitting .flowtingArea_bottom .flowtingArea_section:last-child {
-              border-right: none;
-            }
-            .fitting .flowtingLink {
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              justify-content: center;
-              padding: 15px 20px;
-              height: 100%;
-              text-decoration: none;
-              transition: background-color 0.3s ease;
-            }
-            .fitting .flowtingArea_bottom .flowtingLink {
-              padding: 10px 15px;
-            }
-            .fitting .flowtingLink:hover {
-              background-color: #f8f8f8;
-            }
-            .fitting .flowtingText {
-              color: #e90029;
-              font-family: "Noto Sans";
-              font-size: 14px;
-              font-style: normal;
-              font-weight: 700;
-              line-height: 140%;
-              writing-mode: horizontal-tb;
-              text-orientation: mixed;
-              margin-right: 8px;
-              text-align: center;
-              white-space: nowrap;
-            }
-            .fitting .flowtingIcon {
-              color: #e90029;
-              border: 2px solid #e90029;
-              width: 16px;
-              height: 16px;
-              font-size: 0.8rem;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              border-radius: 2px;
             }
           }
         </style>
@@ -765,6 +752,7 @@
             </div>
           </section>
 
+          <!-- inherited stepArea -->
           <section class="stepArea" id="step">
             <h2 class="ttlArea in_view">
               <img
@@ -872,7 +860,7 @@
                 height="67" />
             </div>
           </section>
-
+          <!-- inherited reportWrap -->
           <section class="reportWrap" id="report">
             <div class="line line01"></div>
             <div class="line line02"></div>
@@ -1099,37 +1087,37 @@
                 </div>
               </div>
             </section>
+          </section>
 
-            <section class="flowtingArea">
-              <div class="flowtingArea_inner">
-                <div class="flowtingArea_section">
+          <section class="flowtingArea">
+            <div class="flowtingArea_inner">
+              <div class="flowtingArea_section flowtingArea_section_store">
+                <a href="#" class="flowtingLink">
+                  <div class="flowtingText">店舗一覧</div>
+                  <svg width="12" height="12">
+                    <use href="#external-link-icon"></use>
+                  </svg>
+                </a>
+              </div>
+              <div class="flowtingArea_bottom">
+                <div class="flowtingArea_section flowtingArea_section_reservation">
                   <a href="#" class="flowtingLink">
-                    <div class="flowtingText">店舗一覧</div>
+                    <div class="flowtingText">予約する</div>
                     <svg width="12" height="12">
                       <use href="#external-link-icon"></use>
                     </svg>
                   </a>
                 </div>
-                <div class="flowtingArea_bottom">
-                  <div class="flowtingArea_section">
-                    <a href="#" class="flowtingLink">
-                      <div class="flowtingText">オンラインで商品購入</div>
-                      <svg width="12" height="12">
-                        <use href="#external-link-icon"></use>
-                      </svg>
-                    </a>
-                  </div>
-                  <div class="flowtingArea_section">
-                    <a href="#" class="flowtingLink">
-                      <div class="flowtingText">予約する</div>
-                      <svg width="12" height="12">
-                        <use href="#external-link-icon"></use>
-                      </svg>
-                    </a>
-                  </div>
+                <div class="flowtingArea_section flowtingArea_section_online">
+                  <a href="#" class="flowtingLink">
+                    <div class="flowtingText">オンラインで商品購入</div>
+                    <svg width="12" height="12">
+                      <use href="#external-link-icon"></use>
+                    </svg>
+                  </a>
                 </div>
               </div>
-            </section>
+            </div>
           </section>
         </article>
 
@@ -1157,32 +1145,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin=""></script>
     <script type="text/javascript" src="https://jpn-ecommerce-s3.triumph.com/tr-about/js/jquery.inview.min.js"></script>
     <script type="text/javascript" src="https://jpn-ecommerce-s3.triumph.com/tr-about/js/slick.min.js"></script>
-    <script>
-      console.log("test");
-      const dialog = document.querySelector("dialog");
-      const showButton = document.querySelector("dialog + button");
-      const closeButton = document.querySelector("dialog button");
 
-      showButton.addEventListener("click", () => {
-        dialog.showModal();
-      });
-
-      closeButton.addEventListener("click", () => {
-        dialog.close();
-      });
-
-      $(function () {
-        $(".slideshow-fade li").css({ position: "relative", overflow: "hidden" });
-        $(".slideshow-fade li").hide().css({ position: "absolute", top: 0, left: 0 });
-        $(".slideshow-fade li:first").addClass("fade").show();
-        setInterval(function () {
-          var $active = $(".slideshow-fade li.fade");
-          var $next = $active.next("li").length ? $active.next("li") : $(".slideshow-fade li:first");
-          $active.fadeOut(1000).removeClass("fade");
-          $next.fadeIn(1000).addClass("fade");
-        }, 2000);
-      });
-    </script>
+    <!-- inherited script source -->
     <script>
       $(".in_view").on("inview", function (event, isInView, visiblePartX, visiblePartY) {
         if (isInView) {
@@ -1225,7 +1189,10 @@
           }
         });
       }
+    </script>
 
+    <!-- Additional Scripts - 202509 -->
+    <script id="KvSliderScript">
       function sliderSetting() {
         var width = $(window).width();
 
@@ -1249,6 +1216,32 @@
 
       $(window).resize(function () {
         sliderSetting();
+      });
+    </script>
+
+    <script id="EssayScript">
+      const dialog = document.querySelector("dialog");
+      const showButton = document.querySelector("dialog + button");
+      const closeButton = document.querySelector("dialog button");
+
+      showButton.addEventListener("click", () => {
+        dialog.showModal();
+      });
+
+      closeButton.addEventListener("click", () => {
+        dialog.close();
+      });
+
+      $(function () {
+        $(".slideshow-fade li").css({ position: "relative", overflow: "hidden" });
+        $(".slideshow-fade li").hide().css({ position: "absolute", top: 0, left: 0 });
+        $(".slideshow-fade li:first").addClass("fade").show();
+        setInterval(function () {
+          var $active = $(".slideshow-fade li.fade");
+          var $next = $active.next("li").length ? $active.next("li") : $(".slideshow-fade li:first");
+          $active.fadeOut(1000).removeClass("fade");
+          $next.fadeIn(1000).addClass("fade");
+        }, 2000);
       });
     </script>
   </body>

@@ -26,5 +26,6 @@
   },
   "prettier.requireConfig": true,
   "prettier.useEditorConfig": false,
-  "cSpell.words": ["AMOSTYLE", "flowting", "inview", "Shippori", "sloggi", "unslick", "YSIOA"]
+  "cSpell.words": ["AMOSTYLE", "flowting", "inview", "Shippori", "sloggi", "unslick", "YSIOA"],
+  "colorize.ruler_decoration": false
 }
