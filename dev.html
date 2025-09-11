@@ -28,7 +28,7 @@
             margin: 0;
           }
           .fitting {
-            --tr-red: #e90029;
+            --tr-red: #c7001f;
             --tr-white: #ffffff;
             --tr-gray: #e9e9e6;
             --tr-black: #333;
@@ -228,81 +228,6 @@
             }
             .fitting .statement .statementLinks {
               gap: 20px;
-            }
-          }
-
-          /* Essay Section */
-          .fitting .essay {
-            position: relative;
-            width: 100%;
-            padding: 80px 0;
-            background-color: #f8f8f8;
-            margin-bottom: 0;
-          }
-          .fitting .essay .essayArea {
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-          }
-          .fitting .essay .essayArea_inner {
-            position: relative;
-            width: 100%;
-          }
-          .fitting .essay .essayArea_box {
-            position: relative;
-            width: 100%;
-            text-align: center;
-          }
-          .fitting .essay h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: var(--tr-black);
-          }
-          .fitting .essay h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #666;
-          }
-          .fitting .essay button {
-            background-color: #b2152c;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-          }
-          .fitting .essay button:hover {
-            background-color: #8a1120;
-          }
-          .fitting .essay dialog {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-          }
-          .fitting .essay dialog button {
-            background-color: #666;
-            margin-top: 20px;
-          }
-          @media screen and (max-width: 768px) {
-            .fitting .essay {
-              padding: 40px 0;
-            }
-            .fitting .essay h2 {
-              font-size: 2rem;
-            }
-            .fitting .essay h3 {
-              font-size: 1.5rem;
             }
           }
 
@@ -672,6 +597,300 @@
               width: 250px;
             }
           }
+
+          /* Essay Section */
+          .fitting .essay {
+            background-color: var(--tr-gray);
+            font-family: "Shippori Mincho";
+            padding: 144px 15%;
+          }
+          .fitting .essay_card {
+            background-color: var(--tr-white);
+            border-radius: 0;
+            box-shadow: none;
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+          }
+
+          .fitting .essay_title {
+            color: var(--tr-red);
+            font-family: "Shippori Mincho";
+            font-size: 3.5rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 100%;
+            text-align: center;
+            gap: 16px;
+          }
+          .fitting .essay_title_sub {
+            font-size: 20px;
+          }
+          .fitting .essay_anchors {
+            text-align: center;
+            margin: 64px 0;
+            gap: 56px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: var(--tr-red);
+          }
+          .fitting .essay_anchors_item {
+            display: inline-flex;
+            padding: 0 4px 10px 4px;
+            max-width: 52px;
+            flex-direction: column;
+            object-fit: contain;
+            align-items: flex-start;
+            color: var(--tr-red);
+            border-bottom: 1px solid var(--tr-red);
+          }
+          .fitting .essay_anchors_item svg {
+            stroke: var(--tr-red);
+            color: var(--tr-red);
+            fill: var(--tr-red);
+          }
+          .fitting .essay_card_title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--tr-red);
+            background-color: var(--tr-white);
+            display: flex;
+            padding: 32px 32px;
+            align-items: flex-start;
+            gap: 32px;
+          }
+          .fitting .essay_card_title svg {
+            color: var(--tr-red);
+            width: 72px;
+            height: 55px;
+            flex-shrink: 0;
+            padding-top: 10px;
+          }
+          .fitting .essay_card_button {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap: 12px;
+            align-self: stretch;
+            color: var(--tr-red);
+          }
+
+          .fitting .essay_card_title_text {
+            font-family: "Shippori Mincho", serif;
+            font-size: 38px;
+            font-weight: 500;
+            line-height: 140%;
+            letter-spacing: -1.9px;
+            color: var(--tr-red);
+            text-align: left;
+            margin: 0;
+            flex: 1;
+          }
+
+          .fitting .essay_profile {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 0;
+          }
+          .fitting .essay_profile_img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+          }
+          .fitting .essay_profile_text p {
+            color: var(--tr-red);
+          }
+          .fitting .essay_profile_position {
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0 0 8px 0;
+            line-height: 1.4;
+          }
+
+          .fitting .essay_profile_name_wrapper {
+            display: flex;
+            flex-direction: row;
+            text-align: left;
+            gap: 16px;
+          }
+
+          .fitting .essay_profile_job {
+            font-size: 16px;
+            font-weight: 400;
+            margin: 0;
+            line-height: 1.4;
+          }
+
+          .fitting .essay_profile_name {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.4;
+          }
+
+          .fitting .essay_button {
+            align-self: flex-end;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: none;
+            border: none;
+            color: var(--tr-red);
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            transition: opacity 0.3s ease;
+          }
+
+          .fitting .essay_button:hover {
+            opacity: 0.7;
+          }
+
+          .fitting .essay button {
+            color: var(--tr-red);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+          }
+          .fitting .essay dialog {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+          }
+          .fitting .essay dialog button {
+            background-color: #666;
+            margin-top: 20px;
+          }
+
+          .fitting .essay_button svg {
+            width: 10px;
+            height: 21px;
+            stroke: var(--tr-red);
+            fill: none;
+          }
+
+          .fitting .essay_dialog {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--tr-white);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            max-width: 600px;
+            width: 90%;
+          }
+
+          .fitting .essay_dialog p {
+            font-family: "Shippori Mincho", serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--tr-red);
+            margin: 0 0 16px 0;
+          }
+
+          .fitting .essay_dialog p:last-child {
+            margin-bottom: 0;
+          }
+
+          .fitting .essay_close_button {
+            color: var(--tr-red);
+            border: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 24px;
+            transition: background-color 0.3s ease;
+          }
+
+          /* レスポンシブ対応 */
+          @media screen and (max-width: 768px) {
+            .fitting .essay {
+              padding: 80px 7%;
+            }
+            .fitting .essay_anchors {
+              margin: 40px 0;
+              gap: 24px;
+            }
+            .fitting .essay_anchors_item {
+              max-width: 30px;
+            }
+
+            .fitting .essay_card {
+              background-color: var(--tr-white);
+              padding: 40px 20px;
+              gap: 30px;
+            }
+
+            .fitting .essay_card_title {
+              flex-direction: column;
+              gap: 16px;
+              align-items: flex-start;
+            }
+
+            .fitting .essay_card_title_text {
+              font-size: 28px;
+              letter-spacing: -1.4px;
+            }
+
+            .fitting .essay_profile {
+              flex-direction: column;
+              gap: 16px;
+              align-items: flex-start;
+            }
+
+            .fitting .essay_profile_img {
+              width: 100px;
+              height: 100px;
+            }
+
+            .fitting .essay_button {
+              align-self: flex-start;
+            }
+
+            .fitting .essay_dialog {
+              padding: 30px 20px;
+              width: 95%;
+            }
+
+            .fitting .essay {
+              padding: 0px 0;
+            }
+            .fitting .essay h2 {
+              font-size: 2rem;
+            }
+            .fitting .essay h3 {
+              font-size: 1.5rem;
+            }
+          }
         </style>
         <article class="fitting">
           <section class="kv">
@@ -762,17 +981,60 @@
           </section>
 
           <section class="essay" id="essay">
-            <h2>essay</h2>
             <div class="essayArea">
-              <div class="essayArea_inner">
-                <div class="essayArea_box">
-                  <h3>essay</h3>
-                  <dialog>
-                    <button autofocus>閉じる</button>
+              <div class="essay_title">
+                <p class="essay_title_main">SPECIAL ESSAY</p>
+                <p class="essay_title_sub">特別エッセイ</p>
+              </div>
+              <div class="essay_anchors">
+                <a href="#esssay_hiko" class="essay_anchors_item">
+                  <svg width="45" height="35"><use href="#sharp1"></use></svg>
+                </a>
+                <a href="#esssay_horii" class="essay_anchors_item">
+                  <svg width="45" height="35"><use href="#sharp2"></use></svg>
+                </a>
+                <a href="#esssay_dekami" class="essay_anchors_item">
+                  <svg width="45" height="35"><use href="#sharp3"></use></svg>
+                </a>
+                <a href="#esssay_miyake" class="essay_anchors_item">
+                  <svg width="45" height="35"><use href="#sharp4"></use></svg>
+                </a>
+                <a href="#esssay_ugaki" class="essay_anchors_item">
+                  <svg width="45" height="35"><use href="#sharp5"></use></svg>
+                </a>
+              </div>
+              <div class="essayArea_box">
+                <div class="essay_card" id="esssay_hiko">
+                  <div class="essay_card_title">
+                    <svg width="72" height="55"><use href="#sharp1"></use></svg>
+                    <div class="essay_card_title_text">
+                      私は私のために
+                      <br />
+                      下着を選びたいと思う。
+                    </div>
+                  </div>
+                  <div class="essay_profile">
+                    <img
+                      class="essay_profile_img"
+                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/profile_hiko.webp"
+                      alt="ヒコ" />
+                    <div class="essay_profile_text">
+                      <p class="essay_profile_position">フィッティング体験者 / 執筆者</p>
+                      <div class="essay_profile_name_wrapper">
+                        <p class="essay_profile_job">お笑い芸人</p>
+                        <p class="essay_profile_name">ヒコロヒー</p>
+                      </div>
+                    </div>
+                  </div>
+                  <dialog class="essay_dialog">
+                    <button autofocus class="essay_close_button">閉じる</button>
                     <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青い空の下で。</p>
                     <p>その当時の誰もが羨む、青春と呼ぶべきものだった。</p>
                   </dialog>
-                  <button>essayを表示</button>
+                  <button class="essay_button">
+                    エッセイを読む
+                    <svg width="10" height="21"><use href="#read-essay-icon"></use></svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1153,8 +1415,6 @@
             <path d="M0.700195 2.90039V11.3008H9.09961V11.5H0.5V2.90039H0.700195Z" style="stroke: currentColor; stroke-opacity: 1" />
             <rect x="2.89844" y="0.5" width="8.6" height="8.6" fill="none" style="stroke: currentColor; stroke-opacity: 1" />
           </symbol>
-        </svg>
-        <svg style="display: none">
           <symbol id="down-arrow-icon" viewBox="0 0 23 13">
             <path
               d="M22.001 1.93555L11.501 11.9355L1.00098 1.93555"
@@ -1162,6 +1422,75 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round" />
+          </symbol>
+          <symbol id="read-essay-icon" viewBox="0 0 32 32" fill="none">
+            <path
+              d="M15.9922 10V22"
+              style="stroke: currentColor; stroke-opacity: 1"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M22 15.9922H10"
+              style="stroke: currentColor; stroke-opacity: 1"
+              stroke-miterlimit="10"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 1C7.71573 1 1 7.71573 1 16C1 24.2843 7.71573 31 16 31Z"
+              style="stroke: currentColor; stroke-opacity: 1"
+              stroke-miterlimit="10"
+              stroke-linejoin="round" />
+          </symbol>
+          <symbol id="sharp1" viewBox="0 0 141 108" fill="none">
+            <path
+              d="M104.819 20.3367C103.446 20.3367 102.73 19.2741 102.999 18.064C103.148 17.2965 103.804 16.3815 104.699 15.7912C117.38 12.4559 131.671 5.31293 135.759 1.97759C137.251 0.767423 138.623 0 139.548 0C140.622 0 141.309 1.06259 140.861 3.18776C140.772 3.6305 140.503 4.10276 140.414 4.5455C135.371 20.1891 127.405 57.5567 126.39 62.2793C124.66 70.3372 123.138 77.4802 122.243 82.4684C119.23 98.7319 118.693 101.92 134.774 103.573C135.699 104.34 135.908 105.403 135.759 106.17C135.52 107.233 134.745 108 133.372 108C133.372 108 120.363 107.085 106.072 107.085C98.8513 107.085 91.3027 107.233 84.8281 108H84.5298C83.3065 108 82.8589 107.233 83.0379 106.318C83.2468 105.403 83.933 104.34 85.3055 103.573C104.49 101.447 104.192 99.9125 108.668 82.616C110.488 75.4731 113.71 61.8071 116.634 48.141C122.81 19.2741 122.84 17.6212 120.244 17.6212C114.784 18.064 104.908 20.3662 104.908 20.3662H104.759L104.819 20.3367Z"
+              fill="currentColor"
+              style="fill: currentColor; fill-opacity: 1" />
+            <path
+              d="M81.0622 37.3965L82 26.7752H67.6104L74.9078 0H64.2402L56.9428 26.7456H38.4503L45.7477 0H35.0801L27.7827 26.7456H3.92709L2.98928 37.3669H24.9107L18.5804 60.6509H0.937813L0 71.2722H15.6791L6.47677 105H17.1444L26.3467 71.2722H44.8392L35.6369 105H46.3045L55.5068 71.2722H78.1022L79.04 60.6509H58.4081L64.7384 37.3669H81.0915L81.0622 37.3965ZM54.0415 37.3965L47.7112 60.6805H29.2187L35.549 37.3965H54.0415Z"
+              fill="currentColor"
+              style="fill: currentColor; fill-opacity: 1" />
+          </symbol>
+          <symbol id="sharp2" viewBox="0 0 165 108" fill="none">
+            <path
+              d="M155.018 84.3243C150.468 95.7052 146.774 101.779 145.267 106.025C144.942 106.791 144.469 107.705 143.169 108C143.169 108 127.507 107.233 110.338 107.233C101.828 107.233 92.9627 107.381 85.5456 108H85.3978C84.1863 108 81.704 106.025 82.0291 104.521C82.1177 104.079 82.3541 103.754 82.8565 103.459C97.7203 95.7346 127.684 67.0467 140.775 48.2359C144.764 42.3096 148.251 35.1744 149.611 28.8059C151.679 19.1057 148.99 10.9091 136.963 10.9091C126 10.9091 115.421 19.2531 108.624 28.3636C108.004 29.1302 107.147 29.5725 106.379 29.5725C105.315 29.5725 104.28 28.6585 104.546 27.4496C104.901 25.769 120.238 0 143.05 0C159.185 0 167.636 11.6757 164.267 27.6265C162.554 35.6757 157.707 44.9337 149.226 54.1916C135.811 68.7568 114.564 82.8796 104.576 94.0835C104.221 94.3784 104.133 94.7027 104.074 94.9975C103.955 95.6167 104.31 96.059 105.049 96.2064C108.329 96.5012 112.111 96.6486 116.514 96.6486C134.451 96.6486 144.705 95.7346 151.709 83.4398C151.945 82.9975 152.625 82.6732 153.245 82.6732C154.309 82.6732 155.255 83.2924 155.048 84.1769V84.3243H155.018Z"
+              fill="currentColor"
+              style="fill: currentColor; fill-opacity: 1" />
+            <path
+              d="M81.0622 37.3965L82 26.7752H67.6104L74.9078 0H64.2402L56.9428 26.7456H38.4503L45.7477 0H35.0801L27.7827 26.7456H3.92709L2.98928 37.3669H24.9107L18.5804 60.6509H0.937813L0 71.2722H15.6791L6.47677 105H17.1444L26.3467 71.2722H44.8392L35.6369 105H46.3045L55.5068 71.2722H78.1022L79.04 60.6509H58.4081L64.7384 37.3669H81.0915L81.0622 37.3965ZM54.0415 37.3965L47.7112 60.6805H29.2187L35.549 37.3965H54.0415Z"
+              fill="currentColor"
+              style="fill: currentColor; fill-opacity: 1" />
+          </symbol>
+          <symbol id="sharp3" viewBox="0 0 157 117" fill="none">
+            <path
+              d="M92.7786 116.971C79.7046 116.971 76.3194 111.684 77.1073 107.896C78.3038 102.14 84.1696 101.406 85.2202 101.406C85.6579 101.406 86.0957 101.553 86.3876 101.553C93.158 102.904 92.049 111.068 100.454 111.068C112.331 111.068 131.855 96.7071 136.378 75.0926C140.318 56.3562 130.862 50.6002 123.946 50.6002C121.378 50.6002 116.971 51.6574 115.366 52.8614C114.141 53.625 112.973 54.2124 112.069 54.2124C111.164 54.2124 110.697 53.5956 111.018 52.0979C111.106 51.6574 112.419 46.195 117.234 44.6973C132.905 40.1747 140.522 31.1002 142.507 21.5851C143.966 14.625 141.31 8.75151 133.927 8.75151C125.668 8.75151 115.133 16.0053 110.026 21.7613C108.858 22.9654 107.545 23.5821 106.641 23.5821C105.59 23.5821 104.977 22.9654 105.211 21.7613C105.969 18.1197 123.742 0 141.018 0C152.137 0 158.732 7.25377 156.602 17.3855C154.851 25.6965 147.526 35.5346 135.648 42.7884C135.473 42.9352 135.094 43.2289 135.065 43.4051C135.036 43.552 135.152 43.6988 135.59 43.6988C141.427 44.4624 155.639 50.5121 151.466 70.4526C145.921 96.9127 115.425 117 92.7203 117L92.7786 116.971Z"
+              fill="currentColor"
+              style="fill: currentColor; fill-opacity: 1" />
+            <path
+              d="M81.0622 46.3965L82 35.7752H67.6104L74.9078 9H64.2402L56.9428 35.7456H38.4503L45.7477 9H35.0801L27.7827 35.7456H3.92709L2.98928 46.3669H24.9107L18.5804 69.6509H0.937813L0 80.2722H15.6791L6.47677 114H17.1444L26.3467 80.2722H44.8392L35.6369 114H46.3045L55.5068 80.2722H78.1022L79.04 69.6509H58.4081L64.7384 46.3669H81.0915L81.0622 46.3965ZM54.0415 46.3965L47.7112 69.6805H29.2187L35.549 46.3965H54.0415Z"
+              fill="currentColor"
+              style="fill: currentColor; fill-opacity: 1" />
+          </symbol>
+          <symbol id="sharp4" viewBox="0 0 171 117" fill="none">
+            <path
+              d="M131.579 115.759C126.285 115.759 120.609 116.054 115.727 116.97H115.286C114.374 116.97 114.08 116.202 114.286 115.286C114.492 114.37 115.168 113.306 116.227 112.538C128.785 111.178 129.138 109.494 133.137 90.491C134.108 85.9399 134.284 85.0237 133.226 85.0237C131.284 84.876 128.255 84.876 124.638 84.876C115.55 84.876 103.345 85.3193 98.6691 86.7083C97.5515 87.0038 96.6104 87.1516 95.8457 87.1516C94.4929 87.1516 89.4344 85.9399 90.052 83.0437C90.3167 81.832 91.4637 80.6204 92.9048 79.5565C106.521 68.7696 149.636 13.3875 157.371 3.96009C158.371 2.74842 160.93 0 167.135 0C171.076 0 171.105 1.21167 170.958 1.98005C170.664 3.33948 169.635 4.72847 168.87 5.46729C160.4 14.1263 151.871 23.731 144.607 32.39C130.285 49.4125 118.315 62.3567 105.757 76.0397C105.169 76.6603 104.522 77.5469 104.375 78.3152C104.139 79.3791 104.58 80.1475 106.551 80.1475H106.845C116.021 79.7042 126.638 79.5269 134.431 79.2314C135.049 79.2314 135.608 78.6108 135.755 78.0197C138.637 64.3367 140.402 55.9732 140.96 51.097C141.019 50.8015 141.078 50.4764 141.107 50.3286C142.49 43.7974 155.195 40.9012 155.342 40.9012C156.4 40.9012 157.194 41.5219 156.9 42.8813C156.842 43.1768 156.753 43.6497 156.518 43.9452C154.401 48.9692 149.136 73.2912 148.166 77.8719C148.048 78.4926 148.401 78.9358 148.989 78.9358C150.842 78.7881 154.695 78.4926 160.106 77.8719C161.047 77.7242 161.812 77.7242 162.4 77.7242C163.606 77.7242 164.165 78.0197 163.871 79.4087C162.724 84.876 159.518 85.6444 154.548 85.6444C152.43 85.6444 150.96 85.4966 147.636 85.3488C147.019 85.3488 146.519 85.6444 146.342 86.4127C145.989 88.0972 145.225 91.7323 144.901 94.0078C142.96 106.775 140.078 111.208 152.959 112.567C153.548 113.335 153.665 114.252 153.489 115.168C153.254 116.232 152.636 117 151.43 117C151.43 117 142.137 115.788 131.549 115.788L131.579 115.759Z"
+              fill="currentColor"
+              style="fill: currentColor; fill-opacity: 1" />
+            <path
+              d="M81.0622 46.3965L82 35.7752H67.6104L74.9078 9H64.2402L56.9428 35.7456H38.4503L45.7477 9H35.0801L27.7827 35.7456H3.92709L2.98928 46.3669H24.9107L18.5804 69.6509H0.937813L0 80.2722H15.6791L6.47677 114H17.1444L26.3467 80.2722H44.8392L35.6369 114H46.3045L55.5068 80.2722H78.1022L79.04 69.6509H58.4081L64.7384 46.3669H81.0915L81.0622 46.3965ZM54.0415 46.3965L47.7112 69.6805H29.2187L35.549 46.3965H54.0415Z"
+              fill="currentColor"
+              style="fill: currentColor; fill-opacity: 1" />
+          </symbol>
+          <symbol id="sharp5" viewBox="0 0 165 120" fill="none">
+            <path
+              d="M84.0687 120C82.5628 120 81.7656 118.642 82.0608 117.255C82.2675 116.339 82.9172 115.424 84.3345 115.129C102.967 111.026 135.004 97.5055 141.205 68.9594C144.305 54.2288 136.156 45.4022 119.295 45.4022C117.169 45.4022 114.099 45.5498 107.13 46.9077C104.915 47.3506 104.62 48.738 101.579 48.738C100.22 48.738 99.3346 48.5904 99.5118 47.6753C99.6594 46.9077 100.28 46.1697 100.959 45.107C107.543 34.7749 114.246 19.572 117.908 10.155C118.262 9.23985 118.587 7.73432 120.86 7.73432H121.48C127.268 7.73432 159.424 1.50554 161.934 0.442805C162.76 0.147602 163.41 0 163.853 0C164.768 0 165.152 0.295203 164.945 1.35793C164.325 4.25092 158.361 10.9225 156.973 12.4576C155.792 13.6679 153.991 14.2878 152.898 14.4354C149.266 15.0554 143.154 15.941 137.485 16.8561C132.612 17.6236 126.382 18.3616 123.016 19.1292C121.569 19.4244 120.27 19.8967 119.502 21.4022C117.671 25.0627 115.752 29.7565 114.01 32.9447C113.803 33.2399 113.715 33.5646 113.685 33.7122C113.537 34.4797 114.069 34.7749 114.837 34.7749C115.132 34.7749 115.634 34.6273 115.929 34.6273C118.764 34.1845 121.54 34.0074 124.404 34.0074C142.8 34.0074 160.369 43.572 155.408 67.1292C147.317 105.417 89.2361 120 84.0687 120Z"
+              fill="currentColor"
+              style="fill: currentColor; fill-opacity: 1" />
+            <path
+              d="M81.0622 49.3965L82 38.7752H67.6104L74.9078 12H64.2402L56.9428 38.7456H38.4503L45.7477 12H35.0801L27.7827 38.7456H3.92709L2.98928 49.3669H24.9107L18.5804 72.6509H0.937813L0 83.2722H15.6791L6.47677 117H17.1444L26.3467 83.2722H44.8392L35.6369 117H46.3045L55.5068 83.2722H78.1022L79.04 72.6509H58.4081L64.7384 49.3669H81.0915L81.0622 49.3965ZM54.0415 49.3965L47.7112 72.6805H29.2187L35.549 49.3965H54.0415Z"
+              fill="currentColor"
+              style="fill: currentColor; fill-opacity: 1" />
           </symbol>
         </svg>
       </div>
