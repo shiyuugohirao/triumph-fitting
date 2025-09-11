@@ -91,7 +91,7 @@
 
           .fitting .kv .dots-container {
             position: absolute;
-            bottom: 20px;
+            bottom: 37px;
             left: 50%;
             transform: translateX(-50%);
             display: inline-flex;
@@ -119,6 +119,7 @@
               height: 400px;
             }
             .fitting .kv .dots-container {
+              bottom: 25px;
               gap: 16px;
             }
             .fitting .kv .dot {
@@ -140,10 +141,14 @@
 
           /* Statement Section */
           .fitting .statement {
+            display: inline-flex;
+            padding: 144px 0;
+            flex-direction: column;
+            align-items: center;
             position: relative;
             width: 100%;
             background-color: #e90029;
-            padding: 80px 0;
+
             margin-bottom: 0;
           }
           .fitting .statement .statementArea {
@@ -151,41 +156,37 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15%;
             text-align: center;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 144px;
           }
-          .fitting .statement h1 {
-            color: white;
-            font-size: 3rem;
-            font-weight: bold;
-            font-style: italic;
-            margin-bottom: 60px;
-            font-family: "Shippori Mincho", serif;
-          }
-          .fitting .statement .statementColumns {
+          .fitting .statement .copy_statement {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 60px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            gap: 104px;
           }
-          .fitting .statement .statementColumn {
-            color: white;
-            font-size: 1.2rem;
-            line-height: 2.5;
-            writing-mode: vertical-rl;
-            text-orientation: upright;
-            letter-spacing: 0.1em;
-            font-family: "Shippori Mincho", serif;
-            min-height: 200px;
-            display: block;
-            text-align: left;
+          .fitting .statement .copy_statement .copyText {
+            width: 100%;
+            height: 100%;
           }
+          .fitting .statement .copy_statement .statementText {
+            width: 47%;
+          }
+
           .fitting .statement .statementLinks {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            font-family: "Shippori Mincho";
+            font-size: 38px;
+            font-style: normal;
+            font-weight: 500;
+
+            letter-spacing: -1.9px;
           }
           .fitting .statement .statementLink {
             color: white;
@@ -194,29 +195,17 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             padding-bottom: 5px;
-            transition: opacity 0.3s ease;
-          }
-          .fitting .statement .statementLink:hover {
-            opacity: 0.8;
-          }
-          .fitting .statement .statementLink::after {
-            content: "▼";
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.8rem;
-          }
-          .fitting .statement .statementLink::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background-color: white;
+
+            padding: 4px 0;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #fff;
+            fill: transparent;
+            transition: all 0.3s ease;
           }
 
           @media screen and (max-width: 768px) {
@@ -714,28 +703,31 @@
 
           <section class="statement">
             <div class="statementArea">
-              <h1>#トリンプで試着したら人生変わったわ</h1>
-              <div class="statementColumns">
-                <div class="statementColumn">トリンプで試着する。</div>
-                <div class="statementColumn">変わるのは胸だけじゃない。</div>
-                <div class="statementColumn">
-                  姿勢が変わる。
-                  <br />
-                  表情が変わる。
-                </div>
-                <div class="statementColumn">
-                  知らない自分が、
-                  <br />
-                  顔を出す。
-                </div>
-                <div class="statementColumn">一人ひとりに合ういちまいを、</div>
-                <div class="statementColumn">心を込めて選び抜く。</div>
-                <div class="statementColumn">次はあなたが変わる番。</div>
-                <div class="statementColumn">是非、お近くのトリンプへ。</div>
+              <div class="copy_statement">
+                <picture class="copyText">
+                  <source media="(max-width: 769px)" srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/copy_sp.svg" />
+                  <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/copy_pc.svg" />
+                </picture>
+                <picture class="statementText">
+                  <source
+                    media="(max-width: 769px)"
+                    srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/statement_sp.svg" />
+                  <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/statement_pc.svg" />
+                </picture>
               </div>
               <div class="statementLinks">
-                <a href="#essay" class="statementLink">SPECIAL ESSAY</a>
-                <a href="#step" class="statementLink">FITTING STEP</a>
+                <a href="#essay" class="statementLink">
+                  SPECIAL ESSAY
+                  <svg width="10" height="21">
+                    <use href="#down-arrow-icon"></use>
+                  </svg>
+                </a>
+                <a href="#step" class="statementLink">
+                  FITTING STEP
+                  <svg width="10" height="21">
+                    <use href="#down-arrow-icon"></use>
+                  </svg>
+                </a>
               </div>
             </div>
           </section>
