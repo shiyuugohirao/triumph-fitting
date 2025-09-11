@@ -63,41 +63,73 @@
             height: 810px;
             overflow: hidden;
           }
-          .fitting .kv .kvArea_inner {
+          /* kv slideshow */
+          .fitting .kv .slideshow-container {
             position: relative;
+            object-fit: contain;
+            overflow: hidden;
             width: 100%;
             height: 100%;
           }
-          .fitting .kv .kvArea_box {
-            position: relative;
-            width: 100%;
-            height: 100%;
-          }
-          .fitting .kv .slideshow-fade {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-          }
-          .fitting .kv .slideshow-fade li {
+          .fitting .kv .slide {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
           }
-          .fitting .kv .slideshow-fade img {
+          .fitting .kv .slide.active {
+            opacity: 1;
+          }
+          .fitting .kv .slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+          }
+
+          .fitting .kv .dots-container {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-flex;
+            align-items: center;
+            gap: 25px;
+          }
+          .fitting .kv .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 1.25px solid #e90029;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+          .fitting .kv .dot:hover {
+            transform: scale(1.7);
+          }
+          .fitting .kv .dot.active {
+            transform: scale(1.5);
+            background-color: #e90029;
           }
           @media screen and (max-width: 768px) {
             .fitting .kv .kvArea {
               height: 400px;
             }
+            .fitting .kv .dots-container {
+              gap: 16px;
+            }
+            .fitting .kv .dot {
+              width: 6px;
+              height: 6px;
+            }
+            .fitting .kv .dot.active {
+              transform: scale(1.5);
+            }
           }
+
           /* KV - TRIUMPH FITTING */
           .fitting .mainArea h2 path {
             fill: #b2152c;
@@ -652,30 +684,29 @@
         <article class="fitting">
           <section class="kv">
             <div class="kvArea">
-              <div class="kvArea_inner">
-                <div class="kvArea_box">
-                  <ul class="slideshow-fade">
-                    <li>
-                      <img
-                        src="https://images.unsplash.com/photo-1605713288610-00c1c630ca1e?&w=1440&h=810&fit=crop&crop=faces,edges&q=0&fm=webp"
-                        alt="スライドショー画像1" />
-                    </li>
-                    <li>
-                      <img
-                        src="https://images.unsplash.com/photo-1590527548172-295fdcb1bab0?&w=1440&h=810&fit=crop&crop=faces,edges&q=0&fm=webp"
-                        alt="スライドショー画像2" />
-                    </li>
-                    <li>
-                      <img
-                        src="https://images.unsplash.com/photo-1543095834-7445b8af8c2b?&w=1440&h=810&fit=crop&crop=faces,edges&q=0&fm=webp"
-                        alt="スライドショー画像3" />
-                    </li>
-                    <li>
-                      <img
-                        src="https://images.unsplash.com/photo-1517488629431-6427e0ee1e5f?&w=1440&h=810&fit=crop&crop=faces,edges&q=0&fm=webp"
-                        alt="スライドショー画像4" />
-                    </li>
-                  </ul>
+              <div class="slideshow-container">
+                <div class="slide active">
+                  <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_hiko.svg" alt="スライド1" />
+                </div>
+                <div class="slide">
+                  <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_horii.svg" alt="スライド2" />
+                </div>
+                <div class="slide">
+                  <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_dekami.svg" alt="スライド3" />
+                </div>
+                <div class="slide">
+                  <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_miyake.svg" alt="スライド4" />
+                </div>
+                <div class="slide">
+                  <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_ugaki.svg" alt="スライド5" />
+                </div>
+
+                <div class="dots-container">
+                  <div class="dot active" data-slide="0"></div>
+                  <div class="dot" data-slide="1"></div>
+                  <div class="dot" data-slide="2"></div>
+                  <div class="dot" data-slide="3"></div>
+                  <div class="dot" data-slide="4"></div>
                 </div>
               </div>
             </div>
@@ -1124,15 +1155,15 @@
         <!-- define SVG icons -->
         <svg style="display: none">
           <symbol id="external-link-icon" viewBox="0 0 12 12">
-            <path d="M0.700195 2.90039V11.3008H9.09961V11.5H0.5V2.90039H0.700195Z" style="stroke: #d51833; stroke-opacity: 1" />
-            <rect x="2.89844" y="0.5" width="8.6" height="8.6" fill="none" style="stroke: #d51833; stroke-opacity: 1" />
+            <path d="M0.700195 2.90039V11.3008H9.09961V11.5H0.5V2.90039H0.700195Z" style="stroke: currentColor; stroke-opacity: 1" />
+            <rect x="2.89844" y="0.5" width="8.6" height="8.6" fill="none" style="stroke: currentColor; stroke-opacity: 1" />
           </symbol>
         </svg>
         <svg style="display: none">
           <symbol id="down-arrow-icon" viewBox="0 0 23 13">
             <path
               d="M22.001 1.93555L11.501 11.9355L1.00098 1.93555"
-              style="stroke: white; stroke-opacity: 1"
+              style="stroke: currentColor; stroke-opacity: 1"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round" />
@@ -1192,34 +1223,52 @@
     </script>
 
     <!-- Additional Scripts - 202509 -->
-    <script id="KvSliderScript">
-      function sliderSetting() {
-        var width = $(window).width();
+    <script type="text/javascript" id="KV_SlideshowScript">
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+      const slideNumber = document.getElementById("slideNumber");
+      const totalSlides = slides.length;
+      let slideInterval;
 
-        if (width < 768) {
-          $(".stepArea_box").not(".slick-initialized").slick({
-            autoplay: false,
-            infinite: false,
-            swipe: true,
-            arrows: false,
-            dots: true,
-            fade: false,
-            speed: 700,
-            easing: "ease-in-out",
-          });
-        } else {
-          $(".stepArea_box.slick-initialized").slick("unslick");
-        }
+      function showSlide(index) {
+        slides[currentSlide].classList.remove("active");
+        dots[currentSlide].classList.remove("active");
+        currentSlide = index;
+        slides[currentSlide].classList.add("active");
+        dots[currentSlide].classList.add("active");
+        slideNumber.textContent = currentSlide + 1;
       }
 
-      sliderSetting();
+      function nextSlide() {
+        const nextIndex = (currentSlide + 1) % totalSlides;
+        showSlide(nextIndex);
+      }
+      function startSlideshow() {
+        slideInterval = setInterval(nextSlide, 5000);
+      }
 
-      $(window).resize(function () {
-        sliderSetting();
+      function stopSlideshow() {
+        clearInterval(slideInterval);
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          // stopSlideshow(); // 手動切り替え時は自動切り替えを一時停止
+          showSlide(index);
+          // setTimeout(startSlideshow, 5000); // 5秒後に自動切り替えを再開
+        });
       });
+
+      // スライドショーコンテナにマウスが入った時は自動切り替えを停止
+      // const slideshowContainer = document.querySelector(".slideshow-container");
+      // slideshowContainer.addEventListener("mouseenter", stopSlideshow);
+      // slideshowContainer.addEventListener("mouseleave", startSlideshow);
+
+      startSlideshow();
     </script>
 
-    <script id="EssayScript">
+    <script type="text/javascript" id="EssayScript">
       const dialog = document.querySelector("dialog");
       const showButton = document.querySelector("dialog + button");
       const closeButton = document.querySelector("dialog button");
