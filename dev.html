@@ -749,9 +749,14 @@
             font-weight: 500;
             line-height: 140%;
           }
-
-          .fitting .essay_button {
-            align-self: flex-end;
+          .fitting .essay_buttons {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 12px;
+          }
+          .fitting .essay_buttons button {
             display: flex;
             align-items: center;
             background: none;
@@ -765,11 +770,11 @@
             margin: 0;
             transition: opacity 0.3s ease;
           }
-          .fitting .essay_button svg {
+          .fitting .essay_buttons svg {
             width: 30px;
             height: 30px;
           }
-          .fitting .essay_button:hover {
+          .fitting .essay_buttons:hover {
             opacity: 0.7;
           }
 
@@ -1039,13 +1044,13 @@
               /* line-height: 100%; */
             }
 
-            .fitting .essay_button {
+            .fitting .essay_buttons button {
               font-size: 15px;
               line-height: 100%;
               gap: 8px;
               margin-top: 16px;
             }
-            .fitting .essay_button svg {
+            .fitting .essay_buttons svg {
               width: 20px;
               height: 20px;
             }
@@ -1238,13 +1243,12 @@
                         プロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキスト
                       </div>
                     </div>
-                    <dialog class="essay_dialog">
+                    <dialog class="essay_dialog" id="dialog_hiko">
                       <div class="essay_close_button">
                         <button autofocus>
                           CLOSE
                           <svg width="53" height="20"><use href="#essay_close"></use></svg>
                         </button>
-                        t
                       </div>
                       <div class="essay_dialog_content">
                         <div class="essay_dialog_title">
@@ -1281,10 +1285,16 @@
                         </div>
                       </div>
                     </dialog>
-                    <button class="essay_button">
-                      エッセイを読む
-                      <svg width="10" height="21"><use href="#read-essay-icon"></use></svg>
-                    </button>
+                    <div class="essay_buttons">
+                      <button class="essay_listen_button" id="essay_listen_ugaki">
+                        エッセイを聴く
+                        <svg width="10" height="21"><use href="#read-essay-icon"></use></svg>
+                      </button>
+                      <button class="essay_read_button" id="read_hiko">
+                        エッセイを読む
+                        <svg width="10" height="21"><use href="#read-essay-icon"></use></svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1660,6 +1670,12 @@
           </section>
         </article>
 
+        <!-- audible -->
+        <audio
+          id="audible_ugaki"
+          type="audio/mpeg"
+          src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/audio/tr-audible-ugaki.mp3"></audio>
+
         <!-- define SVG icons -->
         <svg style="display: none">
           <symbol id="external-link-icon" viewBox="0 0 12 12">
@@ -1818,7 +1834,6 @@
         dots[currentSlide].classList.add("active");
         slideNumber.textContent = currentSlide + 1;
       }
-
       function nextSlide() {
         const nextIndex = (currentSlide + 1) % totalSlides;
         showSlide(nextIndex);
@@ -1847,21 +1862,36 @@
       startSlideshow();
     </script>
 
-    <script type="text/javascript" id="EssayScript">
-      const dialog = document.querySelector("dialog");
-      const showButton = document.querySelector("dialog + button");
-      const closeButton = document.querySelector("dialog button");
+    <script type="text/javascript" id="AudioScript">
+      const essay_listen_ugaki = document.getElementById("essay_listen_ugaki");
+      const audible_ugaki = document.getElementById("audible_ugaki");
+      const audioElement = document.querySelector("audio");
 
-      showButton.addEventListener("click", () => {
-        dialog.showModal();
-        dialog.style.animation = "fadeIn 0.3s ease forwards";
+      essay_listen_ugaki.addEventListener("click", e => {
+        if (audible_ugaki.paused) audible_ugaki.play();
+        else audible_ugaki.pause();
       });
 
+      btn_pause.addEventListener("click", e => {
+        audioElement.pause();
+      });
+    </script>
+
+    <script type="text/javascript" id="EssayScript">
+      const dialog_hiko = document.querySelector("#dialog_hiko");
+      const read_hiko = document.querySelector("#read_hiko");
+
+      const closeButton = document.querySelector("dialog button");
+
+      read_hiko.addEventListener("click", () => {
+        dialog_hiko.showModal();
+        dialog_hiko.style.animation = "fadeIn 0.3s ease forwards";
+      });
       closeButton.addEventListener("click", () => {
-        dialog.style.animation = "fadeOut 0.3s ease forwards";
+        dialog_hiko.style.animation = "fadeOut 0.3s ease forwards";
         setTimeout(() => {
-          dialog.close();
-          dialog.style.animation = "";
+          dialog_hiko.close();
+          dialog_hiko.style.animation = "";
         }, 300);
       });
 
