@@ -604,29 +604,35 @@
             font-family: "Shippori Mincho";
             padding: 144px 15%;
           }
+
+          .fitting .essay_card_wrapper {
+            gap: 40px;
+          }
           .fitting .essay_card {
+            color: var(--tr-red);
             background-color: var(--tr-white);
+            font-family: "Shippori Mincho";
             border-radius: 0;
             box-shadow: none;
             position: relative;
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 80px;
+            padding: 50px;
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            align-items: flex-start;
+            align-self: stretch;
           }
 
           .fitting .essay_title {
-            color: var(--tr-red);
-            font-family: "Shippori Mincho";
             font-size: 3.5rem;
             font-style: normal;
             font-weight: 500;
             line-height: 100%;
             text-align: center;
             gap: 16px;
+            margin-bottom: 64px;
           }
           .fitting .essay_title_sub {
             font-size: 20px;
@@ -639,7 +645,6 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            color: var(--tr-red);
           }
           .fitting .essay_anchors_item {
             display: inline-flex;
@@ -651,27 +656,21 @@
             color: var(--tr-red);
             border-bottom: 1px solid var(--tr-red);
           }
-          .fitting .essay_anchors_item svg {
-            stroke: var(--tr-red);
-            color: var(--tr-red);
-            fill: var(--tr-red);
-          }
+
           .fitting .essay_card_title {
             font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
             color: var(--tr-red);
             background-color: var(--tr-white);
             display: flex;
-            padding: 32px 32px;
             align-items: flex-start;
-            gap: 32px;
+            margin-bottom: 24px;
           }
           .fitting .essay_card_title svg {
             color: var(--tr-red);
-            width: 72px;
+            width: 80px;
             height: 55px;
             flex-shrink: 0;
+            margin: 0 32px;
             padding-top: 10px;
           }
           .fitting .essay_card_button {
@@ -696,78 +695,81 @@
           }
 
           .fitting .essay_profile {
-            display: flex;
-            align-items: flex-start;
-            gap: 24px;
+            gap: 16px;
             margin-bottom: 0;
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas:
+              "essay_profile essay_profile_name"
+              "essay_profile essay_profile_text";
           }
           .fitting .essay_profile_img {
+            grid-area: essay_profile;
             width: 130px;
             height: 130px;
             border-radius: 50%;
             object-fit: cover;
             flex-shrink: 0;
           }
-          .fitting .essay_profile_text p {
-            color: var(--tr-red);
+          .fitting .essay_profile_name {
+            grid-area: essay_profile_name;
           }
           .fitting .essay_profile_position {
-            font-size: 16px;
-            font-weight: 400;
-            margin: 0 0 8px 0;
-            line-height: 1.4;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.6;
           }
-
-          .fitting .essay_profile_name_wrapper {
+          .fitting .essay_profile_job_author {
             display: flex;
+            align-items: flex-end;
             flex-direction: row;
             text-align: left;
+            vertical-align: middle;
             gap: 16px;
+            font-weight: 500;
           }
-
           .fitting .essay_profile_job {
             font-size: 16px;
-            font-weight: 400;
-            margin: 0;
-            line-height: 1.4;
+            line-height: 180%;
+            font-weight: 500;
           }
-
-          .fitting .essay_profile_name {
-            font-size: 18px;
-            font-weight: 700;
-            margin: 0;
-            line-height: 1.4;
+          .fitting .essay_profile_author {
+            font-size: 20px;
+            line-height: 140%;
+            font-weight: 500;
+          }
+          .fitting .essay_profile_text {
+            grid-area: essay_profile_text;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 140%;
           }
 
           .fitting .essay_button {
             align-self: flex-end;
             display: flex;
             align-items: center;
-            gap: 8px;
             background: none;
             border: none;
             color: var(--tr-red);
-            font-size: 16px;
-            font-weight: 400;
+            font-size: 20px;
+            line-height: 160%;
             cursor: pointer;
+            gap: 12px;
             padding: 0;
             margin: 0;
             transition: opacity 0.3s ease;
           }
-
+          .fitting .essay_button svg {
+            width: 30px;
+            height: 30px;
+          }
           .fitting .essay_button:hover {
             opacity: 0.7;
           }
 
-          .fitting .essay button {
-            color: var(--tr-red);
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-          }
           .fitting .essay dialog {
             position: fixed;
             top: 50%;
@@ -783,13 +785,6 @@
           .fitting .essay dialog button {
             background-color: #666;
             margin-top: 20px;
-          }
-
-          .fitting .essay_button svg {
-            width: 10px;
-            height: 21px;
-            stroke: var(--tr-red);
-            fill: none;
           }
 
           .fitting .essay_dialog {
@@ -831,7 +826,6 @@
             transition: background-color 0.3s ease;
           }
 
-          /* レスポンシブ対応 */
           @media screen and (max-width: 768px) {
             .fitting .essay {
               padding: 80px 7%;
@@ -844,51 +838,85 @@
               max-width: 30px;
             }
 
+            .fitting .essay_card_wrapper {
+              gap: 24px;
+            }
             .fitting .essay_card {
               background-color: var(--tr-white);
-              padding: 40px 20px;
-              gap: 30px;
+              padding: 30px;
             }
 
             .fitting .essay_card_title {
               flex-direction: column;
-              gap: 16px;
               align-items: flex-start;
+              margin-bottom: 16px;
+            }
+            .fitting .essay_card_title svg {
+              color: var(--tr-red);
+              width: 26px;
+              height: 20px;
+              flex-shrink: 0;
+              margin: 0;
+              padding-top: 0px;
             }
 
             .fitting .essay_card_title_text {
-              font-size: 28px;
+              font-size: 20px;
+              margin-top: 4px;
               letter-spacing: -1.4px;
             }
 
             .fitting .essay_profile {
-              flex-direction: column;
-              gap: 16px;
-              align-items: flex-start;
+              gap: 8px;
+              margin-bottom: 0;
+              display: grid;
+              grid-template-columns: 60px 1fr;
+              grid-template-rows: 1fr 1fr;
+              grid-template-areas:
+                "essay_profile essay_profile_name"
+                "essay_profile_text essay_profile_text";
             }
-
             .fitting .essay_profile_img {
-              width: 100px;
-              height: 100px;
+              width: 60px;
+              height: 60px;
+            }
+            .fitting .essay_profile_position {
+              font-size: 12px;
+              line-height: 100%;
+              margin-bottom: 8px;
+            }
+            .fitting .essay_profile_job_author {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 4px;
+            }
+            .fitting .essay_profile_job {
+              font-size: 12px;
+              line-height: 100%;
+            }
+            .fitting .essay_profile_author {
+              font-size: 15px;
+              line-height: 100%;
+            }
+            .fitting .essay_profile_text {
+              font-size: 13px;
+              /* line-height: 100%; */
             }
 
             .fitting .essay_button {
-              align-self: flex-start;
+              font-size: 15px;
+              line-height: 100%;
+              gap: 8px;
+              margin-top: 16px;
+            }
+            .fitting .essay_button svg {
+              width: 20px;
+              height: 20px;
             }
 
             .fitting .essay_dialog {
               padding: 30px 20px;
               width: 95%;
-            }
-
-            .fitting .essay {
-              padding: 0px 0;
-            }
-            .fitting .essay h2 {
-              font-size: 2rem;
-            }
-            .fitting .essay h3 {
-              font-size: 1.5rem;
             }
           }
         </style>
@@ -1004,37 +1032,42 @@
                 </a>
               </div>
               <div class="essayArea_box">
-                <div class="essay_card" id="esssay_hiko">
-                  <div class="essay_card_title">
-                    <svg width="72" height="55"><use href="#sharp1"></use></svg>
-                    <div class="essay_card_title_text">
-                      私は私のために
-                      <br />
-                      下着を選びたいと思う。
-                    </div>
-                  </div>
-                  <div class="essay_profile">
-                    <img
-                      class="essay_profile_img"
-                      src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/profile_hiko.webp"
-                      alt="ヒコ" />
-                    <div class="essay_profile_text">
-                      <p class="essay_profile_position">フィッティング体験者 / 執筆者</p>
-                      <div class="essay_profile_name_wrapper">
-                        <p class="essay_profile_job">お笑い芸人</p>
-                        <p class="essay_profile_name">ヒコロヒー</p>
+                <div class="essay_card_wrapper">
+                  <div class="essay_card" id="esssay_hiko">
+                    <div class="essay_card_title">
+                      <svg><use href="#sharp1"></use></svg>
+                      <div class="essay_card_title_text">
+                        私は私のために
+                        <br />
+                        下着を選びたいと思う。
                       </div>
                     </div>
+                    <div class="essay_profile">
+                      <img
+                        class="essay_profile_img"
+                        src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/profile_hiko.webp"
+                        alt="ヒコ" />
+                      <div class="essay_profile_name">
+                        <p class="essay_profile_position">フィッティング体験者 / 執筆者</p>
+                        <div class="essay_profile_job_author">
+                          <p class="essay_profile_job">お笑い芸人</p>
+                          <p class="essay_profile_author">ヒコロヒー</p>
+                        </div>
+                      </div>
+                      <div class="essay_profile_text">
+                        プロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキスト
+                      </div>
+                    </div>
+                    <dialog class="essay_dialog">
+                      <button autofocus class="essay_close_button">閉じる</button>
+                      <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青い空の下で。</p>
+                      <p>その当時の誰もが羨む、青春と呼ぶべきものだった。</p>
+                    </dialog>
+                    <button class="essay_button">
+                      エッセイを読む
+                      <svg width="10" height="21"><use href="#read-essay-icon"></use></svg>
+                    </button>
                   </div>
-                  <dialog class="essay_dialog">
-                    <button autofocus class="essay_close_button">閉じる</button>
-                    <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青い空の下で。</p>
-                    <p>その当時の誰もが羨む、青春と呼ぶべきものだった。</p>
-                  </dialog>
-                  <button class="essay_button">
-                    エッセイを読む
-                    <svg width="10" height="21"><use href="#read-essay-icon"></use></svg>
-                  </button>
                 </div>
               </div>
             </div>
@@ -1491,6 +1524,10 @@
               d="M81.0622 49.3965L82 38.7752H67.6104L74.9078 12H64.2402L56.9428 38.7456H38.4503L45.7477 12H35.0801L27.7827 38.7456H3.92709L2.98928 49.3669H24.9107L18.5804 72.6509H0.937813L0 83.2722H15.6791L6.47677 117H17.1444L26.3467 83.2722H44.8392L35.6369 117H46.3045L55.5068 83.2722H78.1022L79.04 72.6509H58.4081L64.7384 49.3669H81.0915L81.0622 49.3965ZM54.0415 49.3965L47.7112 72.6805H29.2187L35.549 49.3965H54.0415Z"
               fill="currentColor"
               style="fill: currentColor; fill-opacity: 1" />
+          </symbol>
+          <symbol id="essay_close" viewBox="0 0 42 16" fill="none">
+            <path d="M1 15.5L41 0.500001" style="stroke: currentColor; stroke-opacity: 1" stroke-width="2" />
+            <path d="M1.81836 0.797363L40.1887 15.1862" style="stroke: currentColor; stroke-opacity: 1" stroke-width="2" />
           </symbol>
         </svg>
       </div>
