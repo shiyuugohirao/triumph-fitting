@@ -18,17 +18,16 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/css/slick-theme.css" />
-        <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/css/slick.css" />
+        <!-- <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/css/slick-theme.css" />
+        <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/css/slick.css" /> -->
         <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/fitting/css/new_fitting.css" />
 
-        <style id="202509_Style">
+        <style id="202509_GlobalStyle">
           /* global */
           body {
             margin: 0;
             overflow-x: hidden;
           }
-
           .fitting {
             --tr-red: #c7001f;
             --tr-white: #ffffff;
@@ -45,7 +44,7 @@
             padding-top: 40px !important;
             padding-bottom: 16px !important;
           }
-          .main_contents__h2,
+          /* .main_contents__h2,
           .main_contents__h2_main_title {
             font-family: "triumph grand", sans-serif !important;
           }
@@ -53,8 +52,15 @@
             text-decoration: none;
             opacity: 0.7;
           }
-
-          /* KV Section */
+          .fitting .mainArea h2 path {
+            fill: #b2152c;
+          }
+          .fitting .mainArea h2.change path {
+            fill: var(--tr-white);
+          }
+          */
+        </style>
+        <style id="202509_KV">
           .fitting .kv {
             background-color: var(--tr-white) !important;
             background-image: none !important;
@@ -69,7 +75,6 @@
             height: 810px;
             overflow: hidden;
           }
-          /* kv slideshow */
           .fitting .kv .slideshow-container {
             position: relative;
             object-fit: contain;
@@ -136,16 +141,24 @@
               transform: scale(1.5);
             }
           }
-
-          /* KV - TRIUMPH FITTING */
-          .fitting .mainArea h2 path {
-            fill: #b2152c;
+        </style>
+        <style id="202509_Copy">
+          .fitting .copy {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            background-color: var(--tr-red);
+            padding: 40px 0;
           }
-          .fitting .mainArea h2.change path {
-            fill: var(--tr-white);
+          @media screen and (max-width: 768px) {
+            .fitting .copy {
+              padding: 20px 0;
+            }
           }
-
-          /* Statement Section */
+        </style>
+        <style id="202509_Statement">
           .fitting .statement {
             display: inline-flex;
             padding: 144px 0;
@@ -178,9 +191,6 @@
           .fitting .statement .copy_statement .copyText {
             width: 100%;
             height: 100%;
-          }
-          .fitting .statement .copy_statement .statementText {
-            width: 47%;
           }
 
           .fitting .statement .statementLinks {
@@ -233,8 +243,8 @@
               gap: 20px;
             }
           }
-
-          /* Flowting Area */
+        </style>
+        <style id="202509_Flowting">
           .fitting .flowtingArea {
             position: fixed;
             right: 0;
@@ -276,7 +286,6 @@
             text-decoration: none;
             padding: 30px;
           }
-
           .fitting .flowtingLink {
             color: var(--tr-red);
             background-color: var(--tr-white);
@@ -287,7 +296,6 @@
             background-color: var(--tr-red);
             stroke: var(--tr-white);
           }
-
           .fitting .flowtingText {
             font-family: "Noto Sans JP";
             font-size: 18px;
@@ -384,6 +392,11 @@
               color: #f8f8f8;
               background-color: var(--tr-red);
             }
+            .fitting .flowtingLink svg {
+              margin-left: 8px;
+              width: 12px;
+              height: 12px;
+            }
             .fitting .flowtingText {
               font-family: "Noto Sans";
               font-size: 14px;
@@ -401,68 +414,9 @@
             .fitting .flowtingText:hover {
               color: #f8f8f8;
             }
-            .fitting svg {
-              margin-left: 8px;
-              width: 12px;
-              height: 12px;
-            }
           }
         </style>
-        <style>
-          /* FITTING STEP */
-          .fitting .stepArea {
-            position: relative;
-            width: 100%;
-            padding: 80px 0;
-            background-color: var(--tr-white);
-            margin-bottom: 0;
-          }
-          .fitting .stepArea .ttlArea {
-            padding: 60px 0 0 112px !important;
-          }
-          .fitting .stepArea .ttlArea img {
-            width: 317px;
-            position: relative;
-            z-index: 2;
-          }
-          @media screen and (max-width: 769px) {
-            .fitting .stepArea .ttlArea {
-              padding: 26px 0 0 10px !important;
-            }
-            .fitting .stepArea .ttlArea img {
-              width: 159px;
-            }
-          }
-
-          /* STEP1〜3 */
-          .fitting .stepArea_box--list .stepTtl img {
-            margin: 0 auto;
-            width: 39px;
-          }
-
-          @media screen and (max-width: 768px) {
-            .fitting .stepArea {
-              padding: 40px 0;
-            }
-            .fitting .stepArea_box--list:nth-child(3) .stepIcn {
-              margin: 15px auto 0;
-            }
-          }
-
-          /* FITTING REPORT */
-          .fitting .reportArea_inner .ttlArea img {
-            height: auto;
-            width: 312px;
-            position: relative;
-            z-index: 2;
-          }
-          @media screen and (max-width: 769px) {
-            .fitting .reportArea_inner .ttlArea img {
-              width: 156px;
-            }
-          }
-
-          /* Link Section */
+        <style id="202509_Link">
           .fitting .link {
             position: relative;
             width: 100%;
@@ -600,33 +554,13 @@
               width: 250px;
             }
           }
-
-          /* Essay Section */
+        </style>
+        <style id="202509_Essay">
           .fitting .essay {
             color: var(--tr-red);
             background-color: var(--tr-gray);
             font-family: "Shippori Mincho";
             padding: 144px 15%;
-          }
-
-          .fitting .essay_card_wrapper {
-            gap: 40px;
-          }
-          .fitting .essay_card {
-            color: var(--tr-red);
-            background-color: var(--tr-white);
-            font-family: "Shippori Mincho";
-            border-radius: 0;
-            box-shadow: none;
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            align-self: stretch;
           }
 
           .fitting .essay_title {
@@ -650,6 +584,9 @@
             justify-content: center;
             align-items: center;
           }
+          .fitting .essay_anchors_item svg {
+            color: var(--tr-red);
+          }
           .fitting .essay_anchors_item {
             display: inline-flex;
             padding: 0 4px 10px 4px;
@@ -657,10 +594,52 @@
             flex-direction: column;
             object-fit: contain;
             align-items: flex-start;
-            color: var(--tr-red);
             border-bottom: 1px solid var(--tr-red);
           }
 
+          @media screen and (max-width: 768px) {
+            .fitting .essay {
+              padding: 80px 7%;
+            }
+            .fitting .essay_title {
+              font-size: 24px;
+              line-height: 140%;
+              text-align: center;
+              gap: 8px;
+              margin-bottom: 40px;
+            }
+            .fitting .essay_title_sub {
+              font-size: 14px;
+            }
+            .fitting .essay_anchors {
+              margin: 40px 0;
+              gap: 24px;
+            }
+            .fitting .essay_anchors_item {
+              padding: 0 2px 6px 2px;
+            }
+          }
+        </style>
+        <style id="202509_Essay_Card">
+          .fitting .essay_card_wrapper {
+            gap: 40px;
+          }
+          .fitting .essay_card {
+            color: var(--tr-red);
+            background-color: var(--tr-white);
+            font-family: "Shippori Mincho";
+            border-radius: 0;
+            box-shadow: none;
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            align-self: stretch;
+          }
           .fitting .essay_card_title {
             font-size: 2rem;
             color: var(--tr-red);
@@ -675,21 +654,6 @@
             height: 55px;
             flex-shrink: 0;
             margin: 0 32px;
-            padding-top: 10px;
-          }
-          .fitting .essay_dialog_title {
-            font-size: 2rem;
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 32px;
-            line-height: 140%;
-            gap: 32px;
-            letter-spacing: -1.9px;
-          }
-          .fitting .essay_dialog_title svg {
-            width: 80px;
-            height: 55px;
-            flex-shrink: 0;
             padding-top: 10px;
           }
           .fitting .essay_card_button {
@@ -712,88 +676,49 @@
             margin: 0;
             flex: 1;
           }
-
-          .fitting .essay_profile {
-            column-gap: 16px;
-            row-gap: 16px;
-            margin-bottom: 0;
-            display: grid;
-            grid-template-columns: 130px 1fr;
-            grid-template-rows: auto 1fr;
-            grid-template-areas:
-              "essay_profile essay_profile_name"
-              "essay_profile essay_profile_text";
+          @media screen and (max-width: 768px) {
+            .fitting .essay_card_wrapper {
+              gap: 24px;
+            }
+            .fitting .essay_card {
+              padding: 30px;
+            }
+            .fitting .essay_card_title {
+              flex-direction: column;
+              align-items: flex-start;
+              margin-bottom: 16px;
+            }
+            .fitting .essay_card_title svg {
+              width: 26px;
+              height: 20px;
+              flex-shrink: 0;
+              margin: 0;
+              padding-top: 0px;
+            }
+            .fitting .essay_card_title_text {
+              font-size: 20px;
+              margin-top: 4px;
+              letter-spacing: -1.4px;
+            }
           }
-          .fitting .essay_profile_img {
-            grid-area: essay_profile;
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            object-fit: cover;
+        </style>
+
+        <style id="202509_Essay_Dialog">
+          .fitting .essay_dialog_title {
+            font-size: 2rem;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 32px;
+            line-height: 140%;
+            gap: 32px;
+            letter-spacing: -1.9px;
+          }
+          .fitting .essay_dialog_title svg {
+            width: 80px;
+            height: 55px;
             flex-shrink: 0;
+            padding-top: 10px;
           }
-          .fitting .essay_profile_name {
-            grid-area: essay_profile_name;
-          }
-          .fitting .essay_profile_position {
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1.6;
-          }
-          .fitting .essay_profile_job_author {
-            display: flex;
-            flex-direction: row;
-            text-align: left;
-            vertical-align: middle;
-            gap: 16px;
-            font-weight: 500;
-          }
-          .fitting .essay_profile_job {
-            font-size: 16px;
-            line-height: 180%;
-            font-weight: 500;
-          }
-          .fitting .essay_profile_author {
-            font-size: 20px;
-            line-height: 140%;
-            font-weight: 500;
-          }
-          .fitting .essay_profile_text {
-            grid-area: essay_profile_text;
-            font-size: 15px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 140%;
-          }
-          .fitting .essay_buttons {
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 12px;
-          }
-          .fitting .essay_buttons button {
-            display: flex;
-            align-items: center;
-            background: none;
-            border: none;
-            color: var(--tr-red);
-            font-size: 20px;
-            line-height: 160%;
-            cursor: pointer;
-            gap: 12px;
-            padding: 0;
-            margin: 0;
-            transition: opacity 0.3s ease;
-          }
-          .fitting .essay_buttons svg {
-            width: 30px;
-            height: 30px;
-          }
-          .fitting .essay_buttons:hover {
-            opacity: 0.7;
-          }
-
           html:has(dialog[open]) {
             overflow: hidden; /* prevent scroll when dialog is open */
           }
@@ -820,10 +745,32 @@
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
           }
-
           .fitting .essay_dialog[open] {
             opacity: 1;
             visibility: visible;
+          }
+          .fitting .essay_dialog_content {
+            padding: 60px 40px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            position: relative;
+          }
+          .fitting .essay_body {
+            font-family: "Shippori Mincho", serif;
+            color: var(--tr-red);
+            margin-bottom: 60px;
+          }
+          .fitting .essay_body p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin: 0 0 24px 0;
+          }
+          .fitting .essay_body p:last-child {
+            margin-bottom: 0;
           }
 
           @keyframes fadeIn {
@@ -844,114 +791,10 @@
             }
           }
 
-          .fitting .essay_close_button {
-            color: var(--tr-red);
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1002;
-            pointer-events: auto;
-          }
-
-          .fitting .essay_close_button button {
-            display: flex;
-            align-items: center;
-            gap: 17px;
-            border: none;
-            background: transparent;
-            font-size: 24px;
-            font-weight: 700;
-            cursor: pointer;
-            padding: 0;
-            transition: opacity 0.3s ease;
-          }
-
-          .fitting .essay_close_button button:hover {
-            opacity: 0.7;
-          }
-
-          .fitting .essay_dialog_content {
-            padding: 60px 40px 40px;
-            max-width: 800px;
-            margin: 0 auto;
-            height: 100vh;
-            overflow-y: auto;
-            overflow-x: hidden;
-            box-sizing: border-box;
-            position: relative;
-          }
-
-          .fitting .essay_body {
-            font-family: "Shippori Mincho", serif;
-            color: var(--tr-red);
-            margin-bottom: 60px;
-          }
-
-          .fitting .essay_body p {
-            font-size: 16px;
-            line-height: 1.8;
-            margin: 0 0 24px 0;
-          }
-
-          .fitting .essay_body p:last-child {
-            margin-bottom: 0;
-          }
-
-          .fitting .essay_dialog_profile {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            padding-top: 40px;
-          }
-
-          .fitting .essay_profile_image img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-          }
-          .fitting .essay_profile_position {
-            font-size: 14px;
-          }
-          .fitting .essay_profile_job {
-            font-size: 16px;
-          }
-          .fitting .essay_profile_text {
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 0;
-          }
-
           @media screen and (max-width: 768px) {
-            .fitting .essay {
-              padding: 80px 7%;
-            }
-            .fitting .essay_anchors {
-              margin: 40px 0;
-              gap: 24px;
-            }
-            .fitting .essay_anchors_item {
-              max-width: 30px;
-            }
-
-            .fitting .essay_card_wrapper {
-              gap: 24px;
-            }
-            .fitting .essay_card {
-              padding: 30px;
-            }
-
-            .fitting .essay_card_title {
-              flex-direction: column;
-              align-items: flex-start;
-              margin-bottom: 16px;
-            }
-            .fitting .essay_card_title svg {
-              width: 26px;
-              height: 20px;
-              flex-shrink: 0;
-              margin: 0;
-              padding-top: 0px;
+            .fitting .essay_dialog {
+              padding: 0;
+              width: 100vw;
             }
             .fitting .essay_dialog_title {
               flex-direction: column;
@@ -965,13 +808,72 @@
               flex-shrink: 0;
               padding-top: 0px;
             }
-
-            .fitting .essay_card_title_text {
-              font-size: 20px;
-              margin-top: 4px;
-              letter-spacing: -1.4px;
+            .fitting .essay_dialog_content {
+              padding: 60px 20px 40px;
+              max-width: none;
             }
+            .fitting .essay_body p {
+              font-size: 14px;
+              line-height: 1.7;
+            }
+          }
+        </style>
 
+        <style id="202509_Essay_Profile">
+          .fitting .essay_profile {
+            column-gap: 16px;
+            row-gap: 16px;
+            margin-bottom: 0;
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            grid-template-rows: auto 1fr;
+            grid-template-areas:
+              "ES_PROFILE_IMG ESSAY_PROFILE_NAME"
+              "ES_PROFILE_IMG ES_PROFILE_TEXT";
+          }
+          .fitting .essay_profile_img {
+            grid-area: ES_PROFILE_IMG;
+            border-radius: 50%;
+            object-fit: cover;
+            width: 130px;
+            height: 130px;
+          }
+
+          .fitting .essay_profile_name {
+            grid-area: ESSAY_PROFILE_NAME;
+          }
+          .fitting .essay_profile_position {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.6;
+          }
+          .fitting .essay_profile_job_author {
+            display: flex;
+            flex-direction: row;
+            text-align: left;
+            vertical-align: middle;
+            gap: 16px;
+            font-weight: 500;
+          }
+          .fitting .essay_profile_job {
+            font-size: 16px;
+            line-height: 180%;
+            font-weight: 500;
+          }
+          .fitting .essay_profile_author {
+            font-size: 20px;
+            line-height: 140%;
+            font-weight: 500;
+          }
+          .fitting .essay_profile_text {
+            grid-area: ES_PROFILE_TEXT;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 140%;
+          }
+
+          @media screen and (max-width: 768px) {
             .fitting .essay_profile {
               column-gap: 8px;
               row-gap: 4px;
@@ -980,8 +882,8 @@
               grid-template-columns: 60px 1fr;
               grid-template-rows: auto 1fr;
               grid-template-areas:
-                "essay_profile essay_profile_name"
-                "essay_profile_text essay_profile_text";
+                "ES_PROFILE_IMG ESSAY_PROFILE_NAME"
+                "ES_PROFILE_TEXT ES_PROFILE_TEXT";
             }
             .fitting .essay_profile_img {
               width: 60px;
@@ -1009,10 +911,68 @@
               font-size: 12px;
               line-height: 140%;
             }
+          }
+        </style>
+
+        <style id="202509_Essay_Buttons">
+          .fitting .essay_buttons {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 12px;
+            margin-top: 10px;
+          }
+          .fitting .essay_buttons button {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: none;
+            color: var(--tr-red);
+            font-size: 20px;
+            line-height: 160%;
+            cursor: pointer;
+            gap: 12px;
+            padding: 0;
+            margin: 0;
+            transition: opacity 0.3s ease;
+          }
+          .fitting .essay_buttons svg {
+            width: 30px;
+            height: 30px;
+          }
+          .fitting .essay_buttons:hover {
+            opacity: 0.7;
+          }
+          .fitting .essay_close_button {
+            color: var(--tr-red);
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1002;
+            pointer-events: auto;
+          }
+          .fitting .essay_close_button button {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+            border: none;
+            background: transparent;
+            font-size: 24px;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 0;
+            transition: opacity 0.3s ease;
+          }
+          .fitting .essay_close_button button:hover {
+            opacity: 0.7;
+          }
+          @media screen and (max-width: 768px) {
             .fitting .essay_buttons {
               flex-direction: column;
               align-items: flex-end;
               gap: 0px;
+              margin-top: 0px;
             }
             .fitting .essay_buttons button {
               font-size: 15px;
@@ -1025,33 +985,6 @@
               height: 20px;
             }
 
-            .fitting .essay_dialog {
-              padding: 0;
-              width: 100vw;
-            }
-
-            .fitting .essay_dialog_content {
-              padding: 60px 20px 40px;
-              max-width: none;
-            }
-
-            .fitting .essay_body p {
-              font-size: 14px;
-              line-height: 1.7;
-            }
-
-            .fitting .essay_dialog_profile {
-              flex-direction: column;
-              align-items: center;
-              text-align: center;
-              gap: 16px;
-            }
-
-            .fitting .essay_profile_image img {
-              width: 60px;
-              height: 60px;
-            }
-
             .fitting .essay_close_button {
               top: 15px;
               right: 15px;
@@ -1062,7 +995,69 @@
             }
           }
         </style>
+        <style id="FittingStep">
+          /* FITTING STEP */
+          .fitting .stepArea {
+            position: relative;
+            width: 100%;
+            padding: 80px 0;
+            background-color: var(--tr-white);
+            margin-bottom: 0;
+          }
+          .fitting .stepArea .ttlArea {
+            padding: 60px 0 0 112px !important;
+          }
+          .fitting .stepArea .ttlArea img {
+            width: 317px;
+            position: relative;
+            z-index: 2;
+          }
+          @media screen and (max-width: 769px) {
+            .fitting .stepArea .ttlArea {
+              padding: 26px 0 0 10px !important;
+            }
+            .fitting .stepArea .ttlArea img {
+              width: 159px;
+            }
+          }
+
+          /* STEP1〜3 */
+          .fitting .stepArea_box--list .stepTtl img {
+            margin: 0 auto;
+            width: 39px;
+          }
+
+          @media screen and (max-width: 768px) {
+            .fitting .stepArea {
+              padding: 40px 0;
+            }
+            .fitting .stepArea_box--list:nth-child(3) .stepIcn {
+              margin: 15px auto 0;
+            }
+          }
+        </style>
+        <style id="FittingReport">
+          /* FITTING REPORT */
+          .fitting .reportArea_inner .ttlArea img {
+            height: auto;
+            width: 312px;
+            position: relative;
+            z-index: 2;
+          }
+          @media screen and (max-width: 769px) {
+            .fitting .reportArea_inner .ttlArea img {
+              width: 156px;
+            }
+          }
+        </style>
+
         <article class="fitting">
+          <section class="copy">
+            <picture class="copyText">
+              <source media="(max-width: 769px)" srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/copy_sp.svg" />
+              <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/copy_pc.svg" />
+            </picture>
+          </section>
           <section class="kv">
             <div class="kvArea">
               <div class="slideshow-container">
@@ -1758,7 +1753,7 @@
     <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/css/build.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin=""></script>
     <script type="text/javascript" src="https://jpn-ecommerce-s3.triumph.com/tr-about/js/jquery.inview.min.js"></script>
-    <script type="text/javascript" src="https://jpn-ecommerce-s3.triumph.com/tr-about/js/slick.min.js"></script>
+    <!-- <script type="text/javascript" src="https://jpn-ecommerce-s3.triumph.com/tr-about/js/slick.min.js"></script> -->
 
     <!-- inherited script source -->
     <script>
