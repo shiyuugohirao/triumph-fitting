@@ -412,7 +412,7 @@
               align-items: center;
             }
             .fitting .flowtingText:hover {
-              color: #f8f8f8;
+              color: var(--tr-white);
             }
           }
         </style>
@@ -915,7 +915,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            gap: 12px;
+            gap: 40px;
             margin-top: 10px;
           }
           .fitting .essay_buttons button {
@@ -930,15 +930,16 @@
             gap: 12px;
             padding: 0;
             margin: 0;
-            transition: opacity 0.3s ease;
+            transition: scale 0.3s ease;
           }
           .fitting .essay_buttons svg {
             width: 30px;
             height: 30px;
           }
-          .fitting .essay_buttons:hover {
-            opacity: 0.7;
+          .fitting .essay_buttons button:hover {
+            scale: 1.05;
           }
+
           .fitting .essay_close_button {
             color: var(--tr-red);
             position: fixed;
@@ -966,14 +967,13 @@
             .fitting .essay_buttons {
               flex-direction: column;
               align-items: flex-end;
-              gap: 0px;
-              margin-top: 0px;
+              gap: 16px;
+              margin-top: 16px;
             }
             .fitting .essay_buttons button {
               font-size: 15px;
               line-height: 100%;
               gap: 8px;
-              margin-top: 16px;
             }
             .fitting .essay_buttons svg {
               width: 20px;
@@ -1851,8 +1851,14 @@
       const audioElement = document.querySelector("audio");
 
       essay_listen_ugaki.addEventListener("click", e => {
-        if (audible_ugaki.paused) audible_ugaki.play();
-        else audible_ugaki.pause();
+        const svgElement = essay_listen_ugaki.querySelector("svg use");
+        if (audible_ugaki.paused) {
+          audible_ugaki.play();
+          svgElement.setAttribute("href", "#audible_stop");
+        } else {
+          audible_ugaki.pause();
+          svgElement.setAttribute("href", "#audible_play");
+        }
       });
 
       btn_pause.addEventListener("click", e => {
