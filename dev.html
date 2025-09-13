@@ -709,7 +709,7 @@
 
         <style id="202509_Essay_Dialog">
           .fitting .essay_dialog_title {
-            font-size: 2rem;
+            font-size: 38px;
             display: flex;
             align-items: flex-start;
             margin-bottom: 32px;
@@ -795,6 +795,7 @@
               width: 100vw;
             }
             .fitting .essay_dialog_title {
+              font-size: 24px;
               flex-direction: column;
               align-items: flex-start;
               margin-bottom: 24px;
@@ -962,6 +963,10 @@
             padding: 0;
             transition: opacity 0.3s ease;
           }
+          .fitting .essay_close svg {
+            width: 54px;
+            height: 20px;
+          }
           .fitting .essay_close button:hover {
             opacity: 0.7;
           }
@@ -989,6 +994,10 @@
             .fitting .essay_close button {
               font-size: 16px;
               gap: 12px;
+            }
+            .fitting .essay_close svg {
+              width: 40px;
+              height: 15px;
             }
           }
         </style>
@@ -1898,8 +1907,6 @@
       function renderEssay() {
         const essay_cards_container = document.getElementById("essay_cards_container");
         const essay_dialog_container = document.getElementById("essay_dialog_container");
-        console.log(essay_cards_container);
-        console.log(essay_dialog_container);
         if (essay_cards_container && essay_dialog_container) {
           essay_cards_container.innerHTML = "";
           essay_dialog_container.innerHTML = "";
@@ -1968,19 +1975,40 @@
         const readButtons = document.querySelectorAll(".essay_read_button");
         readButtons.forEach(readButton => {
           readButton.addEventListener("click", e => {
-            console.log("readButton id:", readButton.id);
             const essayId = readButton.id.replace("read_", "");
             const dialog = document.getElementById(`dialog_${essayId}`);
-            if (dialog) dialog.showModal();
+            if (dialog) {
+              dialog.showModal();
+              dialog.style.animation = "fadeIn 0.3s ease forwards";
+            }
           });
         });
+
         const closeButtons = document.querySelectorAll(".essay_close_button");
         closeButtons.forEach(closeButton => {
           closeButton.addEventListener("click", e => {
-            console.log("closeButton id:", closeButton.id);
             const essayId = closeButton.id.replace("close_", "");
             const dialog = document.getElementById(`dialog_${essayId}`);
-            if (dialog) dialog.close();
+            if (dialog) {
+              dialog.style.animation = "fadeOut 0.3s ease forwards";
+              setTimeout(() => {
+                dialog.close();
+                dialog.style.animation = "";
+              }, 300);
+            }
+          });
+        });
+
+        document.querySelectorAll(".essay_dialog").forEach(dialog => {
+          dialog.addEventListener("click", function (e) {
+            if (e.target === dialog) {
+              const essayId = dialog.id.replace("dialog_", "");
+              dialog.style.animation = "fadeOut 0.3s ease forwards";
+              setTimeout(() => {
+                dialog.close();
+                dialog.style.animation = "";
+              }, 300);
+            }
           });
         });
       }
@@ -2040,23 +2068,6 @@
     </script>
 
     <script type="text/javascript" id="EssayScript">
-      // const dialog_hiko = document.querySelector("#dialog_hiko");
-      // const read_hiko = document.querySelector("#read_hiko");
-
-      // const closeButton = document.querySelector("dialog button");
-
-      // read_hiko.addEventListener("click", () => {
-      //   dialog_hiko.showModal();
-      //   dialog_hiko.style.animation = "fadeIn 0.3s ease forwards";
-      // });
-      // closeButton.addEventListener("click", () => {
-      //   dialog_hiko.style.animation = "fadeOut 0.3s ease forwards";
-      //   setTimeout(() => {
-      //     dialog_hiko.close();
-      //     dialog_hiko.style.animation = "";
-      //   }, 300);
-      // });
-
       $(function () {
         $(".slideshow-fade li").css({ position: "relative", overflow: "hidden" });
         $(".slideshow-fade li").hide().css({ position: "absolute", top: 0, left: 0 });
