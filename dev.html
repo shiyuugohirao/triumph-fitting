@@ -1863,8 +1863,6 @@
           profileAuthor: "ヒコロヒー",
           profileText:
             "2011年ピン芸人としてデビュー。独特の世界観とキャラクターで描く1人コントが人気で単独公演は毎回即完。バラエティ番組出演の他、ドラマ・映画出演、執筆やドラマ脚本、デザインまで幅広く活躍中。",
-          listenButtonId: "essay_listen_hiko",
-          readButtonId: "read_hiko",
         },
         {
           id: "ugaki",
@@ -1873,8 +1871,6 @@
           profileAuthor: "宇垣美里",
           profileText:
             "1991年 兵庫県出身。2019年3月にTBSを退社し、現在はドラマ出演やラジオパーソナリティーなどのほか執筆業も行うなど幅広く活躍している。週刊文春、女子SPA！などで漫画や映画のコラムを連載中。",
-          listenButtonId: "essay_listen_ugaki",
-          readButtonId: "read_ugaki",
         },
         {
           id: "dekami",
@@ -1883,8 +1879,6 @@
           profileAuthor: "でか美ちゃん",
           profileText:
             "多方面から評価される的確なコメント力を武器に、場所を選ばず大活躍。自身の楽曲の作詞作曲やライブ活動、楽曲提供、コラム執筆などジャンルやメディアにとらわれず活動中。",
-          listenButtonId: "essay_listen_dekami",
-          readButtonId: "read_dekami",
         },
       ];
 
@@ -1933,7 +1927,63 @@
         }
       }
 
-      document.addEventListener("DOMContentLoaded", renderEssayCards);
+      function setupAudioControls() {
+        const listenButtons = document.querySelectorAll(".essay_listen_button");
+        const audioElements = document.querySelectorAll(".essay_audible");
+        listenButtons.forEach(listenButton => {
+          listenButton.addEventListener("click", e => {
+            const audioId = listenButton.id.replace("listen_", "audible_");
+            const audibleElement = document.getElementById(audioId);
+            const svgElement = listenButton.querySelector("svg use");
+            if (audibleElement && svgElement) {
+              // 他のaudioを停止
+              audioElements.forEach(audio => {
+                if (audio !== audibleElement) {
+                  audio.pause();
+                  // 他のボタンのアイコンを再生アイコンに戻す
+                  const otherButtonId = audio.id.replace("audible_", "listen_");
+                  const otherButton = document.getElementById(otherButtonId);
+                  if (otherButton) {
+                    const otherSvgElement = otherButton.querySelector("svg use");
+                    if (otherSvgElement) {
+                      otherSvgElement.setAttribute("href", "#audible_play");
+                    }
+                  }
+                }
+              });
+              // 現在のaudioを再生/停止
+              if (audibleElement.paused) {
+                audibleElement.play();
+                svgElement.setAttribute("href", "#audible_stop");
+              } else {
+                audibleElement.pause();
+                svgElement.setAttribute("href", "#audible_play");
+              }
+            }
+          });
+        });
+
+        // audio終了時にアイコンを再生アイコンに戻す
+        document.querySelectorAll("audio").forEach(audio => {
+          audio.addEventListener("ended", function () {
+            const essayId = this.id.replace("audible_", "");
+            const button = document.getElementById(`listen_${essayId}`);
+            if (button) {
+              const svgElement = button.querySelector("svg use");
+              if (svgElement) {
+                svgElement.setAttribute("href", "#audible_play");
+              }
+            }
+          });
+        });
+      }
+
+      function setup() {
+        renderEssayCards();
+        setupAudioControls();
+      }
+
+      document.addEventListener("DOMContentLoaded", setup);
     </script>
 
     <!-- Additional Scripts - 202509 -->
@@ -1979,27 +2029,6 @@
       // slideshowContainer.addEventListener("mouseleave", startSlideshow);
 
       startSlideshow();
-    </script>
-
-    <script type="text/javascript" id="AudioScript">
-      const essay_listen_ugaki = document.getElementById("essay_listen_ugaki");
-      const audible_ugaki = document.getElementById("audible_ugaki");
-      const audioElement = document.querySelector("audio");
-
-      essay_listen_ugaki.addEventListener("click", e => {
-        const svgElement = essay_listen_ugaki.querySelector("svg use");
-        if (audible_ugaki.paused) {
-          audible_ugaki.play();
-          svgElement.setAttribute("href", "#audible_stop");
-        } else {
-          audible_ugaki.pause();
-          svgElement.setAttribute("href", "#audible_play");
-        }
-      });
-
-      btn_pause.addEventListener("click", e => {
-        audioElement.pause();
-      });
     </script>
 
     <script type="text/javascript" id="EssayScript">
