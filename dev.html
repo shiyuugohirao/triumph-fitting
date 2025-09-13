@@ -904,26 +904,18 @@
             padding-top: 40px;
           }
 
-          .fitting .essay_profile_image {
-            flex-shrink: 0;
-          }
           .fitting .essay_profile_image img {
             width: 80px;
             height: 80px;
             border-radius: 50%;
             object-fit: cover;
           }
-
           .fitting .essay_profile_position {
             font-size: 14px;
-            margin: 0 0 8px 0;
           }
-
           .fitting .essay_profile_job {
             font-size: 16px;
-            margin: 0 0 4px 0;
           }
-
           .fitting .essay_profile_text {
             font-size: 14px;
             line-height: 1.6;
@@ -1213,7 +1205,7 @@
                     <div class="essay_buttons">
                       <button class="essay_listen_button" id="essay_listen_ugaki">
                         エッセイを聴く
-                        <svg width="10" height="21"><use href="#read-essay-icon"></use></svg>
+                        <svg width="10" height="21"><use href="#audible_play"></use></svg>
                       </button>
                       <button class="essay_read_button" id="read_hiko">
                         エッセイを読む
@@ -1648,7 +1640,11 @@
         <audio
           id="audible_ugaki"
           type="audio/mpeg"
-          src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/audio/tr-audible-ugaki.mp3"></audio>
+          src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/audio/audible-ugaki.mp3"></audio>
+        <audio
+          id="audible_ugaki"
+          type="audio/mpeg"
+          src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/audio/audible-dekami.mp3"></audio>
 
         <!-- define SVG icons -->
         <svg style="display: none">
@@ -1736,6 +1732,24 @@
           <symbol id="essay_close" viewBox="0 0 42 16" fill="none">
             <path d="M1 15.5L41 0.500001" style="stroke: currentColor; stroke-opacity: 1" stroke-width="2" />
             <path d="M1.81836 0.797363L40.1887 15.1862" style="stroke: currentColor; stroke-opacity: 1" stroke-width="2" />
+          </symbol>
+          <symbol id="audible_play" viewBox="0 0 32 32" fill="none">
+            <path
+              d="M16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 1C7.71573 1 1 7.71573 1 16C1 24.2843 7.71573 31 16 31Z"
+              stroke="currentColor"
+              stroke-miterlimit="10"
+              stroke-linejoin="round" />
+            <path
+              d="M13 10.5C13 9.88197 13.7056 9.52918 14.2 9.9L22.2 15.9C22.6 16.2 22.6 16.8 22.2 17.1L14.2 23.1C13.7056 23.4708 13 23.118 13 22.5V10.5Z"
+              fill="currentColor" />
+          </symbol>
+          <symbol id="audible_stop" viewBox="0 0 32 32" fill="none">
+            <path
+              d="M16 31C24.2843 31 31 24.2843 31 16C31 7.71573 24.2843 1 16 1C7.71573 1 1 7.71573 1 16C1 24.2843 7.71573 31 16 31Z"
+              stroke="currentColor"
+              stroke-miterlimit="10"
+              stroke-linejoin="round" />
+            <rect x="11" y="11" width="10" height="10" rx="0.75" fill="currentColor" />
           </symbol>
         </svg>
       </div>
