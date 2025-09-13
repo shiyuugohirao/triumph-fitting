@@ -624,6 +624,8 @@
         </style>
         <style id="202509_Essay_Card">
           .fitting .essay_card_wrapper {
+            display: flex;
+            flex-direction: column;
             gap: 40px;
           }
           .fitting .essay_card {
@@ -1147,62 +1149,25 @@
                 <p class="essay_title_sub">特別エッセイ</p>
               </div>
               <div class="essay_anchors">
-                <a href="#esssay_hiko" class="essay_anchors_item">
+                <a href="#card1" class="essay_anchors_item">
                   <svg width="45" height="35"><use href="#sharp1"></use></svg>
                 </a>
-                <a href="#esssay_horii" class="essay_anchors_item">
+                <a href="#card2" class="essay_anchors_item">
                   <svg width="45" height="35"><use href="#sharp2"></use></svg>
                 </a>
-                <a href="#esssay_dekami" class="essay_anchors_item">
+                <a href="#card3" class="essay_anchors_item">
                   <svg width="45" height="35"><use href="#sharp3"></use></svg>
                 </a>
-                <a href="#esssay_miyake" class="essay_anchors_item">
+                <a href="#card4" class="essay_anchors_item">
                   <svg width="45" height="35"><use href="#sharp4"></use></svg>
                 </a>
-                <a href="#esssay_ugaki" class="essay_anchors_item">
+                <a href="#card5" class="essay_anchors_item">
                   <svg width="45" height="35"><use href="#sharp5"></use></svg>
                 </a>
               </div>
               <div class="essayArea_box">
-                <div class="essay_card_wrapper">
-                  <div class="essay_card" id="esssay_hiko">
-                    <div class="essay_card_title">
-                      <svg><use href="#sharp1"></use></svg>
-                      <div class="essay_card_title_text">
-                        私は私のために
-                        <br />
-                        下着を選びたいと思う。
-                      </div>
-                    </div>
-                    <div class="essay_profile">
-                      <img
-                        class="essay_profile_img"
-                        src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/profile_hiko.webp"
-                        alt="ヒコ" />
-                      <div class="essay_profile_name">
-                        <p class="essay_profile_position">フィッティング体験者 / 執筆者</p>
-                        <div class="essay_profile_job_author">
-                          <p class="essay_profile_job">お笑い芸人</p>
-                          <p class="essay_profile_author">ヒコロヒー</p>
-                        </div>
-                      </div>
-                      <div class="essay_profile_text">
-                        2011年ピン芸人としてデビュー。独特の世界観とキャラクターで描く1人コントが人気で単独公演は毎回即完。
-                        バラエティ番組出演の他、ドラマ・映画出演、執筆やドラマ脚本、デザインまで幅広く活躍中。
-                      </div>
-                    </div>
-
-                    <div class="essay_buttons">
-                      <button class="essay_listen_button" id="essay_listen_ugaki">
-                        エッセイを聴く
-                        <svg width="10" height="21"><use href="#audible_play"></use></svg>
-                      </button>
-                      <button class="essay_read_button" id="read_hiko">
-                        エッセイを読む
-                        <svg width="10" height="21"><use href="#read-essay-icon"></use></svg>
-                      </button>
-                    </div>
-                  </div>
+                <div class="essay_card_wrapper" id="essay_cards_container">
+                  <!-- essay cards will be dynamically inserted here -->
                 </div>
               </div>
             </div>
@@ -1629,6 +1594,62 @@
               </div>
             </div>
           </dialog>
+
+          <dialog class="essay_dialog" id="dialog_ugaki">
+            <div class="essay_close_button">
+              <button autofocus>
+                CLOSE
+                <svg width="53" height="20"><use href="#essay_close"></use></svg>
+              </button>
+            </div>
+            <div class="essay_dialog_content">
+              <div class="essay_dialog_title">
+                <svg><use href="#sharp2"></use></svg>
+                <div class="essay_card_title_text">
+                  いつからだろう、
+                  <br />
+                  下着を楽しまなくなったのは。
+                </div>
+              </div>
+              <div class="essay_body">
+                いつからだろう、下着を楽しまなくなったのは。衣装に影響がでないようにとシンプルなものばかりを着用するようになった。胸について揶揄されるのを嫌って肉感的にならないすっきり見えるタイプのものばかりを選びだせば、かえってどんどん胸元が気になって猫背に。加えてコロナ禍ですべての習慣がリセットされたこともあり、もう何年も下着はネットで注文するようになっていた。
+                <br />
+                そうやって足が遠のいて以降、およそ３年ぶりに訪れた下着売り場は、繊細なレースと鮮やかな色彩に溢れていて眩しいくらい。コスメカウンターといい、下着売り場といい、女性用の売り場というのはどうしてこう多幸感に溢れているのだろう。己のために美しくありたいと願うことを臆面もなく全肯定してくれているようで、なんだか磁場がいい。その空気を浴びるだけで血流が良くなる気すらしてくる。
+                <br />
+                最初は久々の雰囲気におどおどしていた私も、スタッフさんに丁寧にヒアリングされ、自分の悩みや下着の好みについてとつとつと話している内に心がほぐされ本音がほろりとこぼれ出た。そうか、私やっぱり可愛い下着、ずっと欲しかったんだ。それも繊細なレースが散りばめられた、これでもかと意匠の凝らされたものを！
+                <br />
+                サイズを測った後、私の胸の形に合わせたものを提案してもらう。いつもなら手を伸ばさない柔らかな素材と深いカップのそれを半信半疑で身に着けると、軽い付け心地に思わず二度見。本当に着けてる？あの肩こりはどこ？？胸のトップの位置は、お腹に手を当てた時の肘と肩の間あたりにくるのがベストだそう。スタッフさんによって手際よくカップに肉が納められると、明らかに胸の高さが位置が上がり、かえってすっきりとしたラインに。胸が上がると口角が上がり目線も上がり、つられて気分まで上がってきた。
+                <br />
+                「この形も合うと思います」「この色はきっと肌に映えます」とスタッフさんが次から次へとおすすめを持ってくる。色やデザインで雰囲気ががらりと変わり、今まで身に着けたことのないボルドーや深い緑が自分の肌に合うことを知った。ああ、丁寧に作られた“可愛い”を身に着けていると気分がいい。素肌を見せるような有事があろうがなかろうが、普段他人に見せることのない内側に自分だけが知っているお洒落を忍ばせる、とはなんて贅沢な楽しみだろう。
+                <br />
+                靴下の中に忍ばせるフットネイルのように、一番上までボタンの閉められたシャツの隙間から輝く華奢なチェーンのように、スーツの下に纏われている艶やかな下着は、理不尽にまみれた社会への出陣に向けて己を守るための鎧。
+                <br />
+                例えば、あなたがネチネチと嫌味をぶつけている私は、今もんのすごくかわいい下着を付けていますので最強なんです。まあ、貴方が目にすることは生涯ありませんが、なんてね。
+                <br />
+                次に気になっているのはいままで手を伸ばしたことのなかったブラとセットのキャミソール。試着して以降、ずっとあの肌触りを夢見ている。ゆったりとしたニットの下に華やかな光沢の大人な下着を仕込んだらどれほど強くなれることだろう。おすすめしてくれたスタッフさん様様だ。ああ、次の休みまで、待てない。
+                <br />
+              </div>
+
+              <div class="essay_profile">
+                <img
+                  class="essay_profile_img"
+                  src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/profile_ugaki.webp"
+                  alt="ugaki" />
+                <div class="essay_profile_name">
+                  <p class="essay_profile_position">フィッティング体験者 / 執筆者</p>
+                  <div class="essay_profile_job_author">
+                    <p class="essay_profile_job">フリーアナウンサー・俳優</p>
+                    <p class="essay_profile_author">宇垣美里</p>
+                  </div>
+                </div>
+                <div class="essay_profile_text">
+                  1991年
+                  兵庫県出身。2019年3月にTBSを退社し、現在はドラマ出演やラジオパーソナリティーなどのほか執筆業も行うなど幅広く活躍している。
+                  週刊文春、女子SPA！などで漫画や映画のコラムを連載中。
+                </div>
+              </div>
+            </div>
+          </dialog>
         </article>
 
         <!-- audible -->
@@ -1750,6 +1771,38 @@
       </div>
     </div>
 
+    <!-- Essay Card Template -->
+    <template id="essay-card-template">
+      <div class="essay_card">
+        <div class="essay_card_title">
+          <svg><use></use></svg>
+          <div class="essay_card_title_text"></div>
+        </div>
+        <div class="essay_profile">
+          <img class="essay_profile_img" alt="" />
+          <div class="essay_profile_name">
+            <p class="essay_profile_position">フィッティング体験者 / 執筆者</p>
+            <div class="essay_profile_job_author">
+              <p class="essay_profile_job"></p>
+              <p class="essay_profile_author"></p>
+            </div>
+          </div>
+          <div class="essay_profile_text"></div>
+        </div>
+        <div class="essay_buttons">
+          <button class="essay_listen_button">
+            エッセイを聴く
+            <svg width="10" height="21"><use href="#audible_play"></use></svg>
+          </button>
+          <button class="essay_read_button">
+            エッセイを読む
+            <svg width="10" height="21"><use href="#read-essay-icon"></use></svg>
+          </button>
+        </div>
+        <audio class="essay_audible" type="audio/mpeg"></audio>
+      </div>
+    </template>
+
     <link rel="stylesheet" href="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting202408/assets/css/build.css" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin=""></script>
     <script type="text/javascript" src="https://jpn-ecommerce-s3.triumph.com/tr-about/js/jquery.inview.min.js"></script>
@@ -1800,6 +1853,89 @@
       }
     </script>
 
+    <!-- Essay Card Template Script -->
+    <script type="text/javascript" id="EssayCardTemplateScript">
+      const essayCardsData = [
+        {
+          id: "hiko",
+          titleText: "私は私のために<br />下着を選びたいと思う。",
+          profileJob: "お笑い芸人",
+          profileAuthor: "ヒコロヒー",
+          profileText:
+            "2011年ピン芸人としてデビュー。独特の世界観とキャラクターで描く1人コントが人気で単独公演は毎回即完。バラエティ番組出演の他、ドラマ・映画出演、執筆やドラマ脚本、デザインまで幅広く活躍中。",
+          listenButtonId: "essay_listen_hiko",
+          readButtonId: "read_hiko",
+        },
+        {
+          id: "ugaki",
+          titleText: "いつからだろう、<br />下着を楽しまなくなったのは。",
+          profileJob: "フリーアナウンサー・俳優 ",
+          profileAuthor: "宇垣美里",
+          profileText:
+            "1991年 兵庫県出身。2019年3月にTBSを退社し、現在はドラマ出演やラジオパーソナリティーなどのほか執筆業も行うなど幅広く活躍している。週刊文春、女子SPA！などで漫画や映画のコラムを連載中。",
+          listenButtonId: "essay_listen_ugaki",
+          readButtonId: "read_ugaki",
+        },
+        {
+          id: "dekami",
+          titleText: "自己肯定感、というワードが飛び交うようになってどれくらい経っただろうか。",
+          profileJob: "タレント",
+          profileAuthor: "でか美ちゃん",
+          profileText:
+            "多方面から評価される的確なコメント力を武器に、場所を選ばず大活躍。自身の楽曲の作詞作曲やライブ活動、楽曲提供、コラム執筆などジャンルやメディアにとらわれず活動中。",
+          listenButtonId: "essay_listen_dekami",
+          readButtonId: "read_dekami",
+        },
+      ];
+
+      function createEssayCard(data, index) {
+        const template = document.getElementById("essay-card-template");
+        const clone = template.content.cloneNode(true);
+
+        const cardElement = clone.querySelector(".essay_card");
+        cardElement.id = `card${index + 1}`;
+        const titleTextElement = clone.querySelector(".essay_card_title_text");
+        titleTextElement.innerHTML = data.titleText;
+        const sharpIconElement = clone.querySelector(".essay_card_title svg use");
+        sharpIconElement.setAttribute("href", data.sharpIcon);
+
+        const profileImgElement = clone.querySelector(".essay_profile_img");
+        profileImgElement.src = `https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/profile_${data.id}.webp`;
+        profileImgElement.alt = data.profileAuthor;
+        const profileJobElement = clone.querySelector(".essay_profile_job");
+        profileJobElement.textContent = data.profileJob;
+        const profileAuthorElement = clone.querySelector(".essay_profile_author");
+        profileAuthorElement.textContent = data.profileAuthor;
+        const profileTextElement = clone.querySelector(".essay_profile_text");
+        profileTextElement.textContent = data.profileText;
+        const listenButtonElement = clone.querySelector(".essay_listen_button");
+        listenButtonElement.id = `listen_${data.id}`;
+        const readButtonElement = clone.querySelector(".essay_read_button");
+        readButtonElement.id = `read_${data.id}`;
+        const audibleElement = clone.querySelector(".essay_audible");
+        audibleElement.src = `https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/audio/audible_${data.id}.mp3`;
+        audibleElement.id = `audible_${data.id}`;
+        return clone;
+      }
+
+      // Render essay cards
+      function renderEssayCards() {
+        const container = document.getElementById("essay_cards_container");
+        if (container) {
+          // Clear existing content
+          container.innerHTML = "";
+          // Create and append each essay card
+          essayCardsData.forEach((data, index) => {
+            data.sharpIcon = `#sharp${index + 1}`;
+            const cardElement = createEssayCard(data, index);
+            container.appendChild(cardElement);
+          });
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", renderEssayCards);
+    </script>
+
     <!-- Additional Scripts - 202509 -->
     <script type="text/javascript" id="KV_SlideshowScript">
       let currentSlide = 0;
@@ -1815,7 +1951,7 @@
         currentSlide = index;
         slides[currentSlide].classList.add("active");
         dots[currentSlide].classList.add("active");
-        slideNumber.textContent = currentSlide + 1;
+        // slideNumber.textContent = currentSlide + 1;
       }
       function nextSlide() {
         const nextIndex = (currentSlide + 1) % totalSlides;
