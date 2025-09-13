@@ -603,6 +603,7 @@
 
           /* Essay Section */
           .fitting .essay {
+            color: var(--tr-red);
             background-color: var(--tr-gray);
             font-family: "Shippori Mincho";
             padding: 144px 15%;
@@ -676,6 +677,21 @@
             margin: 0 32px;
             padding-top: 10px;
           }
+          .fitting .essay_dialog_title {
+            font-size: 2rem;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 32px;
+            line-height: 140%;
+            gap: 32px;
+            letter-spacing: -1.9px;
+          }
+          .fitting .essay_dialog_title svg {
+            width: 80px;
+            height: 55px;
+            flex-shrink: 0;
+            padding-top: 10px;
+          }
           .fitting .essay_card_button {
             display: flex;
             justify-content: flex-end;
@@ -698,11 +714,12 @@
           }
 
           .fitting .essay_profile {
-            gap: 16px;
+            column-gap: 16px;
+            row-gap: 16px;
             margin-bottom: 0;
             display: grid;
             grid-template-columns: 130px 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: auto 1fr;
             grid-template-areas:
               "essay_profile essay_profile_name"
               "essay_profile essay_profile_text";
@@ -725,7 +742,6 @@
           }
           .fitting .essay_profile_job_author {
             display: flex;
-            align-items: flex-end;
             flex-direction: row;
             text-align: left;
             vertical-align: middle;
@@ -778,20 +794,13 @@
             opacity: 0.7;
           }
 
-          .fitting .essay dialog {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
+          html:has(dialog[open]) {
+            overflow: hidden; /* prevent scroll when dialog is open */
           }
 
           .fitting .essay_dialog {
+            font-family: "Shippori Mincho", serif;
+            color: var(--tr-red);
             position: fixed;
             top: 0;
             left: 0;
@@ -835,19 +844,8 @@
             }
           }
 
-          .fitting .essay_dialog p {
-            font-family: "Shippori Mincho", serif;
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--tr-red);
-            margin: 0 0 16px 0;
-          }
-
-          .fitting .essay_dialog p:last-child {
-            margin-bottom: 0;
-          }
-
           .fitting .essay_close_button {
+            color: var(--tr-red);
             position: fixed;
             top: 20px;
             right: 20px;
@@ -859,7 +857,6 @@
             display: flex;
             align-items: center;
             gap: 17px;
-            color: var(--tr-red);
             border: none;
             background: transparent;
             font-size: 24px;
@@ -884,33 +881,15 @@
             position: relative;
           }
 
-          .fitting .essay_dialog_title {
-            color: var(--tr-red);
-            margin-bottom: 40px;
-          }
-          .fitting .essay_dialog_title .essay_number {
-            color: var(--tr-red);
-            font-size: 24px;
-            font-weight: 700;
-            margin-right: 8px;
-          }
-          .fitting .essay_dialog_title h1 {
-            font-size: 32px;
-            font-weight: 700;
-            line-height: 1.4;
-            margin: 0;
-            display: inline;
-          }
-
           .fitting .essay_body {
+            font-family: "Shippori Mincho", serif;
+            color: var(--tr-red);
             margin-bottom: 60px;
           }
 
           .fitting .essay_body p {
-            font-family: "Shippori Mincho", serif;
             font-size: 16px;
             line-height: 1.8;
-            color: var(--tr-red);
             margin: 0 0 24px 0;
           }
 
@@ -923,13 +902,11 @@
             align-items: flex-start;
             gap: 20px;
             padding-top: 40px;
-            border-top: 1px solid #e0e0e0;
           }
 
           .fitting .essay_profile_image {
             flex-shrink: 0;
           }
-
           .fitting .essay_profile_image img {
             width: 80px;
             height: 80px;
@@ -937,33 +914,19 @@
             object-fit: cover;
           }
 
-          .fitting .essay_profile_info {
-            flex: 1;
-          }
-
           .fitting .essay_profile_position {
             font-size: 14px;
-            color: var(--tr-red);
             margin: 0 0 8px 0;
           }
 
           .fitting .essay_profile_job {
             font-size: 16px;
-            color: var(--tr-red);
             margin: 0 0 4px 0;
-          }
-
-          .fitting .essay_profile_author {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--tr-red);
-            margin: 0 0 16px 0;
           }
 
           .fitting .essay_profile_text {
             font-size: 14px;
             line-height: 1.6;
-            color: var(--tr-red);
             margin: 0;
           }
 
@@ -983,7 +946,6 @@
               gap: 24px;
             }
             .fitting .essay_card {
-              background-color: var(--tr-white);
               padding: 30px;
             }
 
@@ -993,11 +955,22 @@
               margin-bottom: 16px;
             }
             .fitting .essay_card_title svg {
-              color: var(--tr-red);
               width: 26px;
               height: 20px;
               flex-shrink: 0;
               margin: 0;
+              padding-top: 0px;
+            }
+            .fitting .essay_dialog_title {
+              flex-direction: column;
+              align-items: flex-start;
+              margin-bottom: 24px;
+              gap: 8px;
+            }
+            .fitting .essay_dialog_title svg {
+              width: 26px;
+              height: 20px;
+              flex-shrink: 0;
               padding-top: 0px;
             }
 
@@ -1008,11 +981,12 @@
             }
 
             .fitting .essay_profile {
-              gap: 8px;
+              column-gap: 8px;
+              row-gap: 4px;
               margin-bottom: 0;
               display: grid;
               grid-template-columns: 60px 1fr;
-              grid-template-rows: 1fr 1fr;
+              grid-template-rows: auto 1fr;
               grid-template-areas:
                 "essay_profile essay_profile_name"
                 "essay_profile_text essay_profile_text";
@@ -1040,10 +1014,14 @@
               line-height: 100%;
             }
             .fitting .essay_profile_text {
-              font-size: 13px;
-              /* line-height: 100%; */
+              font-size: 12px;
+              line-height: 140%;
             }
-
+            .fitting .essay_buttons {
+              flex-direction: column;
+              align-items: flex-end;
+              gap: 0px;
+            }
             .fitting .essay_buttons button {
               font-size: 15px;
               line-height: 100%;
@@ -1065,14 +1043,6 @@
               max-width: none;
             }
 
-            .fitting .essay_dialog_title h1 {
-              font-size: 24px;
-            }
-
-            .fitting .essay_dialog_title .essay_number {
-              font-size: 20px;
-            }
-
             .fitting .essay_body p {
               font-size: 14px;
               line-height: 1.7;
@@ -1090,15 +1060,10 @@
               height: 60px;
             }
 
-            .fitting .essay_profile_author {
-              font-size: 18px;
-            }
-
             .fitting .essay_close_button {
               top: 15px;
               right: 15px;
             }
-
             .fitting .essay_close_button button {
               font-size: 16px;
               gap: 12px;
@@ -1240,51 +1205,11 @@
                         </div>
                       </div>
                       <div class="essay_profile_text">
-                        プロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキスト
+                        2011年ピン芸人としてデビュー。独特の世界観とキャラクターで描く1人コントが人気で単独公演は毎回即完。
+                        バラエティ番組出演の他、ドラマ・映画出演、執筆やドラマ脚本、デザインまで幅広く活躍中。
                       </div>
                     </div>
-                    <dialog class="essay_dialog" id="dialog_hiko">
-                      <div class="essay_close_button">
-                        <button autofocus>
-                          CLOSE
-                          <svg width="53" height="20"><use href="#essay_close"></use></svg>
-                        </button>
-                      </div>
-                      <div class="essay_dialog_content">
-                        <div class="essay_dialog_title">
-                          <span class="essay_number">#1</span>
-                          <h1>
-                            私は私のために
-                            <br />
-                            下着を選びたいと思う。
-                          </h1>
-                        </div>
-                        <div class="essay_body">
-                          <p>
-                            あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青い空の下で、私は私のために下着を選びたいと思う。その当時の誰もが羨む、青春と呼ぶべきものだった。
-                          </p>
-                          <p>
-                            トリンプの店舗を訪れた時、スタッフの方々は私の体型や好みを丁寧に聞いてくださった。ワイヤレスブラやガードルなど、様々な種類の下着を試着させていただき、自分に合ったものを選ぶことができた。
-                          </p>
-                          <p>
-                            外見や他人の目を気にするのではなく、自分の快適さと心地よさを最優先に考えて下着を選ぶことの大切さを学んだ。それは自分自身を大切にすることでもある。
-                          </p>
-                        </div>
-                        <div class="essay_dialog_profile">
-                          <div class="essay_profile_image">
-                            <img src="https://via.placeholder.com/80x80/cccccc/666666?text=H" alt="ヒコロヒー" />
-                          </div>
-                          <div class="essay_profile_info">
-                            <p class="essay_profile_position">フィッティング体験者/執筆者</p>
-                            <p class="essay_profile_job">お笑い芸人</p>
-                            <p class="essay_profile_author">ヒコロヒー</p>
-                            <p class="essay_profile_text">
-                              プロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキストプロフィールテキスト
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </dialog>
+
                     <div class="essay_buttons">
                       <button class="essay_listen_button" id="essay_listen_ugaki">
                         エッセイを聴く
@@ -1668,6 +1593,55 @@
               </div>
             </div>
           </section>
+
+          <!-- dialog -->
+          <dialog class="essay_dialog" id="dialog_hiko">
+            <div class="essay_close_button">
+              <button autofocus>
+                CLOSE
+                <svg width="53" height="20"><use href="#essay_close"></use></svg>
+              </button>
+            </div>
+            <div class="essay_dialog_content">
+              <div class="essay_dialog_title">
+                <svg><use href="#sharp1"></use></svg>
+                <div class="essay_card_title_text">
+                  私は私のために
+                  <br />
+                  下着を選びたいと思う。
+                </div>
+              </div>
+              <div class="essay_body">
+                <p>
+                  あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青い空の下で、私は私のために下着を選びたいと思う。その当時の誰もが羨む、青春と呼ぶべきものだった。
+                </p>
+                <p>
+                  トリンプの店舗を訪れた時、スタッフの方々は私の体型や好みを丁寧に聞いてくださった。ワイヤレスブラやガードルなど、様々な種類の下着を試着させていただき、自分に合ったものを選ぶことができた。
+                </p>
+                <p>
+                  外見や他人の目を気にするのではなく、自分の快適さと心地よさを最優先に考えて下着を選ぶことの大切さを学んだ。それは自分自身を大切にすることでもある。
+                </p>
+              </div>
+
+              <div class="essay_profile">
+                <img
+                  class="essay_profile_img"
+                  src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/profile_hiko.webp"
+                  alt="ヒコ" />
+                <div class="essay_profile_name">
+                  <p class="essay_profile_position">フィッティング体験者 / 執筆者</p>
+                  <div class="essay_profile_job_author">
+                    <p class="essay_profile_job">お笑い芸人</p>
+                    <p class="essay_profile_author">ヒコロヒー</p>
+                  </div>
+                </div>
+                <div class="essay_profile_text">
+                  2011年ピン芸人としてデビュー。独特の世界観とキャラクターで描く1人コントが人気で単独公演は毎回即完。
+                  バラエティ番組出演の他、ドラマ・映画出演、執筆やドラマ脚本、デザインまで幅広く活躍中。
+                </div>
+              </div>
+            </div>
+          </dialog>
         </article>
 
         <!-- audible -->
