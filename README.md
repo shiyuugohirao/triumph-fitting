@@ -21,7 +21,10 @@
 
 2. `update_dev2triumph.sh` を実行して、`dev.html` から body 要素のみを抜き出した本番コピペ用の `triumph-fitting-data.html` が更新される。
 
-3. Salesforce にて、triumph-fitting-data.html の内容をコピペ。
+3. Salesforce にて、`triumph-fitting-data.html` の内容をコピペ。
+
+- Salesforce アカウントは TH 佐々木経由で発行してもらった。
+- 詳細情報は[Notion の開発メモ](https://www.notion.so/aiddcc/triumph-2025-265fcbc77fb2809b895ad4c5f63f1b7d)に記載。
 
 - ※ LiveServer でプレビューしたい。が、html 要素として最低限の記述がないと、LiveServer では Javascript が正しく読み込まれなかった。
 
