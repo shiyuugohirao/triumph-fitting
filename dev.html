@@ -283,30 +283,30 @@
             justify-content: center;
             height: 100%;
             text-decoration: none;
-            padding: 30px;
-          }
-          .fitting .flowtingLink {
+            padding: 3vh 0;
             color: var(--tr-red);
             background-color: var(--tr-white);
-            stroke: var(--tr-red);
           }
           .fitting .flowtingLink:hover {
             color: var(--tr-white);
             background-color: var(--tr-red);
-            stroke: var(--tr-white);
+            opacity: 1;
           }
           .fitting .flowtingText {
             font-family: "Noto Sans JP";
-            font-size: 18px;
+            /* font-size: 18px; */
+            font-size: min(1.5vh, 18px);
             text-align: center;
             font-style: normal;
             font-weight: 700;
             line-height: 120%;
             writing-mode: vertical-rl;
-            text-orientation: upright;
+            text-align: left;
             letter-spacing: 0.1em;
             margin-bottom: 16px;
-            text-align: center;
+          }
+          .fitting .flowtingText span {
+            font-size: min(1.5vh, 18px);
           }
           .fitting .flowtingArea_section_store {
             order: 1;
@@ -409,6 +409,12 @@
               white-space: nowrap;
               display: inline-flex;
               align-items: center;
+            }
+            .fitting .flowtingText span {
+              font-size: 14px;
+            }
+            .fitting .flowtingText .br_pc {
+              display: none;
             }
             .fitting .flowtingText:hover {
               color: var(--tr-white);
@@ -1539,7 +1545,13 @@
                 </div>
                 <div class="flowtingArea_section flowtingArea_section_online">
                   <a href="#" class="flowtingLink">
-                    <div class="flowtingText">オンラインで商品購入</div>
+                    <div class="flowtingText">
+                      <p style="font-size: 0">
+                        <span>オンラインで</span>
+                        <br class="br_pc" />
+                        <span>商品購入</span>
+                      </p>
+                    </div>
                     <svg width="12" height="12">
                       <use href="#external-link-icon"></use>
                     </svg>
