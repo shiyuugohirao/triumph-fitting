@@ -250,7 +250,7 @@
             top: 50%;
             transform: translateY(-50%);
             z-index: 1000;
-            width: 80px;
+            width: 72px;
             border: 2px solid var(--tr-red);
           }
           .fitting .flowtingArea_inner {
@@ -262,17 +262,18 @@
             flex: 1;
             background-color: var(--tr-white);
             position: relative;
+            width: 100%;
           }
           .fitting .flowtingArea_section_store {
-            order: 1;
+            /* order: 1; */
             border-bottom: 2px solid var(--tr-red);
           }
           .fitting .flowtingArea_section_reservation {
-            order: 2;
+            /* order: 2; */
             border-bottom: 2px solid var(--tr-red);
           }
           .fitting .flowtingArea_section_online {
-            order: 3;
+            /* order: 3; */
             border-bottom: none;
           }
 
@@ -306,9 +307,10 @@
             margin-bottom: 16px;
           }
           .fitting .flowtingText span {
+            vertical-align: middle;
             font-size: min(1.5vh, 18px);
           }
-          .fitting .flowtingArea_section_store {
+          /* .fitting .flowtingArea_section_store {
             order: 1;
           }
           .fitting .flowtingArea_bottom {
@@ -319,7 +321,7 @@
           }
           .fitting .flowtingArea_bottom .flowtingArea_section_online {
             order: 2;
-          }
+          } */
           @media screen and (max-width: 768px) {
             .fitting .flowtingArea {
               position: fixed;
@@ -355,20 +357,21 @@
             .fitting .flowtingArea_bottom .flowtingArea_section {
               flex: 1;
               height: 60px;
+              width: 50%;
             }
-            .fitting .flowtingArea_section_store {
-              order: 1;
+            /* .fitting .flowtingArea_section_store {
+              order: 1; 
             }
             .fitting .flowtingArea_bottom {
-              order: 2;
-            }
+              order: 2; 
+            } */
             .fitting .flowtingArea_bottom .flowtingArea_section_online {
-              order: 1;
-              border-right: 2px solid var(--tr-red);
+              /* order: 1; */
               border-bottom: none;
             }
             .fitting .flowtingArea_bottom .flowtingArea_section_reservation {
-              order: 2;
+              /* order: 2; */
+              border-right: 2px solid var(--tr-red);
               border-bottom: none;
             }
             .fitting .flowtingLink {
@@ -395,6 +398,8 @@
               margin-left: 8px;
               width: 12px;
               height: 12px;
+              min-width: 12px;
+              min-height: 12px;
             }
             .fitting .flowtingText {
               font-family: "Noto Sans";
