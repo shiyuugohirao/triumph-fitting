@@ -266,7 +266,7 @@
         line-height: 140%;
       }
 
-      .fitting .statement .linkArea {
+      .fitting .linkArea {
         font-family: "Noto Sans";
         width: 100%;
         text-align: center;
@@ -276,7 +276,7 @@
         display: flex;
         flex-direction: column;
       }
-      .fitting .statement .linkAreaTop {
+      .fitting .linkAreaTop {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -284,7 +284,7 @@
         gap: 20px;
         margin-bottom: 56px;
       }
-      .fitting .statement .linkAreaBottom {
+      .fitting .linkAreaBottom {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -292,14 +292,14 @@
         gap: 20px;
         margin-bottom: 56px;
       }
-      .fitting .statement .linkArea div {
+      .fitting .linkArea div {
         width: 100%;
       }
-      .fitting .statement .linkArea p {
+      .fitting .linkArea p {
         font-size: 22px;
         margin-bottom: 24px;
       }
-      .fitting .statement .linkArea button {
+      .fitting .linkArea button {
         width: 100%;
         background-color: var(--tr-red);
         color: var(--tr-white);
@@ -310,11 +310,11 @@
         box-sizing: border-box;
         transition: all 0.3s ease;
       }
-      .fitting .statement .linkArea button:hover {
+      .fitting .linkArea button:hover {
         background-color: var(--tr-white);
         color: var(--tr-red);
       }
-      .fitting .statement .linkArea .description {
+      .fitting .linkArea .description {
         font-weight: 500;
         text-align: right;
         font-size: 16px;
@@ -340,31 +340,49 @@
           display: block;
         }
 
-        .fitting .statement .linkArea p {
+        .fitting .linkArea p {
           font-size: 15px;
           margin-bottom: 16px;
         }
-        .fitting .statement .linkArea button {
+        .fitting .linkArea button {
           font-family: "Noto Sans";
           font-size: 15px;
           padding: 22px 0;
         }
 
-        .fitting .statement .linkAreaTop {
+        .fitting .linkAreaTop {
           flex-direction: column;
           gap: 32px;
           margin-bottom: 32px;
         }
-        .fitting .statement .linkAreaBottom {
+        .fitting .linkAreaBottom {
           flex-direction: column;
           gap: 8px;
           margin-bottom: 16px;
         }
-        .fitting .statement .linkArea .description {
+        .fitting .linkArea .description {
           font-weight: 500;
           text-align: left;
           font-size: 12px;
           line-height: 140%;
+        }
+      }
+    </style>
+    <style id="202509_Links_Footer">
+      .fitting .links_footer {
+        background-color: var(--tr-white);
+        color: var(--tr-red);
+        display: flex;
+        padding: 144px 15%;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        z-index: 10;
+        position: relative;
+      }
+      @media screen and (max-width: 768px) {
+        .fitting .links_footer {
+          padding: 80px 7%;
         }
       }
     </style>
@@ -430,7 +448,8 @@
       }
       .fitting .flowtingText span {
         vertical-align: middle;
-        font-size: min(1.5vh, 18px);
+        font-size: 18px;
+        /* font-size: min(1.5vh, 18px); */
       }
       @media screen and (max-width: 768px) {
         .fitting .flowtingArea {
@@ -616,6 +635,15 @@
         flex-direction: column;
         align-items: flex-start;
         align-self: stretch;
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+      .fitting .essay_card.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
       .fitting .essay_card_title {
         font-size: 2rem;
@@ -1499,6 +1527,30 @@
         </section>
       </section>
 
+      <section class="links_footer">
+        <div class="linkArea">
+          <div class="linkAreaTop">
+            <div>
+              <p>お店で試着</p>
+              <button>全国店舗一覧</button>
+            </div>
+            <div>
+              <p>今すぐ購入</p>
+              <button>オンラインショップ</button>
+            </div>
+          </div>
+          <div>
+            <p>試着できる日時を予約する</p>
+            <div class="linkAreaBottom">
+              <button>百貨店・トリンプショップ</button>
+              <button>チェーンストア</button>
+              <button>AMOSTYLE</button>
+            </div>
+          </div>
+          <p class="description">※ 試着室に空きがある場合は、当日店舗にてご予約なしでもご試着いただけます。</p>
+        </div>
+      </section>
+
       <section class="flowtingArea">
         <div class="flowtingArea_inner">
           <div class="flowtingArea_section flowtingArea_section_store">
@@ -2046,10 +2098,35 @@
     });
   }
 
+  function setupEssayCardAnimation() {
+    const essayCards = document.querySelectorAll(".essay_card");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            // 一度表示されたら監視を停止
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.4, // 要素の10%が表示されたら発火
+        rootMargin: "0px 0px -50px 0px", // 下から50px手前で発火
+      }
+    );
+
+    essayCards.forEach(card => {
+      observer.observe(card);
+    });
+  }
+
   function setup() {
     renderEssay();
     setupAudioControls();
     setupReadButton();
+    setupEssayCardAnimation();
   }
 
   document.addEventListener("DOMContentLoaded", setup);
