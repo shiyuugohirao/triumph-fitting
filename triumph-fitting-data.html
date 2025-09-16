@@ -53,7 +53,27 @@
         --tr-gray: #e9e9e6;
         --tr-black: #333;
         background-color: var(--tr-white);
-        overflow-x: initial;
+        overflow-x: unset;
+      }
+      html {
+        scroll-behavior: smooth;
+        /* scroll-padding-top: 80px; */
+      }
+    </style>
+    <style id="202509_Copy">
+      .fitting .copy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        background-color: var(--tr-red);
+        padding: 40px 0;
+      }
+      @media screen and (max-width: 768px) {
+        .fitting .copy {
+          padding: 20px 0;
+        }
       }
     </style>
     <style id="202509_KV">
@@ -138,108 +158,211 @@
         }
       }
     </style>
-    <style id="202509_Copy">
-      .fitting .copy {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        width: 100%;
-        background-color: var(--tr-red);
-        padding: 40px 0;
-      }
-      @media screen and (max-width: 768px) {
-        .fitting .copy {
-          padding: 20px 0;
-        }
-      }
-    </style>
-    <style id="202509_Statement">
-      .fitting .statement {
-        display: inline-flex;
-        padding: 144px 0;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        width: 100%;
-        background-color: var(--tr-red);
 
-        margin-bottom: 0;
-      }
-      .fitting .statement .statementArea {
+    <style id="202509_AnchorLinks">
+      .fitting .anchorLinks {
+        font-family: "Shippori Mincho";
         position: relative;
+        width: 100%;
+        background-color: var(--tr-gray);
+        padding: 40px 0 54px 0;
+      }
+      .fitting .anchorLinks_wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
         width: 100%;
         max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 15%;
-        text-align: center;
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 144px;
-      }
-      .fitting .statement .copy_statement {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         gap: 104px;
       }
-      .fitting .statement .copy_statement .copyText {
-        width: 100%;
-        height: 100%;
-      }
-
-      .fitting .statement .statementLinks {
-        color: var(--tr-white);
-        width: 100%;
-        text-align: center;
-        font-family: "Shippori Mincho";
-        font-size: 38px;
-        font-style: normal;
+      .fitting .anchorLinks .anchorLink {
+        color: var(--tr-red);
+        font-size: 2.375rem;
         font-weight: 500;
-
+        line-height: 140%;
         letter-spacing: -1.9px;
-      }
-      .fitting .statement .statementLink {
-        color: white;
-        text-decoration: none;
-        font-size: 1.1rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
         display: inline-flex;
         align-items: center;
-        gap: 10px;
-        padding-bottom: 5px;
-
-        padding: 4px 0;
-        align-items: center;
-        gap: 8px;
-        border-bottom: 1px solid var(--tr-white);
+        gap: 16px;
+        border-bottom: 1px solid var(--tr-red);
+      }
+      .fitting .anchorLinks .anchorLink svg {
         fill: transparent;
-        transition: all 0.3s ease;
+        stroke-width: 2px;
+        width: 10px;
+        height: 21px;
       }
 
       @media screen and (max-width: 768px) {
-        .fitting .statement {
-          padding: 40px 0;
+        .fitting .anchorLinks {
+          padding: 20px 10px 25px 10px;
         }
-        .fitting .statement h1 {
-          font-size: 2rem;
-          margin-bottom: 60px;
+        .fitting .anchorLinks_wrapper {
+          gap: 16px;
+          flex-direction: column;
         }
-        .fitting .statement .statementColumns {
-          gap: 15px;
+        .fitting .anchorLinks .anchorLink {
+          font-size: 1.25rem;
+          width: min(190px, 100%);
+          letter-spacing: 0px;
+          gap: 0;
+          justify-content: space-between;
         }
-        .fitting .statement .statementColumn {
-          font-size: 1rem;
-          min-height: 150px;
-        }
-        .fitting .statement .statementLinks {
-          gap: 20px;
+        .fitting .anchorLinks .anchorLink svg {
+          stroke-width: 1.5px;
+          width: 5px;
+          height: 11px;
         }
       }
     </style>
+
+    <style id="202509_Statement">
+      .fitting .statement {
+        font-family: "Shippori Mincho";
+        background-color: var(--tr-white);
+        color: var(--tr-red);
+        display: flex;
+        padding: 144px 15%;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 144px;
+      }
+      .fitting .statement .statementArea {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        font-style: normal;
+        white-space: nowrap;
+        font-weight: 500;
+        gap: 64px;
+      }
+      .fitting .statement .statementArea h2 {
+        font-family: "Shippori Mincho";
+        font-size: 0px;
+        line-height: 140%;
+      }
+      .fitting .statement .statementArea h3 {
+        font-family: "Shippori Mincho";
+        font-size: 32px;
+        line-height: 200%;
+      }
+      .fitting .statement .statementArea .br_sp {
+        display: none;
+      }
+      .fitting .statement .statementArea span {
+        font-size: 55px;
+        line-height: 140%;
+      }
+
+      .fitting .statement .linkArea {
+        font-family: "Noto Sans";
+        width: 100%;
+        text-align: center;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .fitting .statement .linkAreaTop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 56px;
+      }
+      .fitting .statement .linkAreaBottom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 56px;
+      }
+      .fitting .statement .linkArea div {
+        width: 100%;
+      }
+      .fitting .statement .linkArea p {
+        font-size: 22px;
+        margin-bottom: 24px;
+      }
+      .fitting .statement .linkArea button {
+        width: 100%;
+        background-color: var(--tr-red);
+        color: var(--tr-white);
+        font-size: min(1.5vw, 20px);
+        padding: 30px 0;
+        white-space: nowrap;
+        border: var(--tr-red) 2px solid;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+      }
+      .fitting .statement .linkArea button:hover {
+        background-color: var(--tr-white);
+        color: var(--tr-red);
+      }
+      .fitting .statement .linkArea .description {
+        font-weight: 500;
+        text-align: right;
+        font-size: 16px;
+      }
+      @media screen and (max-width: 768px) {
+        .fitting .statement {
+          padding: 80px 7%;
+          gap: 80px;
+        }
+        .fitting .statement .statementArea {
+          gap: 24px;
+        }
+        .fitting .statement .statementArea h2 {
+          font-size: 24px;
+        }
+        .fitting .statement .statementArea span {
+          font-size: 24px;
+        }
+        .fitting .statement .statementArea h3 {
+          font-size: 16px;
+        }
+        .fitting .statement .statementArea .br_sp {
+          display: block;
+        }
+
+        .fitting .statement .linkArea p {
+          font-size: 15px;
+          margin-bottom: 16px;
+        }
+        .fitting .statement .linkArea button {
+          font-family: "Noto Sans";
+          font-size: 15px;
+          padding: 22px 0;
+        }
+
+        .fitting .statement .linkAreaTop {
+          flex-direction: column;
+          gap: 32px;
+          margin-bottom: 32px;
+        }
+        .fitting .statement .linkAreaBottom {
+          flex-direction: column;
+          gap: 8px;
+          margin-bottom: 16px;
+        }
+        .fitting .statement .linkArea .description {
+          font-weight: 500;
+          text-align: left;
+          font-size: 12px;
+          line-height: 140%;
+        }
+      }
+    </style>
+
     <style id="202509_Flowting">
       .fitting .flowtingArea {
         position: fixed;
@@ -247,7 +370,7 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 1000;
-        width: 80px;
+        width: 72px;
         border: 2px solid var(--tr-red);
       }
       .fitting .flowtingArea_inner {
@@ -259,17 +382,18 @@
         flex: 1;
         background-color: var(--tr-white);
         position: relative;
+        width: 100%;
       }
       .fitting .flowtingArea_section_store {
-        order: 1;
+        /* order: 1; */
         border-bottom: 2px solid var(--tr-red);
       }
       .fitting .flowtingArea_section_reservation {
-        order: 2;
+        /* order: 2; */
         border-bottom: 2px solid var(--tr-red);
       }
       .fitting .flowtingArea_section_online {
-        order: 3;
+        /* order: 3; */
         border-bottom: none;
       }
 
@@ -280,43 +404,44 @@
         justify-content: center;
         height: 100%;
         text-decoration: none;
-        padding: 30px;
-      }
-      .fitting .flowtingLink {
+        padding: 3vh 0;
         color: var(--tr-red);
         background-color: var(--tr-white);
-        stroke: var(--tr-red);
       }
       .fitting .flowtingLink:hover {
         color: var(--tr-white);
         background-color: var(--tr-red);
-        stroke: var(--tr-white);
+        opacity: 1;
       }
       .fitting .flowtingText {
         font-family: "Noto Sans JP";
-        font-size: 18px;
+        /* font-size: 18px; */
+        font-size: min(1.5vh, 18px);
         text-align: center;
         font-style: normal;
         font-weight: 700;
         line-height: 120%;
         writing-mode: vertical-rl;
-        text-orientation: upright;
+        text-align: left;
         letter-spacing: 0.1em;
         margin-bottom: 16px;
-        text-align: center;
       }
-      .fitting .flowtingArea_section_store {
-        order: 1;
+      .fitting .flowtingText span {
+        vertical-align: middle;
+        font-size: min(1.5vh, 18px);
       }
-      .fitting .flowtingArea_bottom {
-        order: 2;
-      }
-      .fitting .flowtingArea_bottom .flowtingArea_section_reservation {
-        order: 1;
-      }
-      .fitting .flowtingArea_bottom .flowtingArea_section_online {
-        order: 2;
-      }
+      /* .fitting .flowtingArea_section_store {
+            order: 1;
+          }
+          .fitting .flowtingArea_bottom {
+            order: 2;
+          }
+          .fitting .flowtingArea_bottom .flowtingArea_section_reservation {
+            order: 1;
+          }
+          .fitting .flowtingArea_bottom .flowtingArea_section_online {
+            order: 2;
+          } */
       @media screen and (max-width: 768px) {
         .fitting .flowtingArea {
           position: fixed;
@@ -352,20 +477,21 @@
         .fitting .flowtingArea_bottom .flowtingArea_section {
           flex: 1;
           height: 60px;
+          width: 50%;
         }
-        .fitting .flowtingArea_section_store {
-          order: 1;
-        }
-        .fitting .flowtingArea_bottom {
-          order: 2;
-        }
+        /* .fitting .flowtingArea_section_store {
+              order: 1; 
+            }
+            .fitting .flowtingArea_bottom {
+              order: 2; 
+            } */
         .fitting .flowtingArea_bottom .flowtingArea_section_online {
-          order: 1;
-          border-right: 2px solid var(--tr-red);
+          /* order: 1; */
           border-bottom: none;
         }
         .fitting .flowtingArea_bottom .flowtingArea_section_reservation {
-          order: 2;
+          /* order: 2; */
+          border-right: 2px solid var(--tr-red);
           border-bottom: none;
         }
         .fitting .flowtingLink {
@@ -373,7 +499,7 @@
           flex-direction: row;
           align-items: center;
           justify-content: center;
-          padding: 15px 50px;
+          padding: 20px 0px;
           height: 100%;
           text-decoration: none;
           transition: background-color 0.3s ease;
@@ -392,6 +518,8 @@
           margin-left: 8px;
           width: 12px;
           height: 12px;
+          min-width: 12px;
+          min-height: 12px;
         }
         .fitting .flowtingText {
           font-family: "Noto Sans";
@@ -407,147 +535,14 @@
           display: inline-flex;
           align-items: center;
         }
+        .fitting .flowtingText span {
+          font-size: 14px;
+        }
+        .fitting .flowtingText .br_pc {
+          display: none;
+        }
         .fitting .flowtingText:hover {
           color: var(--tr-white);
-        }
-      }
-    </style>
-    <style id="202509_Link">
-      .fitting .link {
-        position: relative;
-        width: 100%;
-        background-color: var(--tr-white);
-        padding: 80px 0;
-        margin-bottom: 0;
-      }
-
-      .fitting .link .linkArea {
-        position: relative;
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        text-align: center;
-      }
-
-      .fitting .link h2 {
-        color: var(--tr-red);
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 40px;
-        font-family: "Shippori Mincho", serif;
-      }
-
-      .fitting .link .linkGroup {
-        margin-bottom: 60px;
-      }
-
-      .fitting .link .linkGroup h3 {
-        color: var(--tr-red);
-        font-size: 1.8rem;
-        margin-bottom: 30px;
-        font-weight: bold;
-      }
-
-      .fitting .link .linkButtons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-
-      .fitting .link .linkButton {
-        display: inline-block;
-        width: 200px;
-        height: 60px;
-        border: 2px solid var(--tr-red);
-        background-color: white;
-        color: var(--tr-black);
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        border-radius: 4px;
-      }
-
-      .fitting .link .linkButton:hover {
-        background-color: var(--tr-red);
-        color: white;
-      }
-
-      .fitting .link .brandButton {
-        display: inline-block;
-        width: 200px;
-        height: 60px;
-        border: 2px solid var(--tr-red);
-        background-color: white;
-        color: var(--tr-black);
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        border-radius: 4px;
-      }
-
-      .fitting .link .brandButton:hover {
-        background-color: var(--tr-red);
-        color: white;
-      }
-
-      .fitting .link .storeListButton {
-        display: inline-block;
-        width: 300px;
-        height: 60px;
-        border: 2px solid var(--tr-red);
-        background-color: white;
-        color: var(--tr-red);
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        border-radius: 4px;
-        margin: 0 auto;
-      }
-
-      .fitting .link .storeListButton:hover {
-        background-color: var(--tr-red);
-        color: white;
-      }
-
-      @media screen and (max-width: 768px) {
-        .fitting .link {
-          padding: 40px 0;
-        }
-
-        .fitting .link h2 {
-          font-size: 2rem;
-        }
-
-        .fitting .link .linkGroup h3 {
-          font-size: 1.5rem;
-        }
-
-        .fitting .link .linkButtons {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .fitting .link .linkButton,
-        .fitting .link .brandButton {
-          width: 250px;
-        }
-
-        .fitting .link .storeListButton {
-          width: 250px;
         }
       }
     </style>
@@ -702,7 +697,6 @@
         }
       }
     </style>
-
     <style id="202509_Essay_Dialog">
       .fitting .essay_dialog_title {
         font-size: 38px;
@@ -814,7 +808,6 @@
         }
       }
     </style>
-
     <style id="202509_Essay_Profile">
       .fitting .essay_profile {
         column-gap: 16px;
@@ -909,7 +902,6 @@
         }
       }
     </style>
-
     <style id="202509_Essay_Buttons">
       .fitting .essay_buttons {
         width: 100%;
@@ -1092,60 +1084,54 @@
         </div>
       </section>
 
-      <section class="statement">
-        <div class="statementArea">
-          <div class="copy_statement">
-            <picture class="copyText">
-              <source media="(max-width: 769px)" srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/copy_sp.svg" />
-              <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/copy_pc.svg" />
-            </picture>
-            <picture class="statementText">
-              <source
-                media="(max-width: 769px)"
-                srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/statement_sp.svg" />
-              <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/statement_pc.svg" />
-            </picture>
-          </div>
-          <div class="statementLinks">
-            <a href="#essay" class="statementLink">
-              SPECIAL ESSAY
-              <svg width="10" height="21">
-                <use href="#down-arrow-icon"></use>
-              </svg>
-            </a>
-            <a href="#step" class="statementLink">
-              FITTING STEP
-              <svg width="10" height="21">
-                <use href="#down-arrow-icon"></use>
-              </svg>
-            </a>
-          </div>
+      <section class="anchorLinks">
+        <div class="anchorLinks_wrapper">
+          <a href="#essay" class="anchorLink">
+            SPECIAL ESSAY
+            <svg><use href="#down-arrow-icon"></use></svg>
+          </a>
+          <a href="#step" class="anchorLink">
+            FITTING STEP
+            <svg><use href="#down-arrow-icon"></use></svg>
+          </a>
         </div>
       </section>
 
-      <section class="link">
+      <section class="statement">
+        <div class="statementArea">
+          <h2>
+            <span>人生を変える体験を、</span>
+            <br class="br_sp" />
+            <span>あなたにも。</span>
+          </h2>
+          <h3>
+            試着で変わるのは、胸だけではありません。
+            <br />
+            姿勢も、表情も、人生までも。
+            <br />
+            さあ、次はあなたが変わる番。
+          </h3>
+        </div>
         <div class="linkArea">
-          <h2>人生が変える体験をあなたにも</h2>
-
-          <div class="linkGroup">
-            <h3>フィッティングを予約する</h3>
-            <div class="linkButtons">
-              <a href="#" class="linkButton">百貨店で予約する</a>
-              <a href="#" class="linkButton">GMSで予約する</a>
-              <a href="#" class="linkButton">AMOで予約する</a>
+          <div class="linkAreaTop">
+            <div>
+              <p>試着できる近所のお店を探す</p>
+              <button>全国店舗一覧</button>
+            </div>
+            <div>
+              <p>試着したいブラジャーを選ぶ</p>
+              <button>オンラインショップ</button>
             </div>
           </div>
-
-          <div class="linkGroup">
-            <h3>オンラインで商品購入</h3>
-            <div class="linkButtons">
-              <a href="#" class="brandButton">Triumph</a>
-              <a href="#" class="brandButton">AMOSTYLE</a>
-              <a href="#" class="brandButton">sloggi</a>
+          <div>
+            <p>試着できる日時を予約する</p>
+            <div class="linkAreaBottom">
+              <button>百貨店で予約</button>
+              <button>ショッピングモールで予約</button>
+              <button>AMO STYLEで予約</button>
             </div>
           </div>
-
-          <a href="#" class="storeListButton">店舗一覧</a>
+          <p class="description">※ 試着室に空きがある場合は、当日店舗にてご予約なしでもご試着いただけます。</p>
         </div>
       </section>
 
@@ -1538,7 +1524,13 @@
             </div>
             <div class="flowtingArea_section flowtingArea_section_online">
               <a href="#" class="flowtingLink">
-                <div class="flowtingText">オンラインで商品購入</div>
+                <div class="flowtingText">
+                  <p style="font-size: 0">
+                    <span>オンラインで</span>
+                    <br class="br_pc" />
+                    <span>商品購入</span>
+                  </p>
+                </div>
                 <svg width="12" height="12">
                   <use href="#external-link-icon"></use>
                 </svg>
