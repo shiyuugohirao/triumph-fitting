@@ -28,17 +28,18 @@
   "prettier.useEditorConfig": false,
   "cSpell.words": [
     "AMOSTYLE",
+    "dekami",
+    "FLORALE",
     "flowting",
-    "inview",
-    "Shippori",
-    "sloggi",
-    "unslick",
-    "YSIOA",
     "hiko",
     "horii",
-    "dekami",
+    "inview",
     "miyake",
-    "ugaki"
+    "Shippori",
+    "sloggi",
+    "ugaki",
+    "unslick",
+    "YSIOA"
   ],
   "colorize.ruler_decoration": false
 }
