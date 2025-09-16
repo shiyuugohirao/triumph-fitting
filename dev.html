@@ -889,6 +889,11 @@
             gap: 40px;
             margin-top: 10px;
           }
+          .fitting .essay_dialog .essay_buttons {
+            justify-content: flex-start;
+            margin-top: 0;
+            margin-bottom: 32px;
+          }
           .fitting .essay_buttons button {
             display: flex;
             align-items: center;
@@ -944,6 +949,11 @@
               align-items: flex-end;
               gap: 16px;
               margin-top: 16px;
+            }
+            .fitting .essay_dialog .essay_buttons {
+              flex-direction: row;
+              justify-content: flex-start;
+              margin-bottom: 24px;
             }
             .fitting .essay_buttons button {
               font-size: 15px;
@@ -1679,6 +1689,12 @@
             <svg><use></use></svg>
             <div class="essay_dialog_title_text"></div>
           </div>
+          <div class="essay_buttons">
+            <button class="essay_listen_button">
+              エッセイを聴く
+              <svg width="10" height="21"><use href="#audible_play"></use></svg>
+            </button>
+          </div>
           <div class="essay_body"></div>
           <div class="essay_profile">
             <img class="essay_profile_img" alt="" />
@@ -1863,6 +1879,9 @@
         const profileTextElement = clone.querySelector(".essay_profile_text");
         profileTextElement.innerHTML = data.profileText;
 
+        const listenButtonElement = clone.querySelector(".essay_listen_button");
+        listenButtonElement.id = `listen_${data.id}`;
+
         const closeButtonElement = clone.querySelector(".essay_close_button");
         closeButtonElement.id = `close_${data.id}`;
 
@@ -1890,51 +1909,49 @@
 
       function setupAudioControls() {
         const listenButtons = document.querySelectorAll(".essay_listen_button");
-        const audioElements = document.querySelectorAll(".essay_audible");
+        const audioElements = document.querySelectorAll(".essay_card .essay_audible");
+
+        // 同じaudioを制御するボタンのSVGアイコンを更新する関数
+        function updateButtonIcons(audioId, iconType) {
+          const buttons = document.querySelectorAll(`[id="listen_${audioId.replace("audible_", "")}"]`);
+          buttons.forEach(button => {
+            const svgElement = button.querySelector("svg use");
+            if (svgElement) {
+              svgElement.setAttribute("href", iconType);
+            }
+          });
+        }
+
         listenButtons.forEach(listenButton => {
           listenButton.addEventListener("click", e => {
             const audioId = listenButton.id.replace("listen_", "audible_");
             const audibleElement = document.getElementById(audioId);
-            const svgElement = listenButton.querySelector("svg use");
-            if (audibleElement && svgElement) {
+            if (audibleElement) {
               // 他のaudioを停止
               audioElements.forEach(audio => {
                 if (audio !== audibleElement) {
                   audio.pause();
-                  // 他のボタンのアイコンを再生アイコンに戻す
-                  const otherButtonId = audio.id.replace("audible_", "listen_");
-                  const otherButton = document.getElementById(otherButtonId);
-                  if (otherButton) {
-                    const otherSvgElement = otherButton.querySelector("svg use");
-                    if (otherSvgElement) {
-                      otherSvgElement.setAttribute("href", "#audible_play");
-                    }
-                  }
+                  // 他のaudioのボタンのアイコンを再生アイコンに戻す
+                  updateButtonIcons(audio.id, "#audible_play");
                 }
               });
               // 現在のaudioを再生/停止
               if (audibleElement.paused) {
                 audibleElement.play();
-                svgElement.setAttribute("href", "#audible_stop");
+                updateButtonIcons(audioId, "#audible_stop");
               } else {
                 audibleElement.pause();
-                svgElement.setAttribute("href", "#audible_play");
+                updateButtonIcons(audioId, "#audible_play");
               }
             }
           });
         });
 
         // audio終了時にアイコンを再生アイコンに戻す
-        document.querySelectorAll("audio").forEach(audio => {
+        audioElements.forEach(audio => {
           audio.addEventListener("ended", function () {
-            const essayId = this.id.replace("audible_", "");
-            const button = document.getElementById(`listen_${essayId}`);
-            if (button) {
-              const svgElement = button.querySelector("svg use");
-              if (svgElement) {
-                svgElement.setAttribute("href", "#audible_play");
-              }
-            }
+            const audioId = this.id;
+            updateButtonIcons(audioId, "#audible_play");
           });
         });
       }
