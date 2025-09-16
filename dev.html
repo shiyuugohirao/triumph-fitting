@@ -194,8 +194,12 @@
           .fitting .anchorLinks .anchorLink svg {
             fill: transparent;
             stroke-width: 2px;
-            width: 10px;
-            height: 21px;
+            width: 21px;
+            height: 10px;
+            transition: transform 0.3s ease;
+          }
+          .fitting .anchorLinks .anchorLink:hover svg {
+            transform: translateY(5px);
           }
 
           @media screen and (max-width: 768px) {
@@ -215,12 +219,14 @@
             }
             .fitting .anchorLinks .anchorLink svg {
               stroke-width: 1.5px;
-              width: 5px;
-              height: 11px;
+              width: 11px;
+              height: 5px;
+            }
+            .fitting .anchorLinks .anchorLink:hover svg {
+              transform: translateY(3px);
             }
           }
         </style>
-
         <style id="202509_Statement">
           .fitting .statement {
             font-family: "Shippori Mincho";
@@ -365,7 +371,6 @@
             }
           }
         </style>
-
         <style id="202509_Flowting">
           .fitting .flowtingArea {
             position: fixed;
@@ -1544,7 +1549,6 @@
             <path
               d="M22.001 1.93555L11.501 11.9355L1.00098 1.93555"
               style="stroke: currentColor; stroke-opacity: 1"
-              stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round" />
           </symbol>
