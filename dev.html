@@ -388,15 +388,12 @@
             width: 100%;
           }
           .fitting .flowtingArea_section_store {
-            /* order: 1; */
             border-bottom: 2px solid var(--tr-red);
           }
           .fitting .flowtingArea_section_reservation {
-            /* order: 2; */
             border-bottom: 2px solid var(--tr-red);
           }
           .fitting .flowtingArea_section_online {
-            /* order: 3; */
             border-bottom: none;
           }
 
@@ -418,8 +415,8 @@
           }
           .fitting .flowtingText {
             font-family: "Noto Sans JP";
-            /* font-size: 18px; */
-            font-size: min(1.5vh, 18px);
+            font-size: 18px;
+            /* font-size: min(1.5vh, 18px); */
             text-align: center;
             font-style: normal;
             font-weight: 700;
@@ -433,18 +430,6 @@
             vertical-align: middle;
             font-size: min(1.5vh, 18px);
           }
-          /* .fitting .flowtingArea_section_store {
-            order: 1;
-          }
-          .fitting .flowtingArea_bottom {
-            order: 2;
-          }
-          .fitting .flowtingArea_bottom .flowtingArea_section_reservation {
-            order: 1;
-          }
-          .fitting .flowtingArea_bottom .flowtingArea_section_online {
-            order: 2;
-          } */
           @media screen and (max-width: 768px) {
             .fitting .flowtingArea {
               position: fixed;
@@ -482,18 +467,10 @@
               height: 60px;
               width: 50%;
             }
-            /* .fitting .flowtingArea_section_store {
-              order: 1; 
-            }
-            .fitting .flowtingArea_bottom {
-              order: 2; 
-            } */
             .fitting .flowtingArea_bottom .flowtingArea_section_online {
-              /* order: 1; */
               border-bottom: none;
             }
             .fitting .flowtingArea_bottom .flowtingArea_section_reservation {
-              /* order: 2; */
               border-right: 2px solid var(--tr-red);
               border-bottom: none;
             }
@@ -1733,7 +1710,7 @@
       });
 
       // .statementセクションが存在する場合のみスクロール制御を実行
-      var $statement = $(".statement");
+      var $statement = $(".anchorLinks");
       if ($statement.length > 0) {
         var sec = $statement.offset().top; //この要素が見えたらclassを追加
         $(document).scroll(function () {
@@ -1749,24 +1726,24 @@
         $(".flowtingArea").show();
       }
 
-      if ($(window).width() > 768) {
-        var main = $(".mainArea").outerHeight() / 2;
-        var height2 = $(".leadArea .empty").offset().top - $(".mainArea h2").offset().top;
-        var target = $(".mainArea h2");
+      // if ($(window).width() > 768) {
+      //   var main = $(".mainArea").outerHeight() / 2;
+      //   var height2 = $(".leadArea .empty").offset().top - $(".mainArea h2").offset().top;
+      //   var target = $(".mainArea h2");
 
-        $(window).on("scroll", function () {
-          if ($(window).scrollTop() < main) {
-            target.removeClass("change");
-          } else {
-            target.addClass("change");
-          }
-          if ($(window).scrollTop() < height2) {
-            target.removeClass("active");
-          } else {
-            target.addClass("active");
-          }
-        });
-      }
+      //   $(window).on("scroll", function () {
+      //     if ($(window).scrollTop() < main) {
+      //       target.removeClass("change");
+      //     } else {
+      //       target.addClass("change");
+      //     }
+      //     if ($(window).scrollTop() < height2) {
+      //       target.removeClass("active");
+      //     } else {
+      //       target.addClass("active");
+      //     }
+      //   });
+      // }
     </script>
 
     <!-- Essay Template Script -->
