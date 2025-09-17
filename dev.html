@@ -479,6 +479,7 @@
               transform: none;
               width: 100%;
               height: auto;
+              box-sizing: border-box;
               border: 2px solid var(--tr-red);
             }
             .fitting .flowtingArea_inner {
@@ -490,6 +491,7 @@
             }
             .fitting .flowtingArea_section {
               width: 100%;
+              height: 60px;
               background-color: var(--tr-white);
             }
             .fitting .flowtingArea_section_store {
@@ -552,7 +554,27 @@
             }
             .fitting .flowtingText rt {
               display: ruby-text;
+              margin-bottom: 4px;
+              letter-spacing: -0.1em;
             }
+            /* .fitting ruby[data-ruby] rt {
+              display: none;
+            }
+            .fitting ruby[data-ruby] {
+              position: relative;
+              display: inline-block;
+            }
+            .fitting ruby[data-ruby]::after {
+              content: attr(data-ruby);
+              position: absolute;
+              transform: translate(-50%, -2em);
+              display: block;
+              left: 50%;
+              top: 0;
+              white-space: nowrap;
+              font-size: 50%;
+              letter-spacing: 0;
+            } */
           }
         </style>
         <style id="202509_Essay">
@@ -1529,14 +1551,20 @@
             <div class="flowtingArea_inner">
               <div class="flowtingArea_section flowtingArea_section_store">
                 <a href="https://jp.triumph.com/shoplist.html" class="flowtingLink">
-                  <div class="flowtingText">お店で試着</div>
+                  <div class="flowtingText">
+                    <ruby data-ruby="店舗一覧">
+                      お店で試着
+                      <rt>店舗一覧</rt>
+                    </ruby>
+                  </div>
+                  <!-- <div class="flowtingText">お店で試着</div> -->
                   <svg width="12" height="12">
                     <use href="#external-link-icon"></use>
                   </svg>
                 </a>
               </div>
               <div class="flowtingArea_section flowtingArea_section_date">
-                <a href="#reserve_area" class="flowtingLink">
+                <a href="#reserve_area_statement" class="flowtingLink">
                   <div class="flowtingText">日時を予約</div>
                   <!-- <svg width="12" height="12">
                       <use href="#external-link-icon"></use>
@@ -1545,13 +1573,13 @@
               </div>
               <div class="flowtingArea_section flowtingArea_section_soon">
                 <a href="https://jp.triumph.com/" class="flowtingLink">
-                  <!-- <div class="flowtingText">
-                      <ruby>
-                        今すぐ購入
-                        <rt>公式オンラインショップ</rt>
-                      </ruby>
-                    </div> -->
-                  <div class="flowtingText">今すぐ購入</div>
+                  <div class="flowtingText">
+                    <ruby data-ruby="公式オンラインショップ">
+                      今すぐ購入
+                      <rt>公式オンラインショップ</rt>
+                    </ruby>
+                  </div>
+                  <!-- <div class="flowtingText">今すぐ購入</div> -->
                   <svg width="12" height="12">
                     <use href="#external-link-icon"></use>
                   </svg>
