@@ -93,7 +93,7 @@
       .fitting .kv .kvArea {
         position: relative;
         width: 100%;
-        height: 810px;
+        height: 420px;
         overflow: hidden;
       }
       .fitting .kv .slideshow-container {
@@ -123,7 +123,7 @@
 
       .fitting .kv .dots-container {
         position: absolute;
-        bottom: 37px;
+        bottom: 15px;
         left: 50%;
         transform: translateX(-50%);
         display: inline-flex;
@@ -131,6 +131,7 @@
         gap: 25px;
       }
       .fitting .kv .dot {
+        position: relative;
         width: 10px;
         height: 10px;
         border-radius: 50%;
@@ -146,12 +147,20 @@
         transform: scale(1.5);
         background-color: var(--tr-red);
       }
+      .fitting .kv .dot {
+        &::after {
+          content: "";
+          position: absolute;
+          inset: -0.5rem;
+        }
+      }
+
       @media screen and (max-width: 768px) {
         .fitting .kv .kvArea {
-          height: 400px;
+          height: 265px;
         }
         .fitting .kv .dots-container {
-          bottom: 25px;
+          bottom: 12px;
           gap: 16px;
         }
         .fitting .kv .dot {
@@ -473,6 +482,7 @@
           transform: none;
           width: 100%;
           height: auto;
+          box-sizing: border-box;
           border: 2px solid var(--tr-red);
         }
         .fitting .flowtingArea_inner {
@@ -484,6 +494,7 @@
         }
         .fitting .flowtingArea_section {
           width: 100%;
+          height: 60px;
           background-color: var(--tr-white);
         }
         .fitting .flowtingArea_section_store {
@@ -518,7 +529,7 @@
           background-color: var(--tr-red);
         }
         .fitting .flowtingLink svg {
-          margin-left: 8px;
+          margin-left: 12px;
           width: 12px;
           height: 12px;
           min-width: 12px;
@@ -544,8 +555,24 @@
         .fitting .flowtingText .br_pc {
           display: none;
         }
-        .fitting .flowtingText rt {
-          display: ruby-text;
+        .fitting ruby[data-ruby] rt {
+          display: none;
+        }
+        .fitting ruby[data-ruby] {
+          position: relative;
+          display: inline-block;
+          transform: translateY(0.3rem);
+        }
+        .fitting ruby[data-ruby]::after {
+          content: attr(data-ruby);
+          position: absolute;
+          transform: translate(-50%, -2.2em);
+          display: block;
+          left: 50%;
+          top: 0;
+          white-space: nowrap;
+          font-size: 60%;
+          letter-spacing: 1px;
         }
       }
     </style>
@@ -1526,15 +1553,21 @@
       <section class="flowtingArea">
         <div class="flowtingArea_inner">
           <div class="flowtingArea_section flowtingArea_section_store">
-            <a href="https://jp.triumph.com/shoplist.html" class="flowtingLink">
-              <div class="flowtingText">お店で試着</div>
+            <a href="https://jp.triumph.com/shoplist.html" target="_blank" class="flowtingLink">
+              <div class="flowtingText">
+                <ruby data-ruby="店舗一覧">
+                  お店で試着
+                  <rt>店舗一覧</rt>
+                </ruby>
+              </div>
+              <!-- <div class="flowtingText">お店で試着</div> -->
               <svg width="12" height="12">
                 <use href="#external-link-icon"></use>
               </svg>
             </a>
           </div>
           <div class="flowtingArea_section flowtingArea_section_date">
-            <a href="#reserve_area" class="flowtingLink">
+            <a href="#reserve_area_statement" class="flowtingLink">
               <div class="flowtingText">日時を予約</div>
               <!-- <svg width="12" height="12">
                       <use href="#external-link-icon"></use>
@@ -1542,14 +1575,14 @@
             </a>
           </div>
           <div class="flowtingArea_section flowtingArea_section_soon">
-            <a href="https://jp.triumph.com/" class="flowtingLink">
-              <!-- <div class="flowtingText">
-                      <ruby>
-                        今すぐ購入
-                        <rt>公式オンラインショップ</rt>
-                      </ruby>
-                    </div> -->
-              <div class="flowtingText">今すぐ購入</div>
+            <a href="https://jp.triumph.com/" target="_blank" class="flowtingLink">
+              <div class="flowtingText">
+                <ruby data-ruby="公式オンラインショップ">
+                  今すぐ購入
+                  <rt>公式オンラインショップ</rt>
+                </ruby>
+              </div>
+              <!-- <div class="flowtingText">今すぐ購入</div> -->
               <svg width="12" height="12">
                 <use href="#external-link-icon"></use>
               </svg>
@@ -1745,19 +1778,19 @@
     <div class="linkAreaTop">
       <div>
         <p>お店で試着</p>
-        <a href="https://jp.triumph.com/shoplist.html"><button>店舗一覧</button></a>
+        <a href="https://jp.triumph.com/shoplist.html" target="_blank"><button>店舗一覧</button></a>
       </div>
       <div>
-        <p><ruby>今すぐ購入</ruby></p>
-        <a href="https://jp.triumph.com/"><button>公式オンラインショップ</button></a>
+        <p>今すぐ購入</p>
+        <a href="https://jp.triumph.com/" target="_blank"><button>公式オンラインショップ</button></a>
       </div>
     </div>
     <div>
       <p>試着できる日時を予約する</p>
       <div class="linkAreaBottom">
-        <a href="https://triumph-cpn-fitting.resv.jp/reserve/calendar.php"><button>百貨店・トリンプショップ</button></a>
-        <a href="https://triumph-cpn-fitting-gms.resv.jp/reserve/calendar.php"><button>チェーンストア</button></a>
-        <a href="https://triumph-fitting-chokuei.resv.jp/reserve/calendar.php"><button>AMOSTYLE</button></a>
+        <a href="https://triumph-cpn-fitting.resv.jp/reserve/calendar.php" target="_blank"><button>百貨店・トリンプショップ</button></a>
+        <a href="https://triumph-cpn-fitting-gms.resv.jp/reserve/calendar.php" target="_blank"><button>チェーンストア</button></a>
+        <a href="https://triumph-fitting-chokuei.resv.jp/reserve/calendar.php" target="_blank"><button>AMOSTYLE</button></a>
       </div>
     </div>
     <p class="description">※ 試着室に空きがある場合は、当日店舗にてご予約なしでもご試着いただけます。</p>
