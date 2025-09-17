@@ -99,7 +99,7 @@
           .fitting .kv .kvArea {
             position: relative;
             width: 100%;
-            height: 810px;
+            height: 420px;
             overflow: hidden;
           }
           .fitting .kv .slideshow-container {
@@ -129,7 +129,7 @@
 
           .fitting .kv .dots-container {
             position: absolute;
-            bottom: 37px;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%);
             display: inline-flex;
@@ -137,6 +137,7 @@
             gap: 25px;
           }
           .fitting .kv .dot {
+            position: relative;
             width: 10px;
             height: 10px;
             border-radius: 50%;
@@ -152,12 +153,20 @@
             transform: scale(1.5);
             background-color: var(--tr-red);
           }
+          .fitting .kv .dot {
+            &::after {
+              content: "";
+              position: absolute;
+              inset: -0.5rem;
+            }
+          }
+
           @media screen and (max-width: 768px) {
             .fitting .kv .kvArea {
-              height: 400px;
+              height: 265px;
             }
             .fitting .kv .dots-container {
-              bottom: 25px;
+              bottom: 12px;
               gap: 16px;
             }
             .fitting .kv .dot {
