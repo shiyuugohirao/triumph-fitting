@@ -28,4 +28,9 @@
 
 - ※ LiveServer でプレビューしたい。が、html 要素として最低限の記述がないと、LiveServer では Javascript が正しく読み込まれなかった。
 
+#### Audible
+
+- もらった音源は高音質で重たいので ffmpeg で変換。  
+  `ffmpeg -i input.mp3 -b:a 96k audible_XXX.mp3`
+
 ---
