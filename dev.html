@@ -425,10 +425,10 @@
           .fitting .flowtingArea_section_store {
             border-bottom: 2px solid var(--tr-red);
           }
-          .fitting .flowtingArea_section_reservation {
+          .fitting .flowtingArea_section_date {
             border-bottom: 2px solid var(--tr-red);
           }
-          .fitting .flowtingArea_section_online {
+          .fitting .flowtingArea_section_soon {
             border-bottom: none;
           }
 
@@ -466,6 +466,9 @@
             font-size: 18px;
             /* font-size: min(1.5vh, 18px); */
           }
+          .fitting .flowtingText rt {
+            display: none;
+          }
           @media screen and (max-width: 768px) {
             .fitting .flowtingArea {
               position: fixed;
@@ -480,34 +483,24 @@
             }
             .fitting .flowtingArea_inner {
               display: flex;
-              flex-direction: column;
+              flex-direction: row;
               align-items: flex-start;
-              height: 100%;
+              width: 100%;
+              height: 60px;
             }
             .fitting .flowtingArea_section {
               width: 100%;
               background-color: var(--tr-white);
             }
             .fitting .flowtingArea_section_store {
-              border-bottom: 2px solid var(--tr-red);
-              height: 60px;
-            }
-            .fitting .flowtingArea_bottom {
-              display: flex;
-              width: 100%;
-              height: 60px;
               border-bottom: none;
-            }
-            .fitting .flowtingArea_bottom .flowtingArea_section {
-              flex: 1;
-              height: 60px;
-              width: 50%;
-            }
-            .fitting .flowtingArea_bottom .flowtingArea_section_online {
-              border-bottom: none;
-            }
-            .fitting .flowtingArea_bottom .flowtingArea_section_reservation {
               border-right: 2px solid var(--tr-red);
+              height: 60px;
+            }
+            .fitting .flowtingArea_inner .flowtingArea_section_date {
+              display: none;
+            }
+            .fitting .flowtingArea_inner .flowtingArea_section_soon {
               border-bottom: none;
             }
             .fitting .flowtingLink {
@@ -557,8 +550,8 @@
             .fitting .flowtingText .br_pc {
               display: none;
             }
-            .fitting .flowtingText:hover {
-              color: var(--tr-white);
+            .fitting .flowtingText rt {
+              display: ruby-text;
             }
           }
         </style>
@@ -1536,23 +1529,27 @@
                   </svg>
                 </a>
               </div>
-              <div class="flowtingArea_bottom">
-                <div class="flowtingArea_section flowtingArea_section_reservation">
-                  <a href="#reserve_area" class="flowtingLink">
-                    <div class="flowtingText">日時を予約</div>
-                    <svg width="12" height="12">
+              <div class="flowtingArea_section flowtingArea_section_date">
+                <a href="#reserve_area" class="flowtingLink">
+                  <div class="flowtingText">日時を予約</div>
+                  <!-- <svg width="12" height="12">
                       <use href="#external-link-icon"></use>
-                    </svg>
-                  </a>
-                </div>
-                <div class="flowtingArea_section flowtingArea_section_online">
-                  <a href="https://jp.triumph.com/" class="flowtingLink">
-                    <div class="flowtingText">今すぐ購入</div>
-                    <svg width="12" height="12">
-                      <use href="#external-link-icon"></use>
-                    </svg>
-                  </a>
-                </div>
+                    </svg> -->
+                </a>
+              </div>
+              <div class="flowtingArea_section flowtingArea_section_soon">
+                <a href="https://jp.triumph.com/" class="flowtingLink">
+                  <!-- <div class="flowtingText">
+                      <ruby>
+                        今すぐ購入
+                        <rt>公式オンラインショップ</rt>
+                      </ruby>
+                    </div> -->
+                  <div class="flowtingText">今すぐ購入</div>
+                  <svg width="12" height="12">
+                    <use href="#external-link-icon"></use>
+                  </svg>
+                </a>
               </div>
             </div>
           </section>
@@ -1747,7 +1744,7 @@
             <a href="https://jp.triumph.com/shoplist.html"><button>店舗一覧</button></a>
           </div>
           <div>
-            <p>今すぐ購入</p>
+            <p><ruby>今すぐ購入</ruby></p>
             <a href="https://jp.triumph.com/"><button>公式オンラインショップ</button></a>
           </div>
         </div>
