@@ -163,7 +163,6 @@
         }
       }
     </style>
-
     <style id="202509_AnchorLinks">
       .fitting .anchorLinks {
         font-family: "Shippori Mincho";
@@ -250,16 +249,18 @@
         align-items: center;
         font-style: normal;
         white-space: nowrap;
-        font-weight: 500;
         gap: 64px;
       }
       .fitting .statement .statementArea h2 {
         font-family: "Shippori Mincho";
+        font-weight: 400;
         font-size: 0px;
         line-height: 140%;
+        padding-left: 16px;
       }
       .fitting .statement .statementArea h3 {
         font-family: "Shippori Mincho";
+        font-weight: 400;
         font-size: 32px;
         line-height: 200%;
       }
@@ -303,6 +304,9 @@
       .fitting .linkArea p {
         font-size: 22px;
         margin-bottom: 24px;
+      }
+      .fitting .linkArea a {
+        width: 100%;
       }
       .fitting .linkArea button {
         width: 100%;
@@ -415,10 +419,10 @@
       .fitting .flowtingArea_section_store {
         border-bottom: 2px solid var(--tr-red);
       }
-      .fitting .flowtingArea_section_reservation {
+      .fitting .flowtingArea_section_date {
         border-bottom: 2px solid var(--tr-red);
       }
-      .fitting .flowtingArea_section_online {
+      .fitting .flowtingArea_section_soon {
         border-bottom: none;
       }
 
@@ -456,6 +460,9 @@
         font-size: 18px;
         /* font-size: min(1.5vh, 18px); */
       }
+      .fitting .flowtingText rt {
+        display: none;
+      }
       @media screen and (max-width: 768px) {
         .fitting .flowtingArea {
           position: fixed;
@@ -470,34 +477,24 @@
         }
         .fitting .flowtingArea_inner {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           align-items: flex-start;
-          height: 100%;
+          width: 100%;
+          height: 60px;
         }
         .fitting .flowtingArea_section {
           width: 100%;
           background-color: var(--tr-white);
         }
         .fitting .flowtingArea_section_store {
-          border-bottom: 2px solid var(--tr-red);
-          height: 60px;
-        }
-        .fitting .flowtingArea_bottom {
-          display: flex;
-          width: 100%;
-          height: 60px;
           border-bottom: none;
-        }
-        .fitting .flowtingArea_bottom .flowtingArea_section {
-          flex: 1;
-          height: 60px;
-          width: 50%;
-        }
-        .fitting .flowtingArea_bottom .flowtingArea_section_online {
-          border-bottom: none;
-        }
-        .fitting .flowtingArea_bottom .flowtingArea_section_reservation {
           border-right: 2px solid var(--tr-red);
+          height: 60px;
+        }
+        .fitting .flowtingArea_inner .flowtingArea_section_date {
+          display: none;
+        }
+        .fitting .flowtingArea_inner .flowtingArea_section_soon {
           border-bottom: none;
         }
         .fitting .flowtingLink {
@@ -547,8 +544,8 @@
         .fitting .flowtingText .br_pc {
           display: none;
         }
-        .fitting .flowtingText:hover {
-          color: var(--tr-white);
+        .fitting .flowtingText rt {
+          display: ruby-text;
         }
       }
     </style>
@@ -563,13 +560,14 @@
       .fitting .essay_title {
         font-size: 3.5rem;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 100%;
         text-align: center;
         gap: 16px;
         margin-bottom: 64px;
       }
       .fitting .essay_title_sub {
+        font-weight: 500;
         font-size: 20px;
       }
       .fitting .essay_anchors {
@@ -581,17 +579,20 @@
         justify-content: center;
         align-items: center;
       }
-      .fitting .essay_anchors_item svg {
-        color: var(--tr-red);
-      }
       .fitting .essay_anchors_item {
         display: inline-flex;
         padding: 0 4px 10px 4px;
         max-width: 52px;
+        max-height: 37px;
         flex-direction: column;
         object-fit: contain;
         align-items: flex-start;
         border-bottom: 1px solid var(--tr-red);
+      }
+      .fitting .essay_anchors_item svg {
+        color: var(--tr-red);
+        width: 52px;
+        height: 37px;
       }
 
       @media screen and (max-width: 768px) {
@@ -616,6 +617,10 @@
           padding: 0 2px 6px 2px;
           max-width: 29px;
           max-height: 21px;
+        }
+        .fitting .essay_anchors_item svg {
+          width: 29px;
+          height: 21px;
         }
       }
     </style>
@@ -1141,26 +1146,8 @@
             さあ、次はあなたが変わる番。
           </h3>
         </div>
-        <div class="linkArea">
-          <div class="linkAreaTop">
-            <div>
-              <p>お店で試着</p>
-              <button>全国店舗一覧</button>
-            </div>
-            <div>
-              <p>今すぐ購入</p>
-              <button>オンラインショップ</button>
-            </div>
-          </div>
-          <div>
-            <p>試着できる日時を予約する</p>
-            <div class="linkAreaBottom">
-              <button>百貨店・トリンプショップ</button>
-              <button>チェーンストア</button>
-              <button>AMOSTYLE</button>
-            </div>
-          </div>
-          <p class="description">※ 試着室に空きがある場合は、当日店舗にてご予約なしでもご試着いただけます。</p>
+        <div id="reserve_area_statement" style="width: 100%">
+          <!-- reserve area will be dynamically inserted here -->
         </div>
       </section>
 
@@ -1172,19 +1159,19 @@
           </div>
           <div class="essay_anchors">
             <a href="#card1" class="essay_anchors_item">
-              <svg width="45" height="35"><use href="#sharp1"></use></svg>
+              <svg><use href="#sharp1"></use></svg>
             </a>
             <a href="#card2" class="essay_anchors_item">
-              <svg width="45" height="35"><use href="#sharp2"></use></svg>
+              <svg><use href="#sharp2"></use></svg>
             </a>
             <a href="#card3" class="essay_anchors_item">
-              <svg width="45" height="35"><use href="#sharp3"></use></svg>
+              <svg><use href="#sharp3"></use></svg>
             </a>
             <a href="#card4" class="essay_anchors_item">
-              <svg width="45" height="35"><use href="#sharp4"></use></svg>
+              <svg><use href="#sharp4"></use></svg>
             </a>
             <a href="#card5" class="essay_anchors_item">
-              <svg width="45" height="35"><use href="#sharp5"></use></svg>
+              <svg><use href="#sharp5"></use></svg>
             </a>
           </div>
           <div class="essayArea_box">
@@ -1532,57 +1519,41 @@
         </section>
       </section>
 
-      <section class="links_footer">
-        <div class="linkArea">
-          <div class="linkAreaTop">
-            <div>
-              <p>お店で試着</p>
-              <button>全国店舗一覧</button>
-            </div>
-            <div>
-              <p>今すぐ購入</p>
-              <button>オンラインショップ</button>
-            </div>
-          </div>
-          <div>
-            <p>試着できる日時を予約する</p>
-            <div class="linkAreaBottom">
-              <button>百貨店・トリンプショップ</button>
-              <button>チェーンストア</button>
-              <button>AMOSTYLE</button>
-            </div>
-          </div>
-          <p class="description">※ 試着室に空きがある場合は、当日店舗にてご予約なしでもご試着いただけます。</p>
-        </div>
+      <section class="links_footer" id="reserve_area_footer">
+        <!-- reserve area will be dynamically inserted here -->
       </section>
 
       <section class="flowtingArea">
         <div class="flowtingArea_inner">
           <div class="flowtingArea_section flowtingArea_section_store">
-            <a href="#" class="flowtingLink">
-              <div class="flowtingText">全国店舗一覧</div>
+            <a href="https://jp.triumph.com/shoplist.html" class="flowtingLink">
+              <div class="flowtingText">お店で試着</div>
               <svg width="12" height="12">
                 <use href="#external-link-icon"></use>
               </svg>
             </a>
           </div>
-          <div class="flowtingArea_bottom">
-            <div class="flowtingArea_section flowtingArea_section_reservation">
-              <a href="#" class="flowtingLink">
-                <div class="flowtingText">予約する</div>
-                <svg width="12" height="12">
-                  <use href="#external-link-icon"></use>
-                </svg>
-              </a>
-            </div>
-            <div class="flowtingArea_section flowtingArea_section_online">
-              <a href="#" class="flowtingLink">
-                <div class="flowtingText">オンラインショップ</div>
-                <svg width="12" height="12">
-                  <use href="#external-link-icon"></use>
-                </svg>
-              </a>
-            </div>
+          <div class="flowtingArea_section flowtingArea_section_date">
+            <a href="#reserve_area" class="flowtingLink">
+              <div class="flowtingText">日時を予約</div>
+              <!-- <svg width="12" height="12">
+                      <use href="#external-link-icon"></use>
+                    </svg> -->
+            </a>
+          </div>
+          <div class="flowtingArea_section flowtingArea_section_soon">
+            <a href="https://jp.triumph.com/" class="flowtingLink">
+              <!-- <div class="flowtingText">
+                      <ruby>
+                        今すぐ購入
+                        <rt>公式オンラインショップ</rt>
+                      </ruby>
+                    </div> -->
+              <div class="flowtingText">今すぐ購入</div>
+              <svg width="12" height="12">
+                <use href="#external-link-icon"></use>
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -1767,6 +1738,30 @@
       </div>
     </div>
   </dialog>
+</template>
+
+<template id="reserve_area_template">
+  <div class="linkArea">
+    <div class="linkAreaTop">
+      <div>
+        <p>お店で試着</p>
+        <a href="https://jp.triumph.com/shoplist.html"><button>店舗一覧</button></a>
+      </div>
+      <div>
+        <p><ruby>今すぐ購入</ruby></p>
+        <a href="https://jp.triumph.com/"><button>公式オンラインショップ</button></a>
+      </div>
+    </div>
+    <div>
+      <p>試着できる日時を予約する</p>
+      <div class="linkAreaBottom">
+        <a href="https://triumph-cpn-fitting.resv.jp/reserve/calendar.php"><button>百貨店・トリンプショップ</button></a>
+        <a href="https://triumph-cpn-fitting-gms.resv.jp/reserve/calendar.php"><button>チェーンストア</button></a>
+        <a href="https://triumph-fitting-chokuei.resv.jp/reserve/calendar.php"><button>AMOSTYLE</button></a>
+      </div>
+    </div>
+    <p class="description">※ 試着室に空きがある場合は、当日店舗にてご予約なしでもご試着いただけます。</p>
+  </div>
 </template>
 
 <!-- external scripts -->
@@ -1960,6 +1955,23 @@
     }
   }
 
+  function renderReserveArea() {
+    const reserve_area_statement = document.getElementById("reserve_area_statement");
+    const reserve_area_footer = document.getElementById("reserve_area_footer");
+    if (reserve_area_statement) {
+      reserve_area_statement.innerHTML = "";
+      const template = document.getElementById("reserve_area_template");
+      const clone = template.content.cloneNode(true);
+      reserve_area_statement.appendChild(clone);
+    }
+    if (reserve_area_footer) {
+      reserve_area_footer.innerHTML = "";
+      const template = document.getElementById("reserve_area_template");
+      const clone = template.content.cloneNode(true);
+      reserve_area_footer.appendChild(clone);
+    }
+  }
+
   function setupAudioControls() {
     const listenButtons = document.querySelectorAll(".essay_listen_button");
     const audioElements = document.querySelectorAll(".essay_card .essay_audible");
@@ -2111,6 +2123,7 @@
   function setup() {
     // --- generate HTML from Templates ---
     renderEssay();
+    renderReserveArea();
     // --- setups ---
     setupAudioControls();
     setupReadButton();
