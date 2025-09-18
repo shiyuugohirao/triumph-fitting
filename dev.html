@@ -107,8 +107,8 @@
           .fitting .kv .kvArea {
             position: relative;
             width: 100%;
-            height: 420px;
-            /* height: 390px; */
+            /* height: 420px; */
+            height: 390px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -173,13 +173,9 @@
 
           @media screen and (max-width: 768px) {
             .fitting .kv .kvArea {
-              height: 265px;
-              /* height: 345px; */
+              /* height: 265px; */
+              height: 345px;
             }
-            /* .fitting .kv .dots_container {
-              height: 24px;
-              gap: 16px;
-            } */
             .fitting .kv .dot {
               width: 6px;
               height: 6px;
@@ -2210,7 +2206,7 @@
         showSlide(nextIndex);
       }
       function startSlideshow() {
-        slideInterval = setInterval(nextSlide, 5000);
+        slideInterval = setInterval(nextSlide, 10000);
       }
 
       function stopSlideshow() {
@@ -2221,7 +2217,7 @@
         dot.addEventListener("click", () => {
           // stopSlideshow(); // 手動切り替え時は自動切り替えを一時停止
           showSlide(index);
-          // setTimeout(startSlideshow, 5000); // 5秒後に自動切り替えを再開
+          // setTimeout(startSlideshow, 10000);
         });
       });
 
