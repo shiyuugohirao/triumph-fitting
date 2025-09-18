@@ -77,13 +77,21 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            width: 100%;
             background-color: var(--tr-red);
-            padding: 40px 0;
+            width: 100%;
+            height: 55px;
+            padding: 15px 0;
+          }
+          .fitting .copy picture {
+            height: 100%;
+          }
+          .fitting .copy img {
+            height: 100%;
+            object-fit: contain;
           }
           @media screen and (max-width: 768px) {
             .fitting .copy {
-              padding: 20px 0;
+              padding: 18px 0;
             }
           }
         </style>
@@ -101,8 +109,10 @@
             width: 100%;
             height: 420px;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
           }
-          .fitting .kv .slideshow-container {
+          .fitting .kv .slideshow_container {
             position: relative;
             object-fit: contain;
             overflow: hidden;
@@ -127,14 +137,13 @@
             object-fit: contain;
           }
 
-          .fitting .kv .dots-container {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: inline-flex;
+          .fitting .kv .dots_container {
+            position: relative;
+            height: 34px;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 25px;
+            gap: 24px;
           }
           .fitting .kv .dot {
             position: relative;
@@ -165,10 +174,10 @@
             .fitting .kv .kvArea {
               height: 265px;
             }
-            .fitting .kv .dots-container {
-              bottom: 12px;
+            /* .fitting .kv .dots_container {
+              height: 24px;
               gap: 16px;
-            }
+            } */
             .fitting .kv .dot {
               width: 6px;
               height: 6px;
@@ -1113,36 +1122,60 @@
         <article class="fitting">
           <section class="copy">
             <picture class="copyText">
-              <source media="(max-width: 769px)" srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/copy_sp.svg" />
+              <!-- <source media="(max-width: 769px)" srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/copy_sp.svg" /> -->
               <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/copy_pc.svg" />
             </picture>
           </section>
           <section class="kv">
             <div class="kvArea">
-              <div class="slideshow-container">
+              <div class="slideshow_container">
                 <div class="slide active">
-                  <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_hiko.svg" alt="スライド1" />
+                  <picture>
+                    <source
+                      media="(max-width: 769px)"
+                      srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_sp_hiko.webp" />
+                    <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_pc_hiko.webp" alt="ヒコロヒー" />
+                  </picture>
                 </div>
                 <div class="slide">
-                  <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_horii.svg" alt="スライド2" />
+                  <picture>
+                    <source
+                      media="(max-width: 769px)"
+                      srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_sp_ugaki.webp" />
+                    <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_pc_ugaki.webp" alt="宇垣美里" />
+                  </picture>
                 </div>
                 <div class="slide">
-                  <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_dekami.svg" alt="スライド3" />
+                  <picture>
+                    <source
+                      media="(max-width: 769px)"
+                      srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_sp_dekami.webp" />
+                    <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_pc_dekami.webp" alt="でか美ちゃん" />
+                  </picture>
                 </div>
                 <div class="slide">
-                  <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_miyake.svg" alt="スライド4" />
+                  <picture>
+                    <source
+                      media="(max-width: 769px)"
+                      srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_sp_horii.webp" />
+                    <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_pc_horii.webp" alt="堀井美香" />
+                  </picture>
                 </div>
                 <div class="slide">
-                  <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_ugaki.svg" alt="スライド5" />
+                  <picture>
+                    <source
+                      media="(max-width: 769px)"
+                      srcset="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_sp_miyake.webp" />
+                    <img src="https://jpn-ecommerce-s3.triumph.com/tr-about/tr-fitting/assets/kv_pc_miyake.webp" alt="三宅香帆" />
+                  </picture>
                 </div>
-
-                <div class="dots-container">
-                  <div class="dot active" data-slide="0"></div>
-                  <div class="dot" data-slide="1"></div>
-                  <div class="dot" data-slide="2"></div>
-                  <div class="dot" data-slide="3"></div>
-                  <div class="dot" data-slide="4"></div>
-                </div>
+              </div>
+              <div class="dots_container">
+                <div class="dot active" data-slide="0"></div>
+                <div class="dot" data-slide="1"></div>
+                <div class="dot" data-slide="2"></div>
+                <div class="dot" data-slide="3"></div>
+                <div class="dot" data-slide="4"></div>
               </div>
             </div>
           </section>
@@ -2206,7 +2239,7 @@
       });
 
       // スライドショーコンテナにマウスが入った時は自動切り替えを停止
-      // const slideshowContainer = document.querySelector(".slideshow-container");
+      // const slideshowContainer = document.querySelector(".slideshow_container");
       // slideshowContainer.addEventListener("mouseenter", stopSlideshow);
       // slideshowContainer.addEventListener("mouseleave", startSlideshow);
       startSlideshow();
