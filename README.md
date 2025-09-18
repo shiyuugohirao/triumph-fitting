@@ -17,6 +17,8 @@
 
 1. `dev.html` を編集
 
+- ※ `triumph-fitting-data.html` を編集しないように注意！二度手間になっちゃう。
+
 - LiveServer でプレビュー （https://localhost:5500/dev.html など）
 
 2. `update_dev2triumph.sh` を実行して、`dev.html` から body 要素のみを抜き出した本番コピペ用の `triumph-fitting-data.html` が更新される。
@@ -32,5 +34,7 @@
 
 - もらった音源は高音質で重たいので ffmpeg で変換。  
   `ffmpeg -i input.mp3 -b:a 96k audible_XXX.mp3`
+- まとめて変換する場合は、  
+  `for f in *.mp3; do ffmpeg -i "$f" -b:a 96k "${f%.mp3}_96k.mp3"; done`
 
 ---
